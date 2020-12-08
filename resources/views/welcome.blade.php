@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Mini Shop</title>
+    <title><strong>WildRiftz's</strong></title>
     <!-- Bootstrap core CSS -->
     <link href="{{asset('/frontend/css/bootstrap.css')}}" rel="stylesheet">
     <!-- Fontawesome core CSS -->
@@ -531,7 +531,7 @@
                     Email: MiniShop@gmail.com<br>
                 </p>
 
-                2014 www.MiniShop.com | All Right Reserved
+                2014 www.WildRiftz's.com | All Right Reserved
             </div>
             <div class="col-md-4 social-box">
                 <strong>We are Social </strong>
