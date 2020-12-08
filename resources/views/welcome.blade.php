@@ -319,7 +319,7 @@
                             <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>
+                                <p>Price : <strong>$ 3,500,000</strong>  </p>
                                 <p><a href="#">Ptional dismiss button </a></p>
                                 <p>Ptional dismiss button in tional dismiss button in   </p>
                                 <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
@@ -332,7 +332,7 @@
                             <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>
+                                <p>Price : <strong>$ 4,000,000</strong>  </p>
                                 <p><a href="#">Ptional dismiss button </a></p>
                                 <p>Ptional dismiss button in tional dismiss button in   </p>
                                 <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
@@ -371,9 +371,9 @@
       <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">By Price Low</a></li>
+                                <li><a href="#">By Price A-Z</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">By Price High</a></li>
+                                <li><a href="#">By Price Z-A</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">By Popularity</a></li>
                                 <li class="divider"></li>
@@ -389,7 +389,7 @@
                             <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>
+                                <p>Price : <strong>$ 2,900,000</strong>  </p>
                                 <p><a href="#">Ptional dismiss button </a></p>
                                 <p>Ptional dismiss button in tional dismiss button in   </p>
                                 <p>
@@ -405,7 +405,7 @@
                             <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>
+                                <p>Price : <strong>$ 6,000,000</strong>  </p>
                                 <p><a href="#">Ptional dismiss button </a></p>
                                 <p>Ptional dismiss button in tional dismiss button in   </p>
                                 <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
@@ -418,7 +418,7 @@
                             <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" />
                             <div class="caption">
                                 <h3><a href="#">Samsung Galaxy </a></h3>
-                                <p>Price : <strong>$ 3,45,900</strong>  </p>
+                                <p>Price : <strong>$ 5,500,000</strong>  </p>
                                 <p><a href="#">Ptional dismiss button </a></p>
                                 <p>Ptional dismiss button in tional dismiss button in   </p>
                                 <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
@@ -448,7 +448,7 @@
     <!-- /.container -->
     <div class="col-md-12 download-app-box text-center">
 
-        <span class="glyphicon glyphicon-download-alt"></span>Download Our Android App and Get 10% additional Off on all Products . <a href="#" class="btn btn-danger btn-lg">DOWNLOAD  NOW</a>
+        <span class="glyphicon glyphicon-download-alt"></span>Download Our Android App and Get 5% additional Off on all Products . <a href="#" class="btn btn-danger btn-lg">DOWNLOAD  NOW</a>
 
     </div>
 
@@ -525,13 +525,13 @@
                 <strong>Our Location</strong>
                 <hr>
                 <p>
-                     234, Nguyễn Thị Minh Khai Street,<br />
+                     123, WildRiftz Street,<br />
                                     Just Location, VN<br />
-                    Call: +09-456-567-890<br>
-                    Email: MiniShop@gmail.com<br>
+                    Tel: +84xxxxxxxxxxx<br>
+                    Email: WildRiftzShop@gmail.com<br>
                 </p>
 
-                2014 www.MiniShop.com | All Right Reserved
+                @2020 www.WildRiftzShop.com | All Right Reserved
             </div>
             <div class="col-md-4 social-box">
                 <strong>We are Social </strong>
@@ -547,7 +547,7 @@
     </div>
     <!-- /.col -->
     <div class="col-md-12 end-box ">
-        &copy; 2014 | &nbsp; All Rights Reserved | &nbsp; www.MiniShop.com | &nbsp; 24x7 support | &nbsp; Email us: MiniShop@gmail.com
+        &copy; 2020 | &nbsp; All Rights Reserved | &nbsp; www.WildRiftzShop.com | &nbsp; 24x7 support | &nbsp; Email us: WildRiftzShop@gmail.com
     </div>
     <!-- /.col -->
     <!--Footer end -->
