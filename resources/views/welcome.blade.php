@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><strong>Mini</strong> Shop</a>
+                <a class="navbar-brand" href="#"><strong>WildRiftz's</strong> Shop</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,12 +43,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">24x7 Support <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><strong>Call: </strong>+09-456-567-890</a></li>
-                            <li><a href="#"><strong>Mail: </strong>MiniShop@gmail.com</a></li>
+                            <li><a href="#"><strong>Tel: </strong>+84xxxxxxxxxxx</a></li>
+                            <li><a href="#"><strong>Mail: </strong>WildRiftzShop@gmail.com</a></li>
                             <li class="divider"></li>
                             <li><a href="#"><strong>Address: </strong>
                                 <div>
-                                    234, Nguyễn Thị Minh Khai street,<br />
+                                    123, WildRiftz street,<br />
                                     Just Location, VN
                                 </div>
                             </a></li>
@@ -149,7 +149,7 @@
             <div class="col-md-3 text-center">
                 <div class=" col-md-12 col-sm-6 col-xs-6" >
                     <div class="offer-text">
-                        30% off here
+                        40% off here
                     </div>
                     <div class="thumbnail product-box">
                         <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" />
@@ -161,7 +161,7 @@
                 </div>
                 <div class=" col-md-12 col-sm-6 col-xs-6">
                     <div class="offer-text2">
-                        30% off here
+                        40% off here
                     </div>
                     <div class="thumbnail product-box">
                         <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" /> 
@@ -183,7 +183,7 @@
                     <ul class="list-group">
 
                         <li class="list-group-item">Mobile
-      <span class="label label-primary pull-right">234</span>
+      <span class="label label-primary pull-right">123</span>
                         </li>
                         <li class="list-group-item">Computers
                       <span class="label label-success pull-right">34</span>
@@ -263,7 +263,7 @@
                         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
                             style="width: 70%">
                             <span class="sr-only">70% Complete (success)</span>
-                            2hr 35 mins left
+                            2hr mins left
                         </div>
                     </div>
                     <a href="#">click here to know more </a>
