@@ -164,7 +164,7 @@
                         30% off here
                     </div>
                     <div class="thumbnail product-box">
-                        <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" />
+                        <img src="{{asset('/frontend/img/dummyimg.png')}}" alt="" /> 
                         <div class="caption">
                             <h3><a href="#">Samsung Galaxy </a></h3>
                             <p><a href="#">Ptional dismiss button </a></p>
