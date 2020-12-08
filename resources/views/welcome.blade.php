@@ -292,7 +292,7 @@
                                 <li class="divider"></li>
                                 <li><a href="#">By Price High</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">By Popularity</a></li>
+                                <li><a href="#">By Famaus</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">By Reviews</a></li>
                             </ul>
