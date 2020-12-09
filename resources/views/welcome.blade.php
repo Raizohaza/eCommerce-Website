@@ -262,7 +262,7 @@
                     <div class="progress progress-striped">
                         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
                             style="width: 70%">
-                            <span class="sr-only">70% Complete (success)</span>
+                            <span class="sr-only">70% (success)</span>
                             2hr mins left
                         </div>
                     </div>
