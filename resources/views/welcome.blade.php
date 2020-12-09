@@ -554,10 +554,10 @@
     <!--Core JavaScript file  -->
     <script src="{{asset('/frontend/js/jquery-1.10.2.js')}}"></script>
     <!--bootstrap JavaScript file  -->
-    <script src="{{asset('/frontend/js/bootstrap.js')}"></script>
+    <script src="{{asset('/frontend/js/bootstrap.js')}}"></script>
     <!--Slider JavaScript file  -->
-    <script src="{{asset('/frontend/ItemSlider/js/modernizr.custom.63321.js')}"></script>
-    <script src="{{asset('/frontend/ItemSlider/js/jquery.catslider.js')}"></script>
+    <script src="{{asset('/frontend/ItemSlider/js/modernizr.custom.63321.js')}}"></script>
+    <script src="{{asset('/frontend/ItemSlider/js/jquery.catslider.js')}}"></script>
     <script>
         $(function () {
 
