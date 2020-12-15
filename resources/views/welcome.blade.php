@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <title>Laravel</title>
 
@@ -274,7 +274,7 @@
 				<div class="col-lg-2 col-md-4 col-6 welcome-image">
 						<div class="boxhny13">
 								<a href="#URL">
-										<img src="assets/images/grid1.jpg" class="img-fluid" alt="" />
+										<img src="{{asset('/frontend/assets/images/grid1.jpg')}}" class="img-fluid" alt="" />
 								<div class="boxhny-content">
 									<h3 class="title">Product
 								</div>
@@ -287,7 +287,7 @@
 				<div class="col-lg-2 col-md-4 col-6 welcome-image">
 						<div class="boxhny13">
 								<a href="#URL">
-										<img src="assets/images/grid3.jpg" class="img-fluid" alt="" />
+										<img src="{{asset('/frontend/assets/images/grid3.jpg')}}" class="img-fluid" alt="" />
 								<div class="boxhny-content">
 									<h3 class="title">Product</h3>
 								</div>
@@ -301,7 +301,7 @@
 				<div class="col-lg-2 col-md-4 col-6 welcome-image">
 						<div class="boxhny13">
 								<a href="#URL">
-										<img src="assets/images/grid2.jpg" class="img-fluid" alt="" />
+										<img src="{{asset('/frontend/assets/images/grid2.jpg')}}" class="img-fluid" alt="" />
 								<div class="boxhny-content">
 									<h3 class="title">Product</h3>
 								</div>
@@ -314,7 +314,7 @@
 				<div class="col-lg-2 col-md-4 col-6 welcome-image">
 						<div class="boxhny13">
 								<a href="#URL">
-										<img src="assets/images/grid4.jpg" class="img-fluid" alt="" />
+										<img src="{{asset('/frontend/assets/images/grid4.jpg')}}" class="img-fluid" alt="" />
 								<div class="boxhny-content">
 									<h3 class="title">Product</h3>
 								</div>
@@ -326,7 +326,7 @@
 				<div class="col-lg-2 col-md-4 col-6 welcome-image">
 						<div class="boxhny13">
 								<a href="#URL">
-										<img src="assets/images/grid5.jpg" class="img-fluid" alt="" />
+										<img src="{{asset('/frontend/assets/images/grid5.jpg')}}" class="img-fluid" alt="" />
 								<div class="boxhny-content">
 									<h3 class="title">Product</h3>
 								</div>
@@ -340,7 +340,7 @@
 				<div class="col-lg-2 col-md-4 col-6 welcome-image">
 						<div class="boxhny13">
 								<a href="#URL">
-										<img src="assets/images/grid6.jpg" class="img-fluid" alt="" />
+										<img src="{{asset('/frontend/assets/images/grid6.jpg')}}" class="img-fluid" alt="" />
 								<div class="boxhny-content">
 									<h3 class="title">Product</h3>
 								</div>
@@ -388,8 +388,8 @@
 					<div class="product-grid2 transmitv">
 						<div class="product-image2">
 							<a href="#">
-								<img class="pic-1 img-fluid" src="assets/images/shop-1.jpg">
-								<img class="pic-2 img-fluid" src="assets/images/shop-11.jpg">
+								<img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-1.jpg')}}">
+								<img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-11.jpg')}}">
 							</a>
 							<ul class="social">
 									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -419,8 +419,8 @@
 					<div class="product-grid2">
 						<div class="product-image2">
 							<a href="#">
-								<img class="pic-1 img-fluid" src="assets/images/shop-2.jpg">
-								<img class="pic-2 img-fluid" src="assets/images/shop-22.jpg">
+								<img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-2.jpg')}}">
+								<img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-22.jpg')}}">
 							</a>
 							<ul class="social">
 									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -451,8 +451,8 @@
 					<div class="product-grid2">
 						<div class="product-image2">
 							<a href="#">
-								<img class="pic-1 img-fluid" src="assets/images/shop-3.jpg">
-								<img class="pic-2 img-fluid" src="assets/images/shop-33.jpg">
+								<img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-3.jpg')}}">
+								<img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-33.jpg')}}">
 							</a>
 							<ul class="social">
 									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -483,8 +483,8 @@
 					<div class="product-grid2">
 						<div class="product-image2">
 							<a href="#">
-								<img class="pic-1 img-fluid" src="assets/images/shop-4.jpg">
-								<img class="pic-2 img-fluid" src="assets/images/shop-44.jpg">
+								<img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-4.jpg')}}">
+								<img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-44.jpg')}}">
 							</a>
 							<ul class="social">
 									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -515,8 +515,8 @@
 					<div class="product-grid2">
 						<div class="product-image2">
 							<a href="#">
-								<img class="pic-1 img-fluid" src="assets/images/shop-5.jpg">
-								<img class="pic-2 img-fluid" src="assets/images/shop-55.jpg">
+								<img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-5.jpg')}}">
+								<img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-55.jpg')}}">
 							</a>
 							<ul class="social">
 									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -547,8 +547,8 @@
 					<div class="product-grid2">
 						<div class="product-image2">
 							<a href="#">
-								<img class="pic-1 img-fluid" src="assets/images/shop-6.jpg">
-								<img class="pic-2 img-fluid" src="assets/images/shop-66.jpg">
+								<img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-6.jpg')}}">
+								<img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-66.jpg')}}">
 							</a>
 							<ul class="social">
 									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -579,8 +579,8 @@
 					<div class="product-grid2">
 						<div class="product-image2">
 							<a href="#">
-								<img class="pic-1 img-fluid" src="assets/images/shop-7.jpg">
-								<img class="pic-2 img-fluid" src="assets/images/shop-77.jpg">
+								<img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-7.jpg')}}">
+								<img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-77.jpg')}}">
 							</a>
 							<ul class="social">
 									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -611,8 +611,8 @@
 					<div class="product-grid2">
 						<div class="product-image2">
 							<a href="#">
-								<img class="pic-1 img-fluid" src="assets/images/shop-8.jpg">
-								<img class="pic-2 img-fluid" src="assets/images/shop-88.jpg">
+								<img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-8.jpg')}}">
+								<img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-88.jpg')}}">
 							</a>
 							<ul class="social">
 									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -659,7 +659,7 @@
 							<p>Sale up to 25% off all in store</p>
 						</div>
 						<div class="col-sm-5 offerimg-w3l">
-							<img src="assets/images/grid3.jpg" alt="" class="img-fluid">
+							<img src="{{asset('/frontend/assets/images/grid3.jpg')}}" alt="" class="img-fluid">
 						</div>
 					</div>
 				</div>
@@ -673,7 +673,7 @@
 							<p>Free shipping order over $100</p>
 						</div>
 						<div class="col-sm-5 offerimg-w3l">
-							<img src="assets/images/grid3.jpg" alt="" class="img-fluid">
+							<img src="{{asset('/frontend/assets/images/grid3.jpg')}}" alt="" class="img-fluid">
 						</div>
 					</div>
 				</div>
@@ -712,7 +712,7 @@
 													Some text</p>
 											</div>
 											<div class="feedback-review mt-4">
-												<img src="assets/images/c1.jpg" class="img-fluid" alt="">
+												<img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
 												<h5>Smith Roy</h5>
 
 											</div>
@@ -726,7 +726,7 @@
 															Some text</p>
 													</div>
 													<div class="feedback-review mt-4">
-														<img src="assets/images/c2.jpg" class="img-fluid" alt="">
+														<img src="{{asset('/frontend/assets/images/c2.jpg')}}" class="img-fluid" alt="">
 														<h5>Lora Grill</h5>
 		
 													</div>
@@ -740,7 +740,7 @@
 															Some text</p>
 													</div>
 													<div class="feedback-review mt-4">
-														<img src="assets/images/c3.jpg" class="img-fluid" alt="">
+														<img src="{{asset('/frontend/assets/images/c3.jpg')}}" class="img-fluid" alt="">
 														<h5>Laura Sten</h5>
 		
 													</div>
@@ -754,7 +754,7 @@
 															Some text</p>
 													</div>
 													<div class="feedback-review mt-4">
-														<img src="assets/images/c4.jpg" class="img-fluid" alt="">
+														<img src="{{asset('/frontend/assets/images/c4.jpg')}}" class="img-fluid" alt="">
 														<h5>John Lee</h5>
 		
 													</div>
@@ -775,7 +775,7 @@
 															Some text</p>
 													</div>
 													<div class="feedback-review mt-4">
-														<img src="assets/images/c4.jpg" class="img-fluid" alt="">
+														<img src="{{asset('/frontend/assets/images/c4.jpg')}}" class="img-fluid" alt="">
 														<h5>John Lee</h5>
 		
 													</div>
@@ -789,7 +789,7 @@
 															Some text</p>
 													</div>
 													<div class="feedback-review mt-4">
-														<img src="assets/images/c3.jpg" class="img-fluid" alt="">
+														<img src="{{asset('/frontend/assets/images/c3.jpg')}}" class="img-fluid" alt="">
 														<h5>Laura Sten</h5>
 		
 													</div>
@@ -803,7 +803,7 @@
 														Some text</p>
 												</div>
 												<div class="feedback-review mt-4">
-													<img src="assets/images/c1.jpg" class="img-fluid" alt="">
+													<img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
 													<h5>Smith Roy</h5>
 	
 												</div>
@@ -817,7 +817,7 @@
 																Some text</p>
 														</div>
 														<div class="feedback-review mt-4">
-															<img src="assets/images/c2.jpg" class="img-fluid" alt="">
+															<img src="{{asset('/frontend/assets/images/c2.jpg')}}" class="img-fluid" alt="">
 															<h5>Lora Grill</h5>
 			
 														</div>
@@ -887,8 +887,8 @@
         </div>
     </body>
 </html>
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="{{asset('/frontend/assets/js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{asset('/frontend/assets/js/jquery-2.1.4.min.js')}}"></script>
 <!--/login-->
 <script>
 		$(document).ready(function () {
@@ -911,7 +911,7 @@
     // });
   </script>
  <!-- cart-js -->
- <script src="assets/js/minicart.js"></script>
+ <script src="{{asset('/frontend/assets/js/minicart.js')}}"></script>
  <script>
      transmitv.render();
 
@@ -927,7 +927,7 @@
  </script>
  <!-- //cart-js -->
 <!--pop-up-box-->
-<script src="assets/js/jquery.magnific-popup.js"></script>
+<script src="{{asset('/frontend/assets/js/jquery.magnific-popup.js')}}"></script>
 <!--//pop-up-box-->
 <script>
   $(document).ready(function () {
@@ -956,4 +956,4 @@
   });
 </script>
 <!-- disable body scroll which navbar is in active -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{{asset('/frontend/assets/js/bootstrap.min.js')}}"></script>
