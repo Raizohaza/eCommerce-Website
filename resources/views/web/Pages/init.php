@@ -9,17 +9,21 @@
     //
     try{
         
-        //$db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', 'root', '');
-
         $option = parse_url(getenv('DATABASE_URL'));
-        var_dump($option);
-        $db = new PDO("pgsql:"
-        . "host=".$option['host']
-        . ";dbname=".ltrim($option['path'],'/')
-        . ";user=".$option['user']
-        . ";port=".$option['port']
-        . ";sslmode=require;"
-        . "password=".$option['pass']);
+        if($option["path"]=="")
+            $db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+        else
+        {
+            //$option = parse_url(getenv('DATABASE_URL'));
+            //var_dump($option);
+            $db = new PDO("pgsql:"
+            . "host=".$option['host']
+            . ";dbname=".ltrim($option['path'],'/')
+            . ";user=".$option['user']
+            . ";port=".$option['port']
+            . ";sslmode=require;"
+            . "password=".$option['pass']);
+        }
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e){
