@@ -66,12 +66,11 @@
                                         </a>
                                     </li>
                                     <li class="transmitvcart galssescart2 cart cart box_1">
-                                        <form action="#" method="post" class="last">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="display" value="1">
+                                        <form action="http://localhost/project-ltw1/resources/views/text.html" method="post" >
                                             <button class="top_transmitv_cart" type="submit" name="submit" value="">
                                                 My Cart
                                                 <span class="fa fa-shopping-cart"></span>
+                                                                                          
                                             </button>
                                         </form>
                                     </li>
