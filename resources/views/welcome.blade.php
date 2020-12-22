@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+       
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
@@ -30,7 +32,7 @@
     </head>
     <body >
         <!-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0"> -->
-            @if (Route::has('login'))
+            <!-- @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
@@ -42,7 +44,7 @@
                         @endif
                     @endif
                 </div>
-            @endif
+            @endif -->
             <!--w3l-banner-slider-main-->
             <section class="w3l-banner-slider-main">
                 <div class="top-header-content">
@@ -86,26 +88,41 @@
                                             <form action="#" method="post">
                                                 <div class="form-group">
                                                     <p class="login-texthny mb-2">Email address</p>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                                        aria-describedby="emailHelp" placeholder="" required="">
+                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" 
+                                                    name="email" value="{{ old('email') }}" 
+                                                    required autocomplete="email" autofocus>
+                                                    @error('email')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email
                                                         with anyone else.</small>
                                                 </div>
                                                 <div class="form-group">
                                                     <p class="login-texthny mb-2">Password</p>
-                                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                                        placeholder="" required="">
+                                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                                    @error('password')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
+                                               
                                                 <div class="form-check mb-2">
                                                     <div class="userhny-check">
                                                         <label class="check-remember container">
-                                                            <input type="checkbox" class="form-check"> <span
+                                                            <input type="checkbox" class="form-check" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> <span
                                                                 class="checkmark"></span>
-                                                            <p class="privacy-policy">Remember me</p>
+                                                            <p class="privacy-policy" for="remember">{{ __('Remember Me') }}</p>
                                                         </label>
                                                         <div class="clearfix"></div>
                                                     </div>
                                                 </div>
+
+
+
                                                 <button type="submit" class="submit-login btn mb-4">Sign In</button>
 
                                             </form>
@@ -120,7 +137,7 @@
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <div class="container-fluid serarc-fluid">
                                 <a class="navbar-brand" href="index.html">
-                                    Spry<span class="lohny">S</span>tore</a>
+                                    CC<span class="lohny">S</span>tore</a>
                                 <!-- if logo is image enable this   
                                         <a class="navbar-brand" href="#index.html">
                                             <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
@@ -157,15 +174,15 @@
                                             <a class="nav-link" href="index.html">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="about.html">About</a>
+                                            <a class="nav-link" href='about.html'>About</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="about.html">What We Offer</a>
+                                            <a class="nav-link" href='offer.html'>What We Offer</a>
                                         </li>
 
-
+                                        
                                         <li class="nav-item">
-                                            <a class="nav-link" href="contact.html">Contact</a>
+                                            <a href="{{ route('register') }}" class="nav-link">Register</a>
                                         </li>
                                     </ul>
 
@@ -957,3 +974,5 @@
 </script>
 <!-- disable body scroll which navbar is in active -->
 <script src="{{asset('/frontend/assets/js/bootstrap.min.js')}}"></script>
+
+
