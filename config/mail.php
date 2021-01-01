@@ -85,6 +85,7 @@ return [
 
     'from' =>  ['address' => env('MAIL_FROM_EMAIL','do_not_reply@email.com'), 'name' => env('MAIL_FROM_NAME','SpongeBob')],
 
+    
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings

@@ -174,7 +174,7 @@
                                             <a class="nav-link" href="index.html">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href='about.html'>About us</a>
+                                            <a class="nav-link" href='about.html'>About us  </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href='offer.html'>What We Offer</a>
