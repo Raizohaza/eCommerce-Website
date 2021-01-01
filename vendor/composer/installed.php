@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'ccd9d3c7dd3b2a9f7e08e195f9689049127e6fcb',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -440,12 +440,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'ccd9d3c7dd3b2a9f7e08e195f9689049127e6fcb',
     ),
     'laravel/tinker' => 
     array (
@@ -532,12 +532,12 @@
     ),
     'nesbot/carbon' => 
     array (
-      'pretty_version' => '2.41.5',
-      'version' => '2.41.5.0',
+      'pretty_version' => '2.43.0',
+      'version' => '2.43.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'c4a9caf97cfc53adfc219043bcecf42bc663acee',
+      'reference' => 'd32c57d8389113742f4a88725a170236470012e2',
     ),
     'nikic/php-parser' => 
     array (

@@ -64,11 +64,13 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
+                                
+                                <a href="/users/{{ Auth::user()->id }}/edit" class="btn btn-info my-2">Edit</a>
+                                
                             </li>
                         @endguest
                     </ul>
