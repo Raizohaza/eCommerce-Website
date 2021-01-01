@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Laravel</title>
+        <title>CC Store</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -123,8 +123,10 @@
 
 
                                                 <button type="submit" class="submit-login btn mb-4">Sign In</button>
+                                                
 
                                             </form>
+                                            
                                             <!--//login-form-->
                                         </div>
                                         <!---->
@@ -403,7 +405,7 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
-                                        <a href="#">
+                                        <a href='detail.php'>
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-1.jpg')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-11.jpg')}}">
                                         </a>
