@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Auth;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +18,10 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */    
-
+Route::get('/Users/{user}/edit', 'App\Http\Controllers\HomeController@edit');
+Route::post('/Users/{user}/update', 'App\Http\Controllers\HomeController@update');
+//send mail
+Route::get('/send-mail', 'App\Http\Controllers\HomeController@send_mail');
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,6 +37,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
