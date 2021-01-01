@@ -48,7 +48,7 @@ class HomeController extends BaseController
                  $to_email = "acquy515@gmail.com";//send to this email
                 
               
-                 $data = array("name"=>"Mail từ tài khoản Khách hàng","body"=>'Mail gửi về vấn về hàng hóa'); //body of mail.blade.php
+                 $data = array("name"=>"Mail từ tài khoản Khách hàng","body"=>'Mail khôi phục'); //body of mail.blade.php
                  
                  Mail::send('users.send_mail',$data,function($message) use ($to_name,$to_email){
  
