@@ -139,7 +139,7 @@
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <div class="container-fluid serarc-fluid">
                                 <a class="navbar-brand" href="index.html">
-                                    Meow~Meow<span class="lohny">S</span>tore</a>
+                                    Meow~<span class="lohny">S</span>tore</a>
                                 <!-- if logo is image enable this   -->
                                         <a class="navbar-brand" href="#index.html">
                                             <img src="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg" alt="Meow~" title="Meow~" style="height:50px;" />
