@@ -5,8 +5,9 @@
        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="image/png" href="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg">
         
-        <title>CC Store</title>
+        <title>Meow~Meow Store</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -138,11 +139,11 @@
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <div class="container-fluid serarc-fluid">
                                 <a class="navbar-brand" href="index.html">
-                                    CC<span class="lohny">S</span>tore</a>
-                                <!-- if logo is image enable this   
+                                    Meow~Meow<span class="lohny">S</span>tore</a>
+                                <!-- if logo is image enable this   -->
                                         <a class="navbar-brand" href="#index.html">
-                                            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                                        </a> -->
+                                            <img src="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg" alt="Meow~" title="Meow~" style="height:50px;" />
+                                        </a> 
                                 <!--/search-right-->
                                 <div class="search-right">
 
@@ -405,13 +406,13 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
-                                        <a href="http://localhost/a/project-ltw1/resources/shop/S01.php">
+                                        <a href="http://localhost/project-ltw1/resources/shop/S01.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S01.JPG')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S01-1.JPG')}}">
                                             <!-- <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S01-2.JPG')}}"> -->
                                         </a>
                                         <ul class="social">
-                                                <li><a href="http://localhost/a/project-ltw1/resources/shop/S01.php" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                                                <li><a href="http://localhost/project-ltw1/resources/shop/S01.php" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
 
                                                 <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
                                                 </li>
@@ -437,7 +438,7 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2">
                                     <div class="product-image2">
-                                        <a href="http://localhost/a/project-ltw1/resources/shop/S02.php">
+                                        <a href="http://localhost/project-ltw1/resources/shop/S02.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S02.JPG')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S02-3.JPG')}}">
                                         </a>
@@ -469,7 +470,7 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2">
                                     <div class="product-image2">
-                                        <a href="http://localhost/a/project-ltw1/resources/shop/S03.php">
+                                        <a href="http://localhost/project-ltw1/resources/shop/S03.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S03.JPG')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S03-1.JPG')}}">
                                         </a>
@@ -501,7 +502,7 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2">
                                     <div class="product-image2">
-                                        <a href="http://localhost/a/project-ltw1/resources/shop/S04.php">
+                                        <a href="http://localhost/project-ltw1/resources/shop/S04.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S04.JPG')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S04-3.JPG')}}">
                                         </a>
@@ -533,7 +534,7 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2">
                                     <div class="product-image2">
-                                        <a href="http://localhost/a/project-ltw1/resources/shop/S05.php">
+                                        <a href="http://localhost/project-ltw1/resources/shop/S05.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S05.JPG')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S05-1.JPG')}}">
                                         </a>

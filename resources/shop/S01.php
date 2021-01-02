@@ -74,7 +74,7 @@
             </div>
             <div class="col-3">
                     <div class="circular mb-2">
-                        <a href="project-ltw1\resources\shop\S01.php">
+                        <a href="http://localhost/project-ltw1\resources\shop\S01.php">
                             <img class="img-fluid" src="http://localhost/project-ltw1\public\frontend\assets\images\S01.JPG" alt="" />
                         </a>
                     </div>
