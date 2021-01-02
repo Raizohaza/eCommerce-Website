@@ -406,8 +406,8 @@
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
                                         <a href='detail.php'>
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-1.jpg')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-11.jpg')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S01.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S01-1.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -428,8 +428,8 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">Women Maroon Top </a></h3>
-                                        <span class="price"><del>$975.00</del>$899.99</span>
+                                        <h3 class="title"><a href="#">Kingsman Men's Orange Slim-fit Satin-trimmed Cotton-velvet Tuxedo Jacket </a></h3>
+                                        <span class="price"><del>$975.00</del>$1673</span>
                                     </div>
                                 </div>
                             </div>
@@ -437,8 +437,8 @@
                                 <div class="product-grid2">
                                     <div class="product-image2">
                                         <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-2.jpg')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-22.jpg')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S02.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S02-1.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -459,8 +459,8 @@
                                                 </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">Men's Pink Shirt </a></h3>
-                                        <span class="price"><del>$775.00</del>$599.99</span>
+                                        <h3 class="title"><a href="#">Kingsman Men's Green Cable-knit Wool And Cashmere-blend Sweater </a></h3>
+                                        <span class="price"><del>$775.00</del>$663</span>
                                     </div>
                                 </div>
 
@@ -469,8 +469,8 @@
                                 <div class="product-grid2">
                                     <div class="product-image2">
                                         <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-3.jpg')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-33.jpg')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S03.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S03-1.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -491,8 +491,8 @@
                                                 </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">Dark Blue Top </a></h3>
-                                        <span class="price"><del>$875.00</del>$799.99</span>
+                                        <h3 class="title"><a href="#">Kingsman Men's White Turnbull & Asser Slim-fit Pinned-collar Cotton Shirt </a></h3>
+                                        <span class="price"><del>$875.00</del>$368</span>
                                     </div>
                                 </div>
 
@@ -501,8 +501,8 @@
                                 <div class="product-grid2">
                                     <div class="product-image2">
                                         <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-4.jpg')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-44.jpg')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S04.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S04-1.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -523,8 +523,8 @@
                                                 </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">Women Tunic </a></h3>
-                                        <span class="price"><del>$475.00</del>$399.99</span>
+                                        <h3 class="title"><a href="#">Kingsman Men's Blue Navy Harry Slim-fit Super 120s Wool And Cashmere-blend Suit</a></h3>
+                                        <span class="price"></del>$2001</span>
                                     </div>
                                 </div>
 
@@ -533,8 +533,8 @@
                                 <div class="product-grid2">
                                     <div class="product-image2">
                                         <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-5.jpg')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-55.jpg')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S05.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S05-1.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -555,8 +555,8 @@
                                                 </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">Yellow T-Shirt</a></h3>
-                                        <span class="price"><del>$575.00</del>$299.99</span>
+                                        <h3 class="title"><a href="#">Kingsman Men's Gray Shawl-collar Ribbed Wool And Cashmere-blend Cardigan</a></h3>
+                                        <span class="price"></del>$663</span>
                                     </div>
                                 </div>
 
@@ -565,8 +565,8 @@
                                 <div class="product-grid2">
                                     <div class="product-image2">
                                         <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-6.jpg')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-66.jpg')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S06.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S06-1.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -587,8 +587,8 @@
                                                 </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">Straight Kurta </a></h3>
-                                        <span class="price"><del>$775.00</del>$699.99</span>
+                                        <h3 class="title"><a href="#">Kingsman Men's Blue Rocketman Navy Slim-fit Cotton-velvet Tuxedo Jacket</a></h3>
+                                        <span class="price"></del>$1686</span>
                                     </div>
                                 </div>
 
@@ -597,8 +597,8 @@
                                 <div class="product-grid2">
                                     <div class="product-image2">
                                         <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-7.jpg')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-77.jpg')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S07.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S07-1.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -619,8 +619,8 @@
                                                 </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">White T-Shirt </a></h3>
-                                        <span class="price"><del>$675.00</del>$599.99</span>
+                                        <h3 class="title"><a href="#">Kingsman Men's Black Grosgrain-trimmed Cotton-velvet Tuxedo Jacket</a></h3>
+                                        <span class="price"></del>$1686</span>
                                     </div>
                                 </div>
 
@@ -629,8 +629,8 @@
                                 <div class="product-grid2">
                                     <div class="product-image2">
                                         <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/shop-8.jpg')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/shop-88.jpg')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S08.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S08-1.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -651,8 +651,8 @@
                                                 </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">Blue Sweater</a></h3>
-                                        <span class="price"><del>$575.00</del>$499.99</span>
+                                        <h3 class="title"><a href="#">Kingsman Men's Blue Brushed-cashmere Zip-up Hoodie</a></h3>
+                                        <span class="price"></del>$803</span>
                                     </div>
                                 </div>
 
