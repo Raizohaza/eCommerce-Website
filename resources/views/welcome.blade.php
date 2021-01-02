@@ -398,19 +398,20 @@
                 <!-- /products-->
                 <div class="ecom-contenthny py-5">
                     <div class="container py-lg-5">
-                        <h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
-                        <p class="text-center">Handpicked Favourites just for you</p>
+                        <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>HOT</span></h3>
+                        <p class="text-center">Những sản phẩm thời trang mới nhất/Hot nhất</p>
                         <!-- /row-->
                         <div class="ecom-products-grids row mt-lg-5 mt-3">
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
-                                        <a href='detail.php'>
+                                        <a href="http://localhost/a/project-ltw1/resources/shop/S01.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S01.JPG')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S01-1.JPG')}}">
+                                            <!-- <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S01-2.JPG')}}"> -->
                                         </a>
                                         <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                                                <li><a href="http://localhost/a/project-ltw1/resources/shop/S01.php" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
 
                                                 <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
                                                 </li>
@@ -429,16 +430,16 @@
                                     </div>
                                     <div class="product-content">
                                         <h3 class="title"><a href="#">Kingsman Men's Orange Slim-fit Satin-trimmed Cotton-velvet Tuxedo Jacket </a></h3>
-                                        <span class="price"><del>$975.00</del>$1673</span>
+                                        <span class="price"><del>$1673</del>$975</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2">
                                     <div class="product-image2">
-                                        <a href="#">
+                                        <a href="http://localhost/a/project-ltw1/resources/shop/S02.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S02.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S02-1.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S02-3.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -468,7 +469,7 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2">
                                     <div class="product-image2">
-                                        <a href="#">
+                                        <a href="http://localhost/a/project-ltw1/resources/shop/S03.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S03.JPG')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S03-1.JPG')}}">
                                         </a>
@@ -500,9 +501,9 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2">
                                     <div class="product-image2">
-                                        <a href="#">
+                                        <a href="http://localhost/a/project-ltw1/resources/shop/S04.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S04.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S04-1.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S04-3.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
@@ -532,7 +533,7 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2">
                                     <div class="product-image2">
-                                        <a href="#">
+                                        <a href="http://localhost/a/project-ltw1/resources/shop/S05.php">
                                             <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S05.JPG')}}">
                                             <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S05-1.JPG')}}">
                                         </a>
@@ -597,8 +598,8 @@
                                 <div class="product-grid2">
                                     <div class="product-image2">
                                         <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S07.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S07-1.JPG')}}">
+                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S09.JPG')}}">
+                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S09-2.JPG')}}">
                                         </a>
                                         <ul class="social">
                                                 <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
