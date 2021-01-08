@@ -450,11 +450,11 @@ class ProductController extends Controller
                 'Catid'=>'5'
             ),
         );
-        //Product::insert($data);
-        //Product::insert($data2);
-        //Product::insert($data3);
-        //Product::insert($data4);
-        //Product::insert($data5);
+        Product::insert($data);
+        Product::insert($data2);
+        Product::insert($data3);
+        Product::insert($data4);
+        Product::insert($data5);
         $test =Product::all();
         echo $test;
     }

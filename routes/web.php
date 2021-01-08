@@ -50,6 +50,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Auth::routes();
+Route::get('/category', [App\Http\Controllers\CategoryController::class, 'init']);
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/product', [App\Http\Controllers\ProductController::class, 'init']);
