@@ -18,7 +18,8 @@
                             </ul>
                         </div>
                     @endif
-                    <form action="/users/{{ Auth::user()->id }}/update" method="POST">
+                    <!-- users/{{ Auth::user()->id }}/update-users -->
+                    <form action="update-users" method="POST">
                         @csrf
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Name" name="name" value="{{ $Users->name }}">

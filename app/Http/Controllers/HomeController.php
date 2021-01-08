@@ -21,15 +21,29 @@ class HomeController extends BaseController
     {
         $this->middleware('auth');
     }
+
+        /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($UsersId)
     {
-        return view('users.edit')->with('Users', Users::find($UsersId));
+        return view('users.edit')->with('Users', user::find($UsersId));
     }
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update($UsersId)
     {
         $this->validate(request(), [
-            'name' => 'required|min:6|max:12',
-            'email' => 'required'
+            'name' => 'required|min:6|max:12|',
+            'email' => 'required|'
         ]);
 
         $data = request()->all();
@@ -38,8 +52,8 @@ class HomeController extends BaseController
         $Users->name = $data['name'];
         $Users->email = $data['email'];
 
-        $User->save();
-        return redirect('/Users');
+        $Users->save();
+        return redirect('/home');
     }
     public function send_mail()
     {

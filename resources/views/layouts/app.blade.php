@@ -69,7 +69,7 @@
                                     </form>
                                 </div>
                                 
-                                <a href="/users/{{ Auth::user()->id }}/edit" class="btn btn-info my-2">Edit</a>
+                                <a href="users/{{ Auth::user()->id }}/edit" class="btn btn-info my-2">Edit</a>
                                 
                             </li>
                         @endguest
