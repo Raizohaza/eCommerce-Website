@@ -31,7 +31,7 @@ class DashboardController extends Controller
     	$users->name = $request->input('username');
     	$users->usertype = $request->input('usertype');
     	$users->update();
-        
+        echo "aaaaa";
     	return redirect('/role-register')->with('status','data is updated'); 
     }
     //delete function
