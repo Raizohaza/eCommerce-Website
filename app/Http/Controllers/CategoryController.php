@@ -94,19 +94,19 @@ class CategoryController extends Controller
     {
         $data = array(
             array(
-                'name'=>"Áo", //nên nó là số 1 catid
+                'Name'=>"Áo", //nên nó là số 1 catid
             ),
             array(
-                'name'=>"Áo khoác", 
+                'Name'=>"Áo khoác", 
             ),
             array(
-                'name'=>"Quần", 
+                'Name'=>"Quần", 
             ),
             array(
-                'name'=>"Giày"
+                'Name'=>"Giày"
             ),
             array(
-                'name'=>"Trang sức", 
+                'Name'=>"Trang sức", 
             )
         );
         Category::insert($data);
