@@ -53,3 +53,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/category', [App\Http\Controllers\CategoryController::class, 'init']);
 
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'init']);
+
+Route::get('/Cart', function () {
+	return view('cart');
+});
