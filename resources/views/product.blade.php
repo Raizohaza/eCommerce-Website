@@ -25,7 +25,7 @@
     <meta name="google-site-verification" content="xFnIbRiqlbUWt2-5yqv6TejVhQ1oYB1hZiZ1jRXLzHw" />
     <link rel="icon" type="image/png" href="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg">
 
-    <title>{{$data_product->Name}}</title>
+    <title>Meow~Meow Store</title>
     
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic,400italic,500,700,500italic,700italic,900&subset=latin,greek,greek-ext,vietnamese,latin-ext,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
 
@@ -68,11 +68,11 @@
 <div class="row mb-4">
     <div class="col-sm-12">
     <div class="breadcrumb">
-            <a href="/"><i class="icon fa fa-home"></i></a>
+            <a href="../../"><i class="icon fa fa-home"></i></a>
             <span class="mx-2 mb-0">/</span>
-            <a href="./welcome">Home</a>
+            <a href="../../">Home</a>
             <span class="mx-2 mb-0">/</span>
-            <a href="./category">Page</a>
+            <a href="../{{$data_product->Catid}}">Page</a>
             <span class="mx-2 mb-0">/</span>
             <strong class="text-black">{{$data_product->Name}}</strong>
 
@@ -80,43 +80,67 @@
     </div>
 </div>
 
-<div class="grids-hny-2-mian py-5">
-                    <div class="container py-lg-5">
-                            
-                        <h3 class="hny-title mb-0 text-center">Shop With <span>Meow~</span></h3>
-                        <p class="mb-4 text-center">Handpicked Favourites just for you</p>
-                        <div class="welcome-grids row mt-5">                       
-                    </div>
-                </div>
+
 <div class="row product-info">
     <div class="col-md-4 col-12">
+        <div class="row">
+
             <div class="col-9" style="padding-right:0px;">
                 <div class="mb-4">
-                    <img class="img-fluid" src="{{asset('/frontend/assets/images/')}}/{{$data_product->Image}}" alt="{{$data_product->Name}}" />
+                    <img class="img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data_product->Image}}" alt="{{$data_product->Name}}" />
                 </div>
-            </div>
 
-            <div class="col-4">
+
+            </div>
+            <div class="col-3">
                     <div class="circular mb-2">
-                        <a href="{{asset('/frontend/assets/images/')}}/{{$data_product->Image}}">
-                            <img class="img-fluid" src="{{asset('/frontend/assets/images/')}}/{{$data_product->Image}}" alt="" />
+                        <a href="./{{ $data_product->id }}">
+                            <img class="img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data_product->Image}}" alt="" />
                         </a>
                     </div>
             </div>
         </div>
+
     </div>
     <div class="col-md-8">
         <div class="ditem">
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5 class="price" style="text-decoration: line-through;">{{$data_product->Price}}</h5>
-                    <h5 class="display-6">Mô tả sản phẩm</h5>
-                    {{$data_product->Description}}
+                <div class="col-md-8">
+                        <p class="text-black">Form Rộng</p>
+
+                        <!-- <h5 class="price" style="text-decoration: line-through;">$1673</h5> -->
+                        <h5 class="price"><span>$<span>{{$data_product->Price}}</span></span></h5>
+                        <!-- <h5 class="text-black display-6"><span>Tiết kiệm <span class="">-50,000 đ</span></span></h5> -->
+                    <div class="row mt-4">
+                            <div class="col-12 mb-2">
+                                <b>...</b><br />
+                                <span class="small">...</span>
+                            </div>
+                            <div class="col-12 mb-4">
+                                
+
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
+
+                    <div class="col-md-4 mb-8">
+                        <h5 class="hny-title mb-0 text-center">Mô tả sản phẩm</h5>
+                        {{$data_product->Description}}
+                        
+                    </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+    
+
 
 
 

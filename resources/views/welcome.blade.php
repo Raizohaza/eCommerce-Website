@@ -53,7 +53,7 @@
                                         </a>
                                     </li>
                                     <li class="transmitvcart galssescart2 cart cart box_1">
-                                        <form action="/project-ltw1/resources/views/text.html" method="post" >
+                                        <form action="Cart" method="get" >
                                             <button class="top_transmitv_cart" type="submit" name="submit" value="">
                                                 My Cart
                                                 <span class="fa fa-shopping-cart"></span>
@@ -282,7 +282,7 @@
                             <div class="col-lg-2 col-md-4 col-6 welcome-image">
                                     <div class="boxhny13">
                                             <a href="./category/{{ $category->id }}">
-                                                <img src="{{asset('/frontend/assets/images/grid1.jpg')}}" class="img-fluid" alt="" />
+                                                <img src="{{asset('/frontend/assets/')}}/{{$category->Name}}" class="img-fluid" alt="" />
                                                 <div class="boxhny-content">
                                                     <h3 class="title">View</h3>
                                                 </div>
@@ -331,6 +331,7 @@
                            <div class="ecom-products-grids row mt-lg-5 mt-3">
 
                            @foreach($data_product as $data)
+                                @if($data->id < 5)
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
@@ -363,6 +364,7 @@
                                     </div>
                                 </div>
                             </div>
+                                @endif
                             @endforeach  
                         </div>
                        
