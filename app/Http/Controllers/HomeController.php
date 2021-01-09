@@ -10,6 +10,10 @@ use Mail;
 
 use App\user;
 
+use App\Models\Category;
+
+use App\Models\Product;
+
 class HomeController extends BaseController
 {
     /**
@@ -88,4 +92,12 @@ class HomeController extends BaseController
     {
         return view('home');
     }
+
+    public function init()
+    {
+        $data_category = Category::all();
+        $data_product = Product::all();
+        return view('welcome',compact('data_category','data_product'));
+    }
+    
 }

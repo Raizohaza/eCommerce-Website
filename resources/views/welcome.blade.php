@@ -32,21 +32,7 @@
         </style>
     </head>
     <body >
-        <!-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0"> -->
-            <!-- @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endif
-                </div>
-            @endif -->
-            <!--w3l-banner-slider-main-->
             <section class="w3l-banner-slider-main">
                 <div class="top-header-content">
                     <header class="tophny-header">
@@ -67,7 +53,7 @@
                                         </a>
                                     </li>
                                     <li class="transmitvcart galssescart2 cart cart box_1">
-                                        <form action="http://localhost/project-ltw1/resources/views/text.html" method="post" >
+                                        <form action="/project-ltw1/resources/views/text.html" method="post" >
                                             <button class="top_transmitv_cart" type="submit" name="submit" value="">
                                                 My Cart
                                                 <span class="fa fa-shopping-cart"></span>
@@ -142,7 +128,7 @@
                                     Meow~<span class="lohny">S</span>tore</a>
                                 <!-- if logo is image enable this   -->
                                         <a class="navbar-brand" href="#index.html">
-                                            <img src="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg" alt="Meow~" title="Meow~" style="height:50px;" />
+                                            <img src="/project-ltw1\public\frontend\assets\images\icon.jpg" alt="Meow~" title="Meow~" style="height:50px;" />
                                         </a> 
                                 <!--/search-right-->
                                 <div class="search-right">
@@ -290,86 +276,23 @@
                         <h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
                         <p class="mb-4 text-center">Handpicked Favourites just for you</p>
                         <div class="welcome-grids row mt-5">
+
+                        @foreach ($data_category as $category)
+                        
                             <div class="col-lg-2 col-md-4 col-6 welcome-image">
                                     <div class="boxhny13">
-                                            <a href="#URL">
-                                                    <img src="{{asset('/frontend/assets/images/grid1.jpg')}}" class="img-fluid" alt="" />
-                                            <div class="boxhny-content">
-                                                <h3 class="title">Product
-                                            </div>
-                                        </a>
+                                            <a href="./category/{{ $category->id }}">
+                                                <img src="{{asset('/frontend/assets/images/grid1.jpg')}}" class="img-fluid" alt="" />
+                                                <div class="boxhny-content">
+                                                    <h3 class="title">View</h3>
+                                                </div>
+                                            </a>
                                     </div>
-                                    <h4><a href="#URL">Hand Bags</a></h4>
+                                    <h4><a href="./category/{{ $category->id }}">{{$category->Name}}</a></h4>
 
                             </div>
-                            
-                            <div class="col-lg-2 col-md-4 col-6 welcome-image">
-                                    <div class="boxhny13">
-                                            <a href="#URL">
-                                                    <img src="{{asset('/frontend/assets/images/grid3.jpg')}}" class="img-fluid" alt="" />
-                                            <div class="boxhny-content">
-                                                <h3 class="title">Product</h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <h4><a href="#URL">
-                                            Watches</a></h4>
 
-                                
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-6 welcome-image">
-                                    <div class="boxhny13">
-                                            <a href="#URL">
-                                                    <img src="{{asset('/frontend/assets/images/grid2.jpg')}}" class="img-fluid" alt="" />
-                                            <div class="boxhny-content">
-                                                <h3 class="title">Product</h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <h4><a href="#URL">Shoes</a></h4>
-
-                            
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-6 welcome-image">
-                                    <div class="boxhny13">
-                                            <a href="#URL">
-                                                    <img src="{{asset('/frontend/assets/images/grid4.jpg')}}" class="img-fluid" alt="" />
-                                            <div class="boxhny-content">
-                                                <h3 class="title">Product</h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <h4><a href="#URL">Suits</a></h4>
-
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-6 welcome-image">
-                                    <div class="boxhny13">
-                                            <a href="#URL">
-                                                    <img src="{{asset('/frontend/assets/images/grid5.jpg')}}" class="img-fluid" alt="" />
-                                            <div class="boxhny-content">
-                                                <h3 class="title">Product</h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <h4><a href="#URL">
-                                            Accessories</a></h4>
-
-                                
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-6 welcome-image">
-                                    <div class="boxhny13">
-                                            <a href="#URL">
-                                                    <img src="{{asset('/frontend/assets/images/grid6.jpg')}}" class="img-fluid" alt="" />
-                                            <div class="boxhny-content">
-                                                <h3 class="title">Product</h3>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <h4><a href="#URL">
-                                            Fragrances</a></h4>
-
-                                
-                            </div>
+                        @endforeach
                         </div>
 
                     </div>
@@ -402,17 +325,22 @@
                         <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>HOT</span></h3>
                         <p class="text-center">Những sản phẩm thời trang mới nhất/Hot nhất</p>
                         <!-- /row-->
-                        <div class="ecom-products-grids row mt-lg-5 mt-3">
+
+                       
+                       
+                           <div class="ecom-products-grids row mt-lg-5 mt-3">
+
+                           @foreach($data_product as $data)
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
-                                        <a href="http://localhost/project-ltw1/resources/shop/S01.php">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S01.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S01-1.JPG')}}">
-                                            <!-- <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S01-2.JPG')}}"> -->
+                                        <a href="/PROJECT-LTW1/resources/views/shop/{{ $data->id }}.php">
+                                            <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                                            <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                                            
                                         </a>
                                         <ul class="social">
-                                                <li><a href="http://localhost/project-ltw1/resources/shop/S01.php" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
 
                                                 <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
                                                 </li>
@@ -426,242 +354,18 @@
                                                 <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
                                                     Add to Cart
                                                 </button>
-                                            </form>
+                                        </form>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">Kingsman Men's Orange Slim-fit Satin-trimmed Cotton-velvet Tuxedo Jacket </a></h3>
-                                        <span class="price"><del>$1673</del>$975</span>
+                                        <h3 class="title"><a href="#">{{ $data->Name }} </a></h3>
+                                        <span class="price"><del>{{$data->Price}}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                <div class="product-grid2">
-                                    <div class="product-image2">
-                                        <a href="http://localhost/project-ltw1/resources/shop/S02.php">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S02.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S02-3.JPG')}}">
-                                        </a>
-                                        <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                        </ul>
-                                        <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="Men's Pink Shirt">
-                                                        <input type="hidden" name="amount" value="599.99">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="#">Kingsman Men's Green Cable-knit Wool And Cashmere-blend Sweater </a></h3>
-                                        <span class="price"><del>$775.00</del>$663</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                <div class="product-grid2">
-                                    <div class="product-image2">
-                                        <a href="http://localhost/project-ltw1/resources/shop/S03.php">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S03.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S03-1.JPG')}}">
-                                        </a>
-                                        <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                        </ul>
-                                        <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="Dark Blue Top">
-                                                        <input type="hidden" name="amount" value="799.99">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="#">Kingsman Men's White Turnbull & Asser Slim-fit Pinned-collar Cotton Shirt </a></h3>
-                                        <span class="price"><del>$875.00</del>$368</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                <div class="product-grid2">
-                                    <div class="product-image2">
-                                        <a href="http://localhost/project-ltw1/resources/shop/S04.php">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S04.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S04-3.JPG')}}">
-                                        </a>
-                                        <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                        </ul>
-                                        <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="Women Tunic">
-                                                        <input type="hidden" name="amount" value="399.99">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="#">Kingsman Men's Blue Navy Harry Slim-fit Super 120s Wool And Cashmere-blend Suit</a></h3>
-                                        <span class="price"></del>$2001</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                <div class="product-grid2">
-                                    <div class="product-image2">
-                                        <a href="http://localhost/project-ltw1/resources/shop/S05.php">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S05.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S05-1.JPG')}}">
-                                        </a>
-                                        <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                        </ul>
-                                        <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="Yellow T-Shirt">
-                                                        <input type="hidden" name="amount" value="299.99">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="#">Kingsman Men's Gray Shawl-collar Ribbed Wool And Cashmere-blend Cardigan</a></h3>
-                                        <span class="price"></del>$663</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                <div class="product-grid2">
-                                    <div class="product-image2">
-                                        <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S06.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S06-1.JPG')}}">
-                                        </a>
-                                        <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                        </ul>
-                                        <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="Straight Kurta">
-                                                        <input type="hidden" name="amount" value="699.99">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="#">Kingsman Men's Blue Rocketman Navy Slim-fit Cotton-velvet Tuxedo Jacket</a></h3>
-                                        <span class="price"></del>$1686</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                <div class="product-grid2">
-                                    <div class="product-image2">
-                                        <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S09.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S09-2.JPG')}}">
-                                        </a>
-                                        <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                        </ul>
-                                        <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="White T-Shirt">
-                                                        <input type="hidden" name="amount" value="599.99">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="#">Kingsman Men's Black Grosgrain-trimmed Cotton-velvet Tuxedo Jacket</a></h3>
-                                        <span class="price"></del>$1686</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                <div class="product-grid2">
-                                    <div class="product-image2">
-                                        <a href="#">
-                                            <img class="pic-1 img-fluid" src="{{asset('/frontend/assets/images/S08.JPG')}}">
-                                            <img class="pic-2 img-fluid" src="{{asset('/frontend/assets/images/S08-1.JPG')}}">
-                                        </a>
-                                        <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-                                                </li>
-                                        </ul>
-                                        <div class="transmitv single-item">
-                                                <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="Blue Sweater">
-                                                        <input type="hidden" name="amount" value="499.99">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="#">Kingsman Men's Blue Brushed-cashmere Zip-up Hoodie</a></h3>
-                                        <span class="price"></del>$803</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
+                            @endforeach  
                         </div>
+                       
                         <!-- //row-->
                     </div>
                 </div>

@@ -23,9 +23,7 @@ Route::get('/users/{users}/edit', 'App\Http\Controllers\HomeController@edit');
 Route::post('/users/{users}/update-users', 'App\Http\Controllers\HomeController@update');
 //send mail
 Route::get('/send-mail', 'App\Http\Controllers\HomeController@send_mail');
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',  [App\Http\Controllers\HomeController::class, 'init']);
 
 Route::get('/test', function () {
     $data = DB::table('users')->get();
@@ -53,3 +51,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/category', [App\Http\Controllers\CategoryController::class, 'init']);
 
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'init']);
+
+Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show']);
+
+Route::get('/category/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);

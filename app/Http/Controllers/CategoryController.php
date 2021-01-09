@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
+
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class CategoryController extends Controller
 {
@@ -46,7 +49,11 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        //echo $id;
+        $data_category = Product::join('categories', 'products.Catid', '=' , 'categories.id')->where('products.Catid', $id)
+        ->get(['products.*']);
+        //echo $data_category;
+        return view('category', compact('data_category'));
     }
 
     /**
