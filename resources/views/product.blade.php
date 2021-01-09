@@ -65,6 +65,7 @@
         <img height="1" width="1"
              src="https://www.facebook.com/tr?id=1772218379751100&ev=PageView&noscript=1" />
     </noscript>
+
 <div class="row mb-4">
     <div class="col-sm-12">
     <div class="breadcrumb">
@@ -75,11 +76,11 @@
             <a href="../{{$data_product->Catid}}">Page</a>
             <span class="mx-2 mb-0">/</span>
             <strong class="text-black">{{$data_product->Name}}</strong>
+            
 
         </div>
     </div>
 </div>
-
 
 <div class="row product-info">
     <div class="col-md-4 col-12">
@@ -106,7 +107,7 @@
         <div class="ditem">
             <div class="row">
                 <div class="col-md-8">
-                        <p class="text-black">Form Rộng</p>
+                        <p class="text-black">Free Ship</p>
 
                         <!-- <h5 class="price" style="text-decoration: line-through;">$1673</h5> -->
                         <h5 class="price"><span>$<span>{{$data_product->Price}}</span></span></h5>
