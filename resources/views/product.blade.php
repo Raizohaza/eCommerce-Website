@@ -122,13 +122,10 @@
                                 </div>
                             </div>
                         </div>
-
                 </div>
-
                     <div class="col-md-4 mb-8">
                         <h5 class="hny-title mb-0 text-center">Mô tả sản phẩm</h5>
-                        {{$data_product->Description}}
-                        
+                        {{$data_product->Description}}                      
                     </div>
             </div>
         </div>
@@ -145,23 +142,81 @@
 
 
 <div class="row">
-
+           
         <div class="col-12 text-center">
             <div class="card-columns twocols">
-                                        
+            @foreach($data_images as $imagess)         
                         <div class="card mb-4">
-                            <img class="img-fluid text-center detailImageItem" src="http://localhost/project-ltw1\public\frontend\assets\images\S01-1.JPG" alt="" style="margin: auto;" />
+                            <img class="img-fluid text-center detailImageItem" src="{{ asset('/frontend/assets/images/')}}/{{$imagess->Name}}" alt="" style="margin: auto;" />
                         </div>
-                        <div class="card mb-4">
-                            <img class="img-fluid text-center detailImageItem" src="http://localhost/project-ltw1\public\frontend\assets\images\S01-2.JPG" alt="" style="margin: auto;" />
-                        </div>
-                        <div class="card mb-4">
-                            <img class="img-fluid text-center detailImageItem" src="http://localhost/project-ltw1\public\frontend\assets\images\S01-3.JPG" alt="" style="margin: auto;" />
-                        </div>
+            @endforeach 
             </div>
 
         </div>
+       
 </div>
+
+
+<section class="w3l-customers-sec-6">
+                <div class="customers-sec-6-cintent py-5">
+                    <!-- /customers-->
+                    <div class="container py-lg-5">
+                            <h3 class="hny-title text-center mb-0 ">Customers <span>Love</span></h3>
+                            <p class="mb-5 text-center">What People Say</p>
+                        <div class="row customerhny my-lg-5 my-4">
+                            <div class="col-md-12">
+                                <div id="customerhnyCarousel" class="carousel slide" data-ride="carousel">
+
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#customerhnyCarousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#customerhnyCarousel" data-slide-to="1"></li>
+                                    </ol>
+                                    <!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                        
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                           
+                                                <div class="col-md-3">
+                                                    <div class="customer-info text-center">
+                                                    
+                                                        <div class="feedback-hny">
+                                                            <span class="fa fa-quote-left"></span>
+                                                            <p class="feedback-para">				
+                                                                day la cmt</p>
+                                                        </div>
+                                                        <div class="feedback-review mt-4">
+                                                            <img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
+                                                            <h5>Smith Roy</h5>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                                                                                                                 
+                                        </div>
+                                        
+                                    </div>                                                                                                            
+                                </div>
+                                <!--.Carousel-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //customers-->
+            <section class="w3l-subscription-6">
+                <!--/customers -->
+                <div class="subscription-infhny">
+                    <div class="container-fluid">
+
+                        <div class="subscription-grids row">
+                        </div>
+
+                        <!--//customers -->
+                    </div>
+            </section>
+            <!-- //customers-6-->
 
 
 

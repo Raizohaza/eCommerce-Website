@@ -14,6 +14,9 @@ use App\Models\Category;
 
 use App\Models\Product;
 
+use App\Models\Product_image;
+use App\Models\Favorite;
+
 class HomeController extends BaseController
 {
     /**
