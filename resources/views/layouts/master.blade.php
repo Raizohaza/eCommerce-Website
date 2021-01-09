@@ -59,9 +59,9 @@
             </a>
           </li> 
           <li>
-            <a href="./notifications.html">
+            <a href="role-categorier">
               <i class="now-ui-icons ui-1_bell-53"></i>
-              <p>Notifications</p>
+              <p>Category</p>
             </a>
           </li> 
           <li class="{{ 'role-register' == request()->path() ? 'active' : ''}}">

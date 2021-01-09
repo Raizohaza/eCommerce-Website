@@ -43,6 +43,14 @@ Route::group(['middleware'  => ['auth','admin']], function() {
 	Route::put('/role-register-update/{id}','App\Http\Controllers\Admin\DashboardController@registerupdate');
 	//delete route
     Route::delete('/role-delete/{id}','App\Http\Controllers\Admin\DashboardController@registerdelete');
+
+	Route::get('/role-categorier','App\Http\Controllers\Admin\DashboardController@categoried');
+
+	Route::get('/role-categorier-edit/{id}','App\Http\Controllers\Admin\DashboardController@categoriededit');
+	//update button route
+	Route::put('/role-categorier-update/{id}','App\Http\Controllers\Admin\DashboardController@categoriedupdate');
+	//delete route
+    Route::delete('/role-categorier-delete/{id}','App\Http\Controllers\Admin\DashboardController@categorierdelete');
 });
 Auth::routes();
 
