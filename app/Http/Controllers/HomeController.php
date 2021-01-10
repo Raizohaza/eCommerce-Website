@@ -123,13 +123,13 @@ class HomeController extends BaseController
 
     public function ajaxRequestPost(Request $request)
     {
-        // if ($request->Quantity !=null)
-        // DB::table('categories')->insert([
-        //     'Name' => $request->Quantity
-        // ]);
+        if ($request->Quantity !=null)
+        DB::table('categories')->insert([
+            'Name' => $request->Quantity
+        ]);
         
-        // else 
-        //$mgs= json_encode($request);
+        else 
+        $mgs= json_encode($request);
 
         $mgs= $request->Code;
 

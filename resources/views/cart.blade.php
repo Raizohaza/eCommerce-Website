@@ -201,8 +201,10 @@
            url:url,
            method:'POST',
            data:{
-                  Code:nameCus, 
-                  Chief:telCus
+                    NameCus:nameCus, 
+                    TelCus:telCus,
+                    AddressCus:addressCus,
+                    NoteCus:noteCus
                 },
            success:function(response){
               if(response.success){
