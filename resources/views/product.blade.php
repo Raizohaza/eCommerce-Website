@@ -58,6 +58,9 @@
             body {
                 font-family: 'Nunito';
             }
+            .redd{
+    color: #E00B0B 
+}
         </style>
 </head>
 <body>
@@ -66,7 +69,7 @@
              src="https://www.facebook.com/tr?id=1772218379751100&ev=PageView&noscript=1" />
     </noscript>
 
-<div class="row mb-4">
+    <div class="row mb-4">
     <div class="col-sm-12">
     <div class="breadcrumb">
             <a href="../../"><i class="icon fa fa-home"></i></a>
@@ -80,9 +83,9 @@
 
         </div>
     </div>
-</div>
+    </div>
 
-<div class="row product-info">
+    <div class="row product-info">
     <div class="col-md-4 col-12">
         <div class="row">
 
@@ -99,7 +102,7 @@
                             <img class="img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data_product->Image}}" alt="" />
                         </a>
                     </div>
-            </div>
+            </div>          
         </div>
 
     </div>
@@ -128,21 +131,23 @@
                         <h5 class="hny-title mb-0 text-center">Mô tả sản phẩm</h5>
                         {{$data_product->Description}}                      
                     </div>
+                    <br><br>
+                    @foreach($data_favorite as $check)
+                                                     
+            @if($data_product->id == $check->id)
+                    <h3><a id="favField" href="../../category/product/{{$data_product->id}}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a></h3>
+                                                
+            @else
+                    <h3><a id="favField" href="../../category/product/{{$data_product->id}}" data-tip="Favorite"><span class="fa fa-heart "></span></a></h3>
+                                                    
+            @endif
+        @endforeach
+                                                
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-    
-
-
-
-
-<div class="row">
+    <div class="row">
            
         <div class="col-12 text-center">
             <div class="card-columns twocols">
@@ -155,15 +160,21 @@
 
         </div>
        
-</div>
+    </div>
 
-
-<section class="w3l-customers-sec-6">
+    <section class="w3l-customers-sec-6">
+    
+            
                 <div class="customers-sec-6-cintent py-5">
                     <!-- /customers-->
                     <div class="container py-lg-5">
                             <h3 class="hny-title text-center mb-0 ">Customers <span>Love</span></h3>
                             <p class="mb-5 text-center">What People Say</p>
+                            <div class="row customerhny my-lg-5 my-4">                          
+                                <!--.Carousel-->
+
+                            </div>
+                    </div>                       
                         <div class="row customerhny my-lg-5 my-4">
                             <div class="col-md-12">
                                 <div id="customerhnyCarousel" class="carousel slide" data-ride="carousel">
@@ -173,35 +184,59 @@
                                         <li data-target="#customerhnyCarousel" data-slide-to="1"></li>
                                     </ol>
                                     <!-- Carousel items -->
+                                    
                                     <div class="carousel-inner">
                                         
                                         <div class="carousel-item active">
                                             <div class="row">
-                                           
+                                            <div class="col-md-3">
+                                                    <div class="customer-info text-center">
+                                                    
+                                                    <form action="#">                                                                                                  
+                                                        <div class="feedback-hny">
+                                                            <span class="fa fa-quote-left"></span>
+                                                            <p id="field" class="feedback-para">				
+                                                            </p>
+                                                            <input type="text" id="fname" name="fname">
+                                                            <input type="submit" value="Submit">
+                                                        </div>
+                                                    </form>
+                                                        <div class="feedback-review mt-4">
+                                                            <img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
+                                                            <h5>{{$nameuser}}</h5>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @foreach($data_commnent as $commnent)                                               
                                                 <div class="col-md-3">
                                                     <div class="customer-info text-center">
                                                     
                                                         <div class="feedback-hny">
                                                             <span class="fa fa-quote-left"></span>
                                                             <p class="feedback-para">				
-                                                                day la cmt</p>
+                                                                {{$commnent->Description}}</p>
                                                         </div>
                                                         <div class="feedback-review mt-4">
                                                             <img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
-                                                            <h5>Smith Roy</h5>
-
+                                                            <h5>{{$commnent->name}}</h5>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>                                                                                                                                 
+                                                
+                                                
+                                            </div>  
+                                            @endforeach                                                                                                                               
                                         </div>
                                         
-                                    </div>                                                                                                            
+                                    </div>  
+                                                                                                                                              
                                 </div>
                                 <!--.Carousel-->
 
                             </div>
                         </div>
+                       
                     </div>
                 </div>
             </section>
@@ -221,7 +256,7 @@
 
 
 
-<a href="#0" class="cd-top">Top</a>
+    <a href="#0" class="cd-top">Top</a>
 
     </div>
 
@@ -233,57 +268,10 @@
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-auth.js"></script>
-
-<script>
-    // Your web app's Firebase configuration
-    // var firebaseConfig = {
-    //     apiKey: "AIzaSyA-Do1DL6kUeFID4A_ejzZpx8kAWgyrfsI",
-    //     authDomain: "yame-5cf79.firebaseapp.com",
-    //     databaseURL: "https://yame-5cf79.firebaseio.com",
-    //     projectId: "yame-5cf79",
-    //     storageBucket: "yame-5cf79.appspot.com",
-    //     messagingSenderId: "98846041174",
-    //     appId: "1:98846041174:web:c253c8e2908bc8b57187f7",
-    //     //languageCode: "vn"
-    // };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    //set language
-    firebase.auth().languageCode = 'vi';
-</script>
-
-    <script>
-        jQuery(function ($) {
-            "use strict";
-
-            //Preloader
-            $(window).on('load', function () {
-
-            });
-        });
-
-        $(document).ready(function () {
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-
-                } else {
-
-                }
-            });
-        });
-
-        function __doLogout() {
-            firebase.auth().signOut();
-            window.location.replace($(location).attr('protocol') + '//' + $(location).attr('host') + "/member/dologout");
-        }
-
-    </script>
-
-    
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-auth.js"></script>
     <script type="text/javascript">
         var google_tag_params = {
             dynx_itemid : '4b83ac48-af13-f37d-b502-00173e1241cd',
@@ -298,137 +286,6 @@
         /* ]]> */
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
-    <noscript>
-        <div style="display: inline;">
-            <img height="1" width="1" style="border-style: none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/880703804/?value=0&amp;guid=ON&amp;script=0" />
-        </div>
-    </noscript>
-
-
-
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            $('#formAddToCart').submit(function () {
-               
-                $(this).validate();
-                if (!$(this).valid()) {
-                    return false;
-                }
-                return true;
-            });
-
-            $('.js-addToCart').click(function () {
-               
-               
-                var form = $('#formAddToCart');
-                form.validate();
-                if (!form.valid()) {
-                    return false;
-                }
-
-                $('#__IsCheckOut').val("0");
-                form.submit();
-                return true;
-            });
-
-            $('.js-addVariantToCart').click(function () {
-
-               
-                var form = $($(this).parent());
-                var url = form.attr("action");
-
-                var __ProductId = form.find("input[name='__ProductId']").val();
-                var __VariantId = form.find("input[name='__VariantId']").val();
-                var __Category = form.find("input[name='__Category']").val();
-
-                var posting = $.post(url, { __VariantId: __VariantId, __ProductId: __ProductId, __Category: __Category });
-                // Put the results in a div
-                posting.done(function (data) {
-                    var notify = $.notify({
-                        message: '<strong>Cập nhật giỏ hàng</strong> <br/> Đã thêm sản phẩm vào giỏ hàng.'
-                    }, {
-                        type: 'success',
-                        allow_dismiss: true,
-                        z_index: 999999,
-                        delay: 2000,
-                        timer: 500,
-                        offset: {
-                            x: 0,
-                            y: 70
-                        },
-                        spacing: 10,
-                        placement: {
-                            from: "top",
-                            align: "right"
-                        },
-                        animate: {
-                            enter: 'animated fadeInDown',
-                            exit: 'animated fadeOutUp'
-                        }
-                    });
-                    $('#NoOfItemsInCart').html(data);
-                });
-
-                return false;
-            });
-
-            $('#btnCheckSize').click(function (e) {
-                var form = $("#frmCheckSize");
-                var url = form.attr("action");
-                //console.log(url);
-                var posting = $.post(url, {
-                    txtCanNang: form.find("input[name='txtCanNang']").val(),
-                    txtChieuCao: form.find("input[name='txtChieuCao']").val(),
-                    txtTypeOfProduct: form.find("input[name='txtTypeOfProduct']").val(),
-                    txtProductForm: form.find("input[name='txtProductForm']").val()
-                });
-                posting.done(function (data) {
-                    $('#divCheckSizeResult').html(data);
-                });
-            });
-
-        
-            //Audio
-            //Howler.autoUnlock = true;
-            ////~/PName/0019801.mp3
-            //var sound = new Howl({
-            //    src: ['../../PName/0019801.mp3'],
-            //    autoplay: true,
-            //    loop: true,
-            //    volume: 0.5,
-            //    onend: function () {
-            //        console.log('Finished!');
-            //    },
-            //    onplayerror: function () {
-            //        console.log('onplayerror');
-            //        sound.once('unlock', function () {
-            //            console.log('unlock');
-            //            sound.play();
-            //        });
-            //    }
-            //});
-            //sound.play();
-
-            $('#audioControl i').on('click', function () {
-                if ($(this).hasClass('fa-volume-up')) {
-                    $(this).toggleClass('fa-volume-up fa-volume-off');
-                    //pause playing
-                    $('audio').trigger('pause');
-                } else {
-                    $(this).toggleClass('fa-volume-off fa-volume-up')
-                    $("audio").prop("currentTime", 0);
-                    $('audio').trigger('play');
-                }
-            });
-        });
-
-    </script>
-
-
-    
-
-
     
 </body>
 

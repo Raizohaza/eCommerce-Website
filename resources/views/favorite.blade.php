@@ -51,13 +51,13 @@
                     <div class="container py-lg-5">
                             
                         <h3 class="hny-title mb-0 text-center">Shop With <span>Meow~</span></h3>
-                        <p class="mb-4 text-center">Handpicked Favourites just for you</p>
+                        <p class="mb-4 text-center">Danh sách sản phẩm yêu thích</p>
                         <div class="welcome-grids row mt-5">
-                        @foreach ($data_category as $data_product)
+                        @foreach ($data_favorite as $data_product)
                         
                             <div class="col-lg-2 col-md-4 col-6 welcome-image">
                                     <div class="boxhny13">
-                                    <a href="./product/{{ $data_product->id }}">
+                                    <a href="../category/product/{{ $data_product->id }}">
                                                 <img src="{{asset('/frontend/assets/images/')}}/{{$data_product->Image}}" class="img-fluid" alt="" />
                                                 <div class="boxhny-content">
                                                     <h3 class="title">View</h3>
@@ -65,7 +65,7 @@
                                             </a>
                                             
                                     </div>
-                                    <h4><a href="./product/{{ $data_product->id }}">{{$data_product->Name}}</a></h4>
+                                    <h4><a href="../category/product/{{ $data_product->id }}">{{$data_product->Name}}</a></h4>
 
                             </div>
                         @endforeach
