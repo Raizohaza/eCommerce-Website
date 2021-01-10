@@ -80,8 +80,6 @@ Route::get('/category/product/{id}', [App\Http\Controllers\ProductController::cl
 
 Route::get('category/product/fav/{{id}}/{Liked}', [App\Http\Controllers\Admin\FavoriteController::class,'store']);
 
-Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'index']);
+Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'ajaxRequest']);
 
-Route::get('postinsert', [App\Http\Controllers\HomeController::class, 'ajaxRequest']);
-
-Route::post('postinsert', [App\Http\Controllers\HomeController::class, 'ajaxRequestPost']);
+Route::post('updatePurchase', [App\Http\Controllers\PurchaseController::class, 'ajaxRequestUpdatePurchase']);

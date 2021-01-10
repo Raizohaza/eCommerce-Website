@@ -288,7 +288,6 @@
                                     <div class="ecom-products-grids row mt-lg-5 mt-3">
 
 @foreach($data_product as $data)
-    @if($data->id < 5)
         @foreach($data_favorite as $check)
                                         <div class="col-lg-3 col-6 product-incfhny mt-4">
                                             <div class="product-grid2 transmitv">
@@ -329,7 +328,6 @@
                                             </div>
                                         </div>
                                     </div>
-    @endif
 @endforeach  
                             
                        

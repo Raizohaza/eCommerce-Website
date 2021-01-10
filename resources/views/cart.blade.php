@@ -183,11 +183,7 @@
         var noteCus = $('#txtNote').val();
 
         var _purchaseId = {{ $_purchaseId}};
-        var url = '{{ url('postinsert') }}';
-        // alert(nameCus);
-        // alert(telCus);
-        // alert(addressCus);
-        // alert(noteCus);
+        var url = '{{ url('updatePurchase') }}';
 
         $.ajax({
            url:url,

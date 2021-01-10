@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Delivery_info;
+use App\Models\Purchase;
+use Exception;
+
 class PurchaseController extends Controller
 {
     /**
@@ -93,5 +97,67 @@ class PurchaseController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function ajaxRequest()
+    {
+        $userId = Auth::id();
+        $purchase_details =  DB::table('purchase_details')
+            ->join('purchases', 'purchases.id', '=', 'purchase_details.PurchaseId')
+            ->join('products', 'products.id','=','purchase_details.ProductId')
+            ->where('purchases.userId', '=', $userId)
+            ->where('purchases.Status', '=','1')
+            ->select('purchase_details.*','products.*')
+            ->get();
+        $_purchaseId = -1;
+        foreach($purchase_details as $item)
+        {
+            $_purchaseId=$item->PurchaseId;
+            break;
+        }
+        //if($purchase_details->Status == 2)
+        return view('cart', compact('purchase_details','_purchaseId'));
+    }
+
+    public function ajaxRequestUpdatePurchase(Request $request)
+    {
+        $mgs ='success';
+        if ($request->NameCus !=null)
+        {
+            $data = array(
+                'NameCus'=>$request->NameCus,
+                'TelCus'=>$request->TelCus,
+                'AddressCus'=>$request->AddressCus,
+                'NoteCus'=>$request->NoteCus, 
+                'PurchaseId'=>$request->PurchaseId,
+                'created_at'=>null,
+                 'updated_at'=>null
+            );
+            try{
+                Delivery_info::insert($data);
+                $id = (int)$request->PurchaseId;
+                $purchase = Purchase::find($id);
+
+                $purchase->Status = 2;
+
+                $purchase->save();
+            }
+            catch(Exception $ex)
+            {
+                $mgs = json_encode ($ex);
+            }
+            $this->ajaxRequest();
+        }
+        
+        else 
+        $mgs= 'failed';
+
+        
+        return response()->json(
+            [
+                'success' => true,
+                'message' => $mgs,
+            ]
+        );
     }
 }

@@ -21,7 +21,6 @@ use App\Models\User as getUser;
 use App\Models\Product;
 use App\Models\Delivery_info;
 
-use Illuminate\Support\Facades\DB;
 
 
 use App\Models\Product_image;
@@ -129,62 +128,6 @@ class HomeController extends BaseController
 
 
         return view('welcome',compact('data_category','data_product', 'data_favorite','getUserId' ,'data_new'));
-    }
-
-    public function ajaxRequest()
-    {
-        $userId = Auth::id();
-        $purchase_details =  DB::table('purchase_details')
-            ->join('purchases', 'purchases.id', '=', 'purchase_details.PurchaseId')
-            ->join('products', 'products.id','=','purchase_details.ProductId')
-            ->where('purchases.userId', '=', $userId)
-            ->select('purchase_details.*','products.*')
-            ->get();
-        $_purchaseId = -1;
-        foreach($purchase_details as $item)
-        {
-            $_purchaseId=$item->PurchaseId;
-        }
-        //echo $purchase_details;
-        return view('cart', compact('purchase_details','_purchaseId'));
-    }
-
-    public function ajaxRequestPost(Request $request)
-    {
-        $mgs ='success';
-        //var_dump($request);
-        if ($request->NameCus !=null)
-        {
-            $data = array(
-                'NameCus'=>$request->NameCus,
-                'TelCus'=>$request->TelCus,
-                'AddressCus'=>$request->AddressCus,
-                'NoteCus'=>$request->NoteCus, 
-                'PurchaseId'=>$request->PurchaseId,
-                'created_at'=>null,
-                 'updated_at'=>null
-            );
-            try{
-                Delivery_info::insert($data);
-
-            }
-            catch(Exception $ex)
-            {
-                $mgs = json_encode ($ex);
-            }
-            
-        }
-        
-        else 
-        $mgs= 'failed';
-
-        
-        return response()->json(
-            [
-                'success' => true,
-                'message' => $mgs,
-            ]
-        );
     }
     
 }
