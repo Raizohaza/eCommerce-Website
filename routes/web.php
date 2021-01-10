@@ -74,6 +74,8 @@ Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 's
 
 Route::get('/category/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);
 
-Route::get('/Cart', function () {
-	return view('cart');
-});
+Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'index']);
+
+Route::get('postinsert', [App\Http\Controllers\HomeController::class, 'ajaxRequest']);
+
+Route::post('postinsert', [App\Http\Controllers\HomeController::class, 'ajaxRequestPost']);
