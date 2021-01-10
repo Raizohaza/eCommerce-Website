@@ -217,9 +217,9 @@
                         <!--//banner-slider-->
                         <div class="right-banner">
                             <div class="right-1">
-                                <h4>
+                                <p>
                                     Hàng loạt các trang phục HOT đang chờ bạn
-                                    <br>Meow~ ngay</h4>
+                                    <br>Meow~ ngay</p>
                             </div>
                         </div>
 
@@ -280,56 +280,49 @@
                 <div class="ecom-contenthny py-5">
                     <div class="container py-lg-5">
                         <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>HOT</span></h3>
-                            <p class="text-center">Những sản phẩm thời trang mới nhất/Hot nhất</p>
+                            <p class="text-center">Những sản phẩm thời trang mới Hot nhất</p>
                         <!-- /row-->
 
-                       
-                       
-                                    <div class="ecom-products-grids row mt-lg-5 mt-3">
+                        <div class="ecom-products-grids row mt-lg-5 mt-3">
 
 @foreach($data_product as $data)
-        @foreach($data_favorite as $check)
-                                        <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                            <div class="product-grid2 transmitv">
-                                                <div class="product-image2">
-                                   
-                                                <a href="./category/product/{{ $data->id }}">
-                                                    <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                                                    <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                                            
-                                                </a>
-                                      
-                                                <ul class="social">
-                                                    <li><a href="./category/product/{{ $data->id }}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-            @if($data->id == $check->id)
-                                                    <li id="favID"><a id="favField" href="./category/product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a>
-                                                    </li>
-            @else
-                                                    <li id="favID"><a id="favField" href="./category/product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart "></span></a>
-                                                    </li>
-            @endif
-        @endforeach
-                                                </ul>
-                                                <div class="transmitv single-item">
-                                                    <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
-                                                        <input type="hidden" name="amount" value="{{$data->Price}}">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-content">
-                                                <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
-                                                <span class="price">{{$data->Price}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-@endforeach  
-                            
+    @if($data->id < 5)
+ <div class="col-lg-3 col-6 product-incfhny mt-4">
+     <div class="product-grid2 transmitv">
+         <div class="product-image2">
+        
+             <a href="./category/product/{{ $data->id }}">
+                 <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                 <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+             </a>
+             <ul class="social">
+                     <li ><a href="./category/product/{{ $data->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                     </li>
+             </ul>
+           
+            
+             <div class="transmitv single-item">
+             <form action="#" method="post">
+                     <input type="hidden" name="cmd" value="_cart">
+                     <input type="hidden" name="add" value="1">
+                     <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
+                     <input type="hidden" name="amount" value="{{$data->Price}}">
+                     <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
+                         Add to Cart
+                     </button>
+             </form>
+             </div>
+         </div>
+         <div class="product-content">
+             <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
+             <span class="price">{{$data->Price}}</span>
+         </div>
+     </div>
+ </div>
+     @endif
+ @endforeach  
+</div>
+                                                 
                        
                         <!-- //row-->
                     </div>
@@ -350,22 +343,21 @@
                            <div class="ecom-products-grids row mt-lg-5 mt-3">
 
                            @foreach($data_new as $fa)
+                           
                                 
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
-                                   
                                         <a href="./category/product/{{ $fa->id }}">
                                             <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$fa->Image}}">
-                                            <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$fa->Image}}">
-                                            
+                                            <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$fa->Image}}">  
                                         </a>
                                       
                                         <ul class="social">
                                                 <li ><a href="./category/product/{{ $fa->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-                                                <li id="favID"><a id="favField" href="./category/product/{{ $fa->id }}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a>
                                                 </li>
                                         </ul>
+                                    
                                         <div class="transmitv single-item">
                                         <form action="#" method="post">
                                                 <input type="hidden" name="cmd" value="_cart">
