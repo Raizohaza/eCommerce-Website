@@ -11,12 +11,15 @@ use App\Models\Product_image;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\Favorite;
 use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades;
 use Storage;
 
+use Illuminate\Support\Facades;
+use Storage;
 
 class ProductController extends Controller
 {
@@ -84,6 +87,9 @@ class ProductController extends Controller
         ->join('users', 'users.id' , '=' , 'commnents.UserId')
         ->select('commnents.*', 'users.name')
         ->get('commnents.*', 'products.id');
+
+
+        
         
         return view('product', compact('data_product','data_images','data_favorite', 'data_commnent', 'nameuser', 'category'));
     }
