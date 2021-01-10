@@ -14,8 +14,13 @@ use App\Models\Category;
 
 use App\Models\Product;
 
+use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Product_image;
 use App\Models\Favorite;
+use SebastianBergmann\Environment\Console;
 
 class HomeController extends BaseController
 {
@@ -101,6 +106,39 @@ class HomeController extends BaseController
         $data_category = Category::all();
         $data_product = Product::all();
         return view('welcome',compact('data_category','data_product'));
+    }
+
+    public function ajaxRequest()
+    {
+        $userId = Auth::id();
+        $purchase_details =  DB::table('purchase_details')
+            ->join('purchases', 'purchases.id', '=', 'purchase_details.PurchaseId')
+            ->join('products', 'products.id','=','purchase_details.ProductId')
+            ->where('purchases.userId', '=', $userId)
+            ->select('purchase_details.*','products.*')
+            ->get();
+        //echo $purchase_details;
+        return view('cart', compact('purchase_details'));
+    }
+
+    public function ajaxRequestPost(Request $request)
+    {
+        // if ($request->Quantity !=null)
+        // DB::table('categories')->insert([
+        //     'Name' => $request->Quantity
+        // ]);
+        
+        // else 
+        //$mgs= json_encode($request);
+
+        $mgs= $request->Code;
+
+        return response()->json(
+            [
+                'success' => true,
+                'message' => $mgs,
+            ]
+        );
     }
     
 }
