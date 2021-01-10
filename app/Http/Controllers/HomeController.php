@@ -19,10 +19,14 @@ use App\Models\Category;
 use App\Models\User as getUser;
 
 use App\Models\Product;
+use App\Models\Delivery_info;
+
+use Illuminate\Support\Facades\DB;
 
 
 use App\Models\Product_image;
 use App\Models\Favorite;
+use Exception;
 use SebastianBergmann\Environment\Console;
 
 class HomeController extends BaseController
@@ -136,22 +140,45 @@ class HomeController extends BaseController
             ->where('purchases.userId', '=', $userId)
             ->select('purchase_details.*','products.*')
             ->get();
+        $_purchaseId = -1;
+        foreach($purchase_details as $item)
+        {
+            $_purchaseId=$item->PurchaseId;
+        }
         //echo $purchase_details;
-        return view('cart', compact('purchase_details'));
+        return view('cart', compact('purchase_details','_purchaseId'));
     }
 
     public function ajaxRequestPost(Request $request)
     {
-        if ($request->Quantity !=null)
-        DB::table('categories')->insert([
-            'Name' => $request->Quantity
-        ]);
+        $mgs ='success';
+        //var_dump($request);
+        if ($request->NameCus !=null)
+        {
+            $data = array(
+                'NameCus'=>$request->NameCus,
+                'TelCus'=>$request->TelCus,
+                'AddressCus'=>$request->AddressCus,
+                'NoteCus'=>$request->NoteCus, 
+                'PurchaseId'=>$request->PurchaseId,
+                'created_at'=>null,
+                 'updated_at'=>null
+            );
+            try{
+                Delivery_info::insert($data);
+
+            }
+            catch(Exception $ex)
+            {
+                $mgs = json_encode ($ex);
+            }
+            
+        }
         
         else 
-        $mgs= json_encode($request);
+        $mgs= 'failed';
 
-        $mgs= $request->Code;
-
+        
         return response()->json(
             [
                 'success' => true,

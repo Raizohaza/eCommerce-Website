@@ -20,7 +20,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories= Category::all;
+        $categories= Category::all();
         return view('admin.category-index',compact('categories'));
     }
 
@@ -42,12 +42,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'Name'=>'required'
+        // $this->validate(request(),[
+        //     'Name'=>'required'
 
-        ]);
-        Category::create($request->all());
-        return back();
+        // ]);
+        $data = array('name' => $request->name);
+        
+        Category::insert($data);
+        return back()->with('status','data is updated');
+        //return view('admin.category-index', compact('data'));
     }
 
     /**

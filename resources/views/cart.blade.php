@@ -7,18 +7,9 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
-
-     <!-- jQuery -->
-     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-     {{-- <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script> --}}
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
-     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  --}}
      
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -122,8 +113,10 @@
                             <label for="txtNote">Ghi chú</label>
                             <textarea rows="2" class="form-control" id="txtNote" name="txtNote"></textarea>
                         </div>
+
                     </form>
                     <button class="js-btnPlaceOrder btn btn-info fw" id="btnDatHang" style="width:100%;">Đặt hàng</button>
+
                     <hr>
                 </div>
             </div>
@@ -189,13 +182,12 @@
 
         var noteCus = $('#txtNote').val();
 
+        var _purchaseId = {{ $_purchaseId}};
+        var url = '{{ url('postinsert') }}';
         // alert(nameCus);
         // alert(telCus);
         // alert(addressCus);
         // alert(noteCus);
-        var url = '{{ url('postinsert') }}';
-        alert(url);
-
 
         $.ajax({
            url:url,
@@ -204,7 +196,8 @@
                     NameCus:nameCus, 
                     TelCus:telCus,
                     AddressCus:addressCus,
-                    NoteCus:noteCus
+                    NoteCus:noteCus,
+                    PurchaseId:_purchaseId
                 },
            success:function(response){
               if(response.success){
