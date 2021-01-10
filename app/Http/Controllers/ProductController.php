@@ -85,7 +85,11 @@ class ProductController extends Controller
     {
         //
     }
-
+    public function get_all_products_for_pie_chart()
+    {
+        $products = \App\Models\Product::all();
+        return view('pie',compact('products')); 
+    }
     public function init()
     {
         $data = array(

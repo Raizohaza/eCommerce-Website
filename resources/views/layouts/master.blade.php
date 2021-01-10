@@ -71,9 +71,9 @@
             </a>
           </li>
           <li>
-            <a href="./tables.html">
+            <a href="pie">
               <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>Table List</p>
+              <p>Pie Chart</p>
             </a>
           </li>
           <!-- <li>
