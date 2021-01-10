@@ -2,6 +2,7 @@
 @section('title','Category Page')
 @section('content')
     <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main" style="margin-top: 50px;">
+    
         <h3 style="text-decoration: underline;">List Categories</h3><br>
         <ul class="nav navbar-nav">
             @if(!empty($categories))
@@ -28,8 +29,9 @@
             @endif
         </ul>
         <br><br>
-        <form action="{{route('store')}}" method="post" role="form">
-            {{csrf_field()}}
+        
+        <form action="role-add" method="POST" role="form">
+        {{ csrf_field() }}
             <div class="form-group">
                 <label for="name">Category name:</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Category name">

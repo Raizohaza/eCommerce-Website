@@ -18,11 +18,13 @@ class CreateProductsTable extends Migration
             
             $table->string('Name')->nullable();
             $table->decimal('Price')->nullable();
+            $table->decimal('Quanlity')->nullable();
             $table->longText('Description')->nullable();
             $table->longText('Image')->nullable();
             
             $table->unsignedBigInteger('Catid');
-            $table->foreign('Catid')->references('id')->on('categories');
+            $table->foreign('Catid')->references('id')->on('categories')->onUpdate('CASCADE');
+            $table->timestamps();
         });
         
             
