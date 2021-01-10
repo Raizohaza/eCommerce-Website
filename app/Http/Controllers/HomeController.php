@@ -6,19 +6,25 @@ use App\Http\Controllers\Controller as BaseController;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\DB;
+
 use Mail;
 
 use App\user;
 
 use App\Models\Category;
 
-use App\Models\Product;
+use App\Models\User as getUser;
 
+use App\Models\Product;
 use App\Models\Delivery_info;
 
 use Illuminate\Support\Facades\DB;
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\Delivery_info;
+
 
 use App\Models\Product_image;
 use App\Models\Favorite;
@@ -34,7 +40,7 @@ class HomeController extends BaseController
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
         /**
@@ -108,7 +114,24 @@ class HomeController extends BaseController
     {
         $data_category = Category::all();
         $data_product = Product::all();
-        return view('welcome',compact('data_category','data_product'));
+
+        $max = Product::max('id');
+
+        $data_new = DB::table('products')->where('id', '>' , '40')
+        ->get();
+
+        $getUserId = Auth::id();
+
+        $data_favorite =DB::table('favorites')
+                ->join('users','favorites.UserId', '=', 'users.id')
+                ->join('products', 'favorites.ProductId', '=', 'products.id')
+                ->select('products.*')
+                ->get();
+        
+
+
+
+        return view('welcome',compact('data_category','data_product', 'data_favorite','getUserId' ,'data_new'));
     }
 
     public function ajaxRequest()

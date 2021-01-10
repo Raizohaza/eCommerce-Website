@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\ResetPasswordController;
 
 use App\Http\Controllers\Admin\DashboardController;
+
+use App\Http\Controllers\Admin\FavoriteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,10 +55,17 @@ Route::group(['middleware'  => ['auth','admin']], function() {
     Route::delete('/role-categorier-delete/{id}','App\Http\Controllers\Admin\DashboardController@categorierdelete');
 	//create category
 	Route::get('/role-category','App\Http\Controllers\CategoryController@index');
-	Route::get('/role-products/{Name}','App\Http\Controllers\Admin\DashboardController@producted');
+	Route::post('/role-add','App\Http\Controllers\CategoryController@store');
 
+	//products
+	Route::get('/role-products','App\Http\Controllers\ProductController@index')->name('admin.producter');
+    Route::get('/role-products-edit/{id}', 'App\Http\Controllers\ProductController@edit')->name('admin.product-edit');
+    Route::put('/role-products-update/{id}', 'App\Http\Controllers\ProductController@update')->name('admin.product-update');
+    Route::delete('/role-products-delete/{id}', 'App\Http\Controllers\ProductController@ProductDestroy');
+ 
 });
-Auth::routes();
+Auth::routes(['verify' => true]);
+Route::get('/', function () {return view('home');})->middleware('verified');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -66,7 +75,11 @@ Route::get('/product', [App\Http\Controllers\ProductController::class, 'init']);
 
 Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show']);
 
+Route::get('/favorite/{id}', [App\Http\Controllers\FavoriteController::class, 'show']);
+
 Route::get('/category/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+
+Route::get('category/product/fav/{{id}}/{Liked}', [App\Http\Controllers\Admin\FavoriteController::class,'store']);
 
 Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'index']);
 

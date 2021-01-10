@@ -5,7 +5,7 @@
        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" type="image/png" href="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg">
+        <link rel="icon" type="image/png" href="/project-ltw1\public\frontend\assets\images\icon.jpg">
         
         <title>Meow~Meow Store</title>
 
@@ -29,7 +29,13 @@
             body {
                 font-family: 'Nunito';
             }
+            .redd{
+    color: #E00B0B 
+}
         </style>
+
+
+
     </head>
     <body >
 
@@ -48,7 +54,7 @@
                                 <ul class="top-hnt-right-content col-lg-6">
 
                                     <li class="button-log usernhy">
-                                        <a class="btn-open" href="#">
+                                        <a class="btn-open" href="./role-register">
                                             <span class="fa fa-user" aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -63,62 +69,7 @@
                                     </li>
                                 </ul>
                                 <!--//right-->
-                                <div class="overlay-login text-left">
-                                    <button type="button" class="overlay-close1">
-                                        <i class="fa fa-times" aria-hidden="true"></i>
-                                    </button>
-                                    <div class="wrap">
-                                        <h5 class="text-center mb-4">Login Now</h5>
-                                        <div class="login-bghny p-md-5 p-4 mx-auto mw-100">
-                                            <!--/login-form-->
-                                            <form action="#" method="post">
-                                                <div class="form-group">
-                                                    <p class="login-texthny mb-2">Email address</p>
-                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" 
-                                                    name="email" value="{{ old('email') }}" 
-                                                    required autocomplete="email" autofocus>
-                                                    @error('email')
-                                                        <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email
-                                                        with anyone else.</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p class="login-texthny mb-2">Password</p>
-                                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                                    @error('password')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                               
-                                                <div class="form-check mb-2">
-                                                    <div class="userhny-check">
-                                                        <label class="check-remember container">
-                                                            <input type="checkbox" class="form-check" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> <span
-                                                                class="checkmark"></span>
-                                                            <p class="privacy-policy" for="remember">{{ __('Remember Me') }}</p>
-                                                        </label>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-
-
-                                                <button type="submit" class="submit-login btn mb-4">Sign In</button>
-                                                
-
-                                            </form>
-                                            
-                                            <!--//login-form-->
-                                        </div>
-                                        <!---->
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                         <!--/nav-->
@@ -127,7 +78,7 @@
                                 <a class="navbar-brand" href="index.html">
                                     Meow~<span class="lohny">S</span>tore</a>
                                 <!-- if logo is image enable this   -->
-                                        <a class="navbar-brand" href="#index.html">
+                                        <a class="navbar-brand" href="./welcome">
                                             <img src="/project-ltw1\public\frontend\assets\images\icon.jpg" alt="Meow~" title="Meow~" style="height:50px;" />
                                         </a> 
                                 <!--/search-right-->
@@ -159,18 +110,22 @@
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="./welcome">Home</a>
+                                            <a class="nav-link" href="#spCategory">Shop</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href='about.html'>About us  </a>
+                                            <a class="nav-link" href='#spHOT'>Sản phẩm HOT</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href='offer.html'>What We Offer</a>
+                                            <a class="nav-link" href='#spFav'>Mới</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href='./favorite/{{$getUserId}}'>Sản phẩm Yêu thích</a>
                                         </li>
 
                                         
                                         <li class="nav-item">
-                                            <a href="{{ route('register') }}" class="nav-link">Register</a>
+                                            <a href="{{ route('register') }}" class="nav-link">Đăng xuất</a>
                                         </li>
                                     </ul>
 
@@ -194,10 +149,11 @@
                                     <div class="carousel-item active">
                                         <div class="container">
                                             <div class="carousel-caption">
-                                                <h3>Women's
-                                                    Fashion
-                                                    <br>50% Off</h3>
-                                                <a href="#" class="shop-button btn">
+                                                <h3>Mùa đông không lạnh
+                                                    Giá giảm không phanh
+                                                    </h3>
+                                                    <br><p  class="mb-4 text-center">Khuyến mãi mùa đông lên đến 30%</p>
+                                                <a href="./category/2" class="shop-button btn">
                                                     Shop Now
                                                 </a>
 
@@ -207,10 +163,12 @@
                                     <div class="carousel-item item2">
                                         <div class="container">
                                             <div class="carousel-caption">
-                                                <h3>Men's
-                                                    Fashion
-                                                    <br>60% Off</h3>
-                                                <a href="#" class="shop-button btn">
+                                            <h3>Không ăn cơm tró
+                                                    Couple Meow~ có
+                                                    </h3>
+                                                    <br><p  class="mb-4 text-center">Khuyến mãi mùa tình yêu lên đến 40%</p>
+                                                
+                                                <a href="./category/1" class="shop-button btn">
                                                     Shop Now
                                                 </a>
 
@@ -220,10 +178,11 @@
                                     <div class="carousel-item item3">
                                         <div class="container">
                                             <div class="carousel-caption">
-                                                <h3>Women's
-                                                    Fashion
-                                                    <br>50% Off</h3>
-                                                <a href="#" class="shop-button btn">
+                                            <h3>Trang sức sương sương
+                                                    Đảm bảo nàng thươngg
+                                                    </h3>
+                                                    <br><p  class="mb-4 text-center">Hàng loại trang sức kim cương mới</p>
+                                                <a href="./category/5" class="shop-button btn">
                                                     Shop Now
                                                 </a>
 
@@ -233,10 +192,11 @@
                                     <div class="carousel-item item4">
                                         <div class="container">
                                             <div class="carousel-caption">
-                                                <h3>Men's
-                                                    Fashion
-                                                    <br>60% Off</h3>
-                                                <a href="#" class="shop-button btn">
+                                            <h3>Trang phục đi chơi
+                                                    </h3>
+                                                    <br><p  class="mb-4 text-center">Giảm giá mùa tết lên đến 20%</p>
+                                                
+                                                <a href="./category/4" class="shop-button btn">
                                                     Shop Now
                                                 </a>
                                             </div>
@@ -257,10 +217,9 @@
                         <!--//banner-slider-->
                         <div class="right-banner">
                             <div class="right-1">
-                                <h4>
-                                    Men's
-                                    Fashion
-                                    <br>50% Off</h4>
+                                <p>
+                                    Hàng loạt các trang phục HOT đang chờ bạn
+                                    <br>Meow~ ngay</p>
                             </div>
                         </div>
 
@@ -268,7 +227,7 @@
 
             </section>
             <!-- //w3l-banner-slider-main -->
-            <section class="w3l-grids-hny-2">
+            <section id="spCategory" class="w3l-grids-hny-2">
                 <!-- /content-6-section -->
                 <div class="grids-hny-2-mian py-5">
                     <div class="container py-lg-5">
@@ -282,7 +241,7 @@
                             <div class="col-lg-2 col-md-4 col-6 welcome-image">
                                     <div class="boxhny13">
                                             <a href="./category/{{ $category->id }}">
-                                                <img src="{{asset('/frontend/assets/')}}/{{$category->Name}}" class="img-fluid" alt="" />
+                                                <img src="{{ asset('/frontend/assets/images/')}}/{{$category->Name}}.jpg" class="img-fluid" alt="" />
                                                 <div class="boxhny-content">
                                                     <h3 class="title">View</h3>
                                                 </div>
@@ -299,7 +258,6 @@
                 </div>
             </section>
             <!-- //content-6-section -->
-
             <section class="w3l-content-w-photo-6">
                 <!-- /specification-6-->
                 <div class="content-photo-6-mian py-5">
@@ -315,45 +273,99 @@
                             </div>
                         </div>
                 </section>
-            <!-- //specification-6-->
-                
+            <!-- //specification-6-->    
             <!-- //video-6-->
-            <section class="w3l-ecommerce-main">
+            <section id="spHOT" class="w3l-ecommerce-main">
                 <!-- /products-->
                 <div class="ecom-contenthny py-5">
                     <div class="container py-lg-5">
                         <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>HOT</span></h3>
-                        <p class="text-center">Những sản phẩm thời trang mới nhất/Hot nhất</p>
+                            <p class="text-center">Những sản phẩm thời trang mới Hot nhất</p>
+                        <!-- /row-->
+
+                        <div class="ecom-products-grids row mt-lg-5 mt-3">
+
+@foreach($data_product as $data)
+    @if($data->id < 5)
+ <div class="col-lg-3 col-6 product-incfhny mt-4">
+     <div class="product-grid2 transmitv">
+         <div class="product-image2">
+        
+             <a href="./category/product/{{ $data->id }}">
+                 <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                 <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+             </a>
+             <ul class="social">
+                     <li ><a href="./category/product/{{ $data->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                     </li>
+             </ul>
+           
+            
+             <div class="transmitv single-item">
+             <form action="#" method="post">
+                     <input type="hidden" name="cmd" value="_cart">
+                     <input type="hidden" name="add" value="1">
+                     <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
+                     <input type="hidden" name="amount" value="{{$data->Price}}">
+                     <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
+                         Add to Cart
+                     </button>
+             </form>
+             </div>
+         </div>
+         <div class="product-content">
+             <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
+             <span class="price">{{$data->Price}}</span>
+         </div>
+     </div>
+ </div>
+     @endif
+ @endforeach  
+</div>
+                       
+                                   
+                            
+                       
+                        <!-- //row-->
+                    </div>
+                </div>
+            </section>
+            <!-- //products-->
+          
+            <section id="spFav" class="w3l-ecommerce-main">
+                <!-- /products-->
+                <div class="ecom-contenthny py-5">
+                    <div class="container py-lg-5">
+                        <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>Mới</span></h3>
+                        <p class="text-center">Những sản phẩm thời trang mới nhất</p>
                         <!-- /row-->
 
                        
                        
                            <div class="ecom-products-grids row mt-lg-5 mt-3">
 
-                           @foreach($data_product as $data)
-                                @if($data->id < 5)
+                           @foreach($data_new as $fa)
+                           
+                                
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
-                                   
-                                        <a href="./category/product/{{ $data->id }}">
-                                            <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                                            <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                                            
+                                        <a href="./category/product/{{ $fa->id }}">
+                                            <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$fa->Image}}">
+                                            <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$fa->Image}}">  
                                         </a>
                                       
                                         <ul class="social">
-                                                <li><a href="./category/product/{{ $data->id }}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-                                                <li><a href="#" data-tip="Favorite"><span class="fa fa-heart"></span></a>
+                                                <li ><a href="./category/product/{{ $fa->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
                                                 </li>
                                         </ul>
+                                    
                                         <div class="transmitv single-item">
                                         <form action="#" method="post">
                                                 <input type="hidden" name="cmd" value="_cart">
                                                 <input type="hidden" name="add" value="1">
-                                                <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
-                                                <input type="hidden" name="amount" value="{{$data->Price}}">
+                                                <input type="hidden" name="transmitv_item" value="{{$fa->Name}}">
+                                                <input type="hidden" name="amount" value="{{$fa->Price}}">
                                                 <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
                                                     Add to Cart
                                                 </button>
@@ -361,12 +373,12 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
-                                        <span class="price"><del>{{$data->Price}}</span>
+                                        <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $fa->Name }} </a></h3>
+                                        <span class="price">{{$fa->Price}}</span>
                                     </div>
                                 </div>
                             </div>
-                                @endif
+                                
                             @endforeach  
                         </div>
                        
@@ -374,42 +386,6 @@
                     </div>
                 </div>
             </section>
-            <!-- //products-->
-            <section class="join-w3l1 py-sm-5 py-4">
-                <div class="container py-xl-4 py-lg-2">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="join-agile text-left p-4">
-                                <div class="row">
-                                    <div class="col-sm-7 offer-name">
-                                        <h6>Smooth, Rich & Loud Audio</h6>
-                                        <h4 class="mt-2 mb-3">Branded Headphones</h4>
-                                        <p>Sale up to 25% off all in store</p>
-                                    </div>
-                                    <div class="col-sm-5 offerimg-w3l">
-                                        <img src="{{asset('/frontend/assets/images/grid3.jpg')}}" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mt-lg-0 mt-5">
-                            <div class="join-agile text-left p-4">
-                                <div class="row ">
-                                    <div class="col-sm-7 offer-name">
-                                        <h6>A Bigger Phone</h6>
-                                        <h4 class="mt-2 mb-3">Smart Phones 5</h4>
-                                        <p>Free shipping order over $100</p>
-                                    </div>
-                                    <div class="col-sm-5 offerimg-w3l">
-                                        <img src="{{asset('/frontend/assets/images/grid3.jpg')}}" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- //content-6-section -->
 
             <!-- //post-grids-->

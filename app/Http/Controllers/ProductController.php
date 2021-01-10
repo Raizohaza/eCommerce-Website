@@ -3,11 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\Commnent;
 use App\Models\User;
 use App\Models\Product_Images;
 use App\Models\Product_image;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\DB;
+use App\Models\Favorite;
+use App\Http\Controllers\FavoriteController;
+use Illuminate\Support\Facades;
+use Storage;
+
+use Illuminate\Support\Facades;
+use Storage;
 
 class ProductController extends Controller
 {
@@ -18,7 +30,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $ProductList = Product::all();
+        return view('admin.producter')
+        ->with('ProductList', $ProductList);
     }
 
     /**
@@ -51,11 +65,33 @@ class ProductController extends Controller
     public function show($id)
     {
         //echo $id;
+        $nameuser = Auth::user()->name;
+
         $data_product = Product::find($id);
+
+        $category = Category::find($data_product->Catid);
+
+
         $data_images = Product_image::join('products', 'products.id', '=' , 'product_images.ProductId')->where('product_images.ProductId', $id)
         ->get(['product_images.*']);
+
+        $data_favorite =DB::table('favorites')
+                ->join('users','favorites.UserId', '=', 'users.id')
+                ->join('products', 'favorites.ProductId', '=', 'products.id')
+                ->select('products.*','favorites.Liked')
+                ->get();
+
+
+        $data_commnent =DB::table('commnents')
+        ->join('products', 'products.id', '=' , 'commnents.ProductId')
+        ->join('users', 'users.id' , '=' , 'commnents.UserId')
+        ->select('commnents.*', 'users.name')
+        ->get('commnents.*', 'products.id');
+
+
         
-        return view('product', compact('data_product','data_images'));
+        
+        return view('product', compact('data_product','data_images','data_favorite', 'data_commnent', 'nameuser', 'category'));
     }
 
     /**
@@ -66,8 +102,15 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::where("id", $id)->first();
+        $categories = Category::all();
+
+        return view('admin.product-edit')
+            ->with('products', $products)
+            ->with('categories', $categories);
     }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -78,7 +121,29 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $products = Product::where("id",  $id)->first();
+        $products->Name = $request->Name;
+        $products->Price = $request->Price;
+        $products->Description = $request->Description;
+        
+        // $products->Catid = $request->Catid;
+
+        if($request->hasFile('Image'))
+        {
+            // Xóa hình cũ để tránh rác
+            Storage::delete('public/frontend/images/' . $products->Image);
+
+            // Upload hình mới
+            // Lưu tên hình vào column sp_hinh
+            $file = $request->Image;
+            $products->Image = $file->getClientOriginalName();
+            
+            // Chép file vào thư mục "photos"
+            $fileSaved = $file->storeAs('public/frontend/images/', $products->Image);
+        }
+        $products->update();
+
+        return redirect()->route('admin.producter');
     }
 
     /**
@@ -87,9 +152,17 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function ProductDestroy($id)
     {
-        //
+        $products = Product::findOrFail($id);
+        if(empty($products) == false)
+        {
+            // Xóa hình cũ để tránh rác
+            assets::delete('public/frontend/images/' . $products->Image);
+        }
+
+        $products->delete();
+        return redirect()->route('admin.producter');
     }
     public function get_all_products_for_pie_chart()
     {
