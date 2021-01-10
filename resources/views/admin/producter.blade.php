@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-			Welcome to Digital CRM!
+			Admin product dashboard
 @endsection()
 
 
@@ -20,7 +20,6 @@
                               </div>
                   @endif
               </div>
-              <a href="role-category" class="btn btn-success">Add</a>
 
               <div class="card-body">
                 <div class="table-responsive">
@@ -28,27 +27,32 @@
                     <thead class=" text-primary">
                       <!-- fetch table data -->
                       <th>Id</th>
+                      <th>Image</th>
                       <th>Name</th>
+                      <th>Price</th>
+                      <th>Catid</th>
 
                       <th>Edit</th>
                       <th>Delete</th>
                     </thead>
                     <tbody>
                       <!--fetch table data -->
-                      @foreach($categories as $row)
+                      @foreach($ProductList as $row)
                       <tr>
+
                         <td>{{ $row->id }}</td>
                         <td>
-                           <a class="nav-link" href="role-product/{{$row -> Name}}">
-                                  {{$row->Name}}
-                           </a>
-                       </td>
+                        <img src="{{ asset('/frontend/assets/images/' . $row->Image) }}" width = 100px height = 100px; />            
+                        </td>
+                        <td>{{$row->Name}}</td>
+                        <td>{{$row->Price}}</td>
+                        <td>{{$row->Catid}}</td>
                         <td>
-                          <a href="role-categorier-edit/{{ $row->id }}" class="btn btn-success">EDIT</a>
+                          <a href="role-products-edit/{{ $row->id }}" class="btn btn-success">EDIT</a>
                         </td>
                         <td>
                           <!-- we have to add form method because without form method it will show error-->
-                          <form action="role-categorier-delete/{{ $row->id }}" method="post">
+                          <form action="role-products-delete/{{ $row->id }}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <button type="submit" class="btn btn-danger">DELETE</button> 

@@ -53,9 +53,9 @@
             </a>
           </li>end comments-->
           <li>
-            <a href="./map.html">
+            <a href="role-products">
               <i class="now-ui-icons location_map-big"></i>
-              <p>Maps</p>
+              <p>Products</p>
             </a>
           </li> 
           <li>
@@ -142,6 +142,7 @@
          </a>
 
  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="./" class="btn btn-info my-2">Home</a>
                <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">

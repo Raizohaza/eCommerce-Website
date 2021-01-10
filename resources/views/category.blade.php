@@ -57,55 +57,55 @@
 
                        
                        
-                                    <div class="ecom-products-grids row mt-lg-5 mt-3">
+                        <div class="ecom-products-grids row mt-lg-5 mt-3">
+
 
 @foreach($data_category as $data)
+        
+ <div class="col-lg-3 col-6 product-incfhny mt-4">
+     <div class="product-grid2 transmitv">
+         <div class="product-image2">
+         
+             <a href="./product/{{ $data->id }}">
+                 <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                 <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                 
+             </a>
         @foreach($data_favorite as $check)
-                                        <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                            <div class="product-grid2 transmitv">
-                                                <div class="product-image2">
-                                   
-                                                <a href="./product/{{ $data->id }}">
-                                                    <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                                                    <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                                            
-                                                </a>
-                                      
-                                                <ul class="social">
-                                                    <li><a href="./product/{{ $data->id }}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-            @if($data->id == $check->id)
-                                                    <li id="favID"><a id="favField" href="./product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a>
-                                                    </li>
-            @else
-                                                    <li id="favID"><a id="favField" href="./product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart "></span></a>
-                                                    </li>
-            @endif
-        @endforeach
-                                                </ul>
-                                                <div class="transmitv single-item">
-                                                    <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
-                                                        <input type="hidden" name="amount" value="{{$data->Price}}">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-content">
-                                                <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
-                                                <span class="price">{{$data->Price}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-@endforeach  
-                            
-                       
-                        <!-- //row-->
-                    </div>
+          
+             <ul class="social">
+                    
+                     <li id="favID"><a id="favField" href="./product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a>
+                     </li>
+             </ul>
+            
+             <ul class="social">
+                     
+                     <li id="favID"><a id="favField" href="./product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart"></span></a>
+                     </li>
+             </ul>
+            
+             <div class="transmitv single-item">
+             <form action="#" method="post">
+                     <input type="hidden" name="cmd" value="_cart">
+                     <input type="hidden" name="add" value="1">
+                     <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
+                     <input type="hidden" name="amount" value="{{$data->Price}}">
+                     <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
+                         Add to Cart
+                     </button>
+             </form>
+             </div>
+         </div>
+         <div class="product-content">
+             <h3 class="title"><a href="./product/{{ $data->id }}">{{ $data->Name }} </a></h3>
+             <span class="price">{{$data->Price}}</span>
+         </div>
+     </div>
+ </div>
+     
+ @endforeach  
+</div>
                 </div>
             </section>
 

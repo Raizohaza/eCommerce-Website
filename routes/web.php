@@ -55,8 +55,14 @@ Route::group(['middleware'  => ['auth','admin']], function() {
     Route::delete('/role-categorier-delete/{id}','App\Http\Controllers\Admin\DashboardController@categorierdelete');
 	//create category
 	Route::get('/role-category','App\Http\Controllers\CategoryController@index');
-	Route::get('/role-products/{Name}','App\Http\Controllers\Admin\DashboardController@producted');
+	Route::post('/role-add','App\Http\Controllers\CategoryController@store');
 
+	//products
+	Route::get('/role-products','App\Http\Controllers\ProductController@index')->name('admin.producter');
+    Route::get('/role-products-edit/{id}', 'App\Http\Controllers\ProductController@edit')->name('admin.product-edit');
+    Route::put('/role-products-update/{id}', 'App\Http\Controllers\ProductController@update')->name('admin.product-update');
+    Route::delete('/role-products-delete/{id}', 'App\Http\Controllers\ProductController@ProductDestroy');
+ 
 });
 Auth::routes();
 

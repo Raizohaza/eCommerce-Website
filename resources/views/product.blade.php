@@ -61,6 +61,15 @@
             .redd{
     color: #E00B0B 
 }
+            .midd{
+                width: 400px;
+  height: 120px;
+  font-size: 24px;
+  line-height: 120px;
+  text-align: center;
+  background-color: #fafafa;
+  border: solid 1px lightgray;
+            }
         </style>
 </head>
 <body>
@@ -108,7 +117,8 @@
         <div class="ditem">
             <div class="row">
                 <div class="col-md-8">
-                        <h3 class="text-black redd">Free Ship</h3>
+                        <h3 class="text-black redd">{{$data_product->Name}}</h3>
+                        <br>
 
                         <!-- <h5 class="price" style="text-decoration: line-through;">$1673</h5> -->
                         <h5 class="price"><span>$<span>{{$data_product->Price}}</span></span></h5>
@@ -116,7 +126,7 @@
                     <div class="row mt-4">
                             <div class="col-12 mb-2">
                                 <b>...</b><br />
-                                <span class="small">...</span>
+                                <span class="small">{{$data_product->Quantity}}</span>
                             </div>
                             <div class="col-12 mb-4">
                                 
@@ -126,8 +136,8 @@
                         </div>
                 </div>
                     <div class="col-md-4 mb-8">
-                        <h5 class="hny-title mb-0 text-center">Mô tả sản phẩm</h5>
-                        {{$data_product->Description}}                      
+                        <h5 class="hny-title mb-0 text-center redd">Mô tả sản phẩm</h5>
+                         {{$data_product->Description}}                     
                     </div>
                     <br><br>
                     @foreach($data_favorite as $check)
