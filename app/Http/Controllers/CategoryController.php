@@ -7,6 +7,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Favorite;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -58,8 +61,16 @@ class CategoryController extends Controller
         //echo $id;
         $data_category = Product::join('categories', 'products.Catid', '=' , 'categories.id')->where('products.Catid', $id)
         ->get(['products.*']);
+
+        $category = Category::find($id);
+
+        $data_favorite =DB::table('favorites')
+                ->join('users','favorites.UserId', '=', 'users.id')
+                ->join('products', 'favorites.ProductId', '=', 'products.id')
+                ->select('products.*','favorites.Liked')
+                ->get();
         //echo $data_category;
-        return view('category', compact('data_category'));
+        return view('category', compact('data_category', 'data_favorite', 'category'));
     }
 
     /**

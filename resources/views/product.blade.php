@@ -74,9 +74,7 @@
     <div class="breadcrumb">
             <a href="../../"><i class="icon fa fa-home"></i></a>
             <span class="mx-2 mb-0">/</span>
-            <a href="../../">Home</a>
-            <span class="mx-2 mb-0">/</span>
-            <a href="../{{$data_product->Catid}}">Page</a>
+            <a href="../{{$data_product->Catid}}">{{$category->Name}}</a>
             <span class="mx-2 mb-0">/</span>
             <strong class="text-black">{{$data_product->Name}}</strong>
             
@@ -110,7 +108,7 @@
         <div class="ditem">
             <div class="row">
                 <div class="col-md-8">
-                        <p class="text-black">Free Ship</p>
+                        <h3 class="text-black redd">Free Ship</h3>
 
                         <!-- <h5 class="price" style="text-decoration: line-through;">$1673</h5> -->
                         <h5 class="price"><span>$<span>{{$data_product->Price}}</span></span></h5>

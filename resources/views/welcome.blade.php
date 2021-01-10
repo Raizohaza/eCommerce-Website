@@ -5,7 +5,7 @@
        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" type="image/png" href="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg">
+        <link rel="icon" type="image/png" href="/project-ltw1\public\frontend\assets\images\icon.jpg">
         
         <title>Meow~Meow Store</title>
 
@@ -325,7 +325,7 @@
                                             </div>
                                             <div class="product-content">
                                                 <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
-                                                <span class="price"><del>{{$data->Price}}</span>
+                                                <span class="price">{{$data->Price}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -351,8 +351,8 @@
                        
                            <div class="ecom-products-grids row mt-lg-5 mt-3">
 
-                           @foreach($data_product as $fa)
-                                @if($fa->id < 5 )
+                           @foreach($data_new as $fa)
+                                
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
@@ -382,11 +382,11 @@
                                     </div>
                                     <div class="product-content">
                                         <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $fa->Name }} </a></h3>
-                                        <span class="price"><del>{{$fa->Price}}</span>
+                                        <span class="price">{{$fa->Price}}</span>
                                     </div>
                                 </div>
                             </div>
-                                @endif
+                                
                             @endforeach  
                         </div>
                        

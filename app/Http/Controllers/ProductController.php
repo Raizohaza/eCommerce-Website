@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\Commnent;
 use App\Models\User;
 use App\Models\Product_Images;
@@ -59,6 +60,10 @@ class ProductController extends Controller
         $nameuser = Auth::user()->name;
 
         $data_product = Product::find($id);
+
+        $category = Category::find($data_product->Catid);
+
+
         $data_images = Product_image::join('products', 'products.id', '=' , 'product_images.ProductId')->where('product_images.ProductId', $id)
         ->get(['product_images.*']);
 
@@ -75,7 +80,7 @@ class ProductController extends Controller
         ->select('commnents.*', 'users.name')
         ->get('commnents.*', 'products.id');
         
-        return view('product', compact('data_product','data_images','data_favorite', 'data_commnent', 'nameuser'));
+        return view('product', compact('data_product','data_images','data_favorite', 'data_commnent', 'nameuser', 'category'));
     }
 
     /**

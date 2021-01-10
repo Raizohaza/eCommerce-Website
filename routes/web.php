@@ -72,16 +72,10 @@ Route::get('/favorite/{id}', [App\Http\Controllers\FavoriteController::class, 's
 
 Route::get('/category/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);
 
-<<<<<<< HEAD
 Route::get('category/product/fav/{{id}}/{Liked}', [App\Http\Controllers\Admin\FavoriteController::class,'store']);
 
-Route::get('/Cart', function () {
-	return view('cart');
-});
-=======
 Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'index']);
 
 Route::get('postinsert', [App\Http\Controllers\HomeController::class, 'ajaxRequest']);
 
 Route::post('postinsert', [App\Http\Controllers\HomeController::class, 'ajaxRequestPost']);
->>>>>>> 1f7718729bfc8817aaacd6b8aced413c151f9546
