@@ -22,6 +22,8 @@ use App\Models\Product;
 use App\Models\Delivery_info;
 
 
+use App\Models\Delivery_info;
+
 
 use App\Models\Product_image;
 use App\Models\Favorite;
@@ -37,7 +39,7 @@ class HomeController extends BaseController
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
         /**
@@ -114,7 +116,8 @@ class HomeController extends BaseController
 
         $max = Product::max('id');
 
-        $data_new = DB::table('products')->where('products.id', '<=', $max )->orWhere('products.id', '>' , ($max-10))->get();
+        $data_new = DB::table('products')->where('id', '>' , '40')
+        ->get();
 
         $getUserId = Auth::id();
 

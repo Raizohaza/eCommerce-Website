@@ -64,7 +64,8 @@ Route::group(['middleware'  => ['auth','admin']], function() {
     Route::delete('/role-products-delete/{id}', 'App\Http\Controllers\ProductController@ProductDestroy');
  
 });
-Auth::routes();
+Auth::routes(['verify' => true]);
+Route::get('/', function () {return view('home');})->middleware('verified');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
