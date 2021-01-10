@@ -65,6 +65,7 @@ class DashboardController extends Controller
 
     }
     
+
     //edit category
 
     public function categoriededit(Request $request, $id)
@@ -93,4 +94,6 @@ class DashboardController extends Controller
         return redirect('/role-categorier')->with('status','data deleted');
 
     }
+
+
 }
