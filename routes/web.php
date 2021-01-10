@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\ResetPasswordController;
 
 use App\Http\Controllers\Admin\DashboardController;
+
+use App\Http\Controllers\Admin\FavoriteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,7 +74,11 @@ Route::get('/product', [App\Http\Controllers\ProductController::class, 'init']);
 
 Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show']);
 
+Route::get('/favorite/{id}', [App\Http\Controllers\FavoriteController::class, 'show']);
+
 Route::get('/category/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+
+Route::get('category/product/fav/{{id}}/{Liked}', [App\Http\Controllers\Admin\FavoriteController::class,'store']);
 
 Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'index']);
 

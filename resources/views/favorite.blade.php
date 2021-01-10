@@ -4,7 +4,7 @@
        
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" type="image/png" href="/project-ltw1\public\frontend\assets\images\icon.jpg">
+        <link rel="icon" type="image/png" href="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg">
         
         <title>Meow~ Store</title>
 
@@ -31,86 +31,49 @@
             body {
                 font-family: 'Nunito';
             }
-            .redd{
-    color: #E00B0B 
-}
         </style>
     </head>
     <body>
     <div class="row mb-4">
-        <div class="col-sm-12">
-            <div class="breadcrumb">
-                <a href="../"><i class="icon fa fa-home"></i></a>
-                <span class="mx-2 mb-0">/</span>
-                <strong class="text-black">{{$category->Name}}</strong>
-            </div>
+    <div class="col-sm-12">
+        <div class="breadcrumb">
+            <a href="../"><i class="icon fa fa-home"></i></a>
+            <span class="mx-2 mb-0">/</span>
+            <a href="../">Home</a>
+            <span class="mx-2 mb-0">/</span>
+            <strong class="text-black">Page</strong>
         </div>
     </div>
-
-    <section id="spHOT" class="w3l-ecommerce-main">
-                <!-- /products-->
-                <div class="ecom-contenthny py-5">
+</div>
+    <section class="w3l-grids-hny-2">
+                <!-- /content-6-section -->
+                <div class="grids-hny-2-mian py-5">
                     <div class="container py-lg-5">
-                        <h3 class="hny-title mb-0 text-center">Dòng sản phẩm <span>{{$category->Name}}</span></h3>
-                            <p class="text-center">Tất cả sản phẩm</p>
-                        <!-- /row-->
-
-                       
-                       
-                                    <div class="ecom-products-grids row mt-lg-5 mt-3">
-
-@foreach($data_category as $data)
-        @foreach($data_favorite as $check)
-                                        <div class="col-lg-3 col-6 product-incfhny mt-4">
-                                            <div class="product-grid2 transmitv">
-                                                <div class="product-image2">
-                                   
-                                                <a href="./product/{{ $data->id }}">
-                                                    <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                                                    <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                                            
-                                                </a>
-                                      
-                                                <ul class="social">
-                                                    <li><a href="./product/{{ $data->id }}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-            @if($data->id == $check->id)
-                                                    <li id="favID"><a id="favField" href="./product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a>
-                                                    </li>
-            @else
-                                                    <li id="favID"><a id="favField" href="./product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart "></span></a>
-                                                    </li>
-            @endif
-        @endforeach
-                                                </ul>
-                                                <div class="transmitv single-item">
-                                                    <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
-                                                        <input type="hidden" name="amount" value="{{$data->Price}}">
-                                                        <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                            Add to Cart
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-content">
-                                                <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
-                                                <span class="price">{{$data->Price}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-@endforeach  
                             
-                       
-                        <!-- //row-->
+                        <h3 class="hny-title mb-0 text-center">Shop With <span>Meow~</span></h3>
+                        <p class="mb-4 text-center">Danh sách sản phẩm yêu thích</p>
+                        <div class="welcome-grids row mt-5">
+                        @foreach ($data_favorite as $data_product)
+                        
+                            <div class="col-lg-2 col-md-4 col-6 welcome-image">
+                                    <div class="boxhny13">
+                                    <a href="../category/product/{{ $data_product->id }}">
+                                                <img src="{{asset('/frontend/assets/images/')}}/{{$data_product->Image}}" class="img-fluid" alt="" />
+                                                <div class="boxhny-content">
+                                                    <h3 class="title">View</h3>
+                                                </div>
+                                            </a>
+                                            
+                                    </div>
+                                    <h4><a href="../category/product/{{ $data_product->id }}">{{$data_product->Name}}</a></h4>
+
+                            </div>
+                        @endforeach
+                        </div>
+
                     </div>
                 </div>
             </section>
-
-
-
 
     </body>
 </html>
