@@ -20,6 +20,7 @@ class CreateFavoritesTable extends Migration
             $table->foreign('ProductId')->references('id')->on('products');
             $table->unsignedBigInteger('UserId');
             $table->foreign('UserId')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 

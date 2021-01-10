@@ -159,7 +159,7 @@
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Home</a>
+                                            <a class="nav-link" href="./welcome">Home</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href='about.html'>About us  </a>
@@ -335,23 +335,25 @@
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
-                                        <a href="/PROJECT-LTW1/resources/views/shop/{{ $data->id }}.php">
+                                   
+                                        <a href="./category/product/{{ $data->id }}">
                                             <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
                                             <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
                                             
                                         </a>
+                                      
                                         <ul class="social">
-                                                <li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                                                <li><a href="./category/product/{{ $data->id }}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
 
-                                                <li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
+                                                <li><a href="#" data-tip="Favorite"><span class="fa fa-heart"></span></a>
                                                 </li>
                                         </ul>
                                         <div class="transmitv single-item">
                                         <form action="#" method="post">
                                                 <input type="hidden" name="cmd" value="_cart">
                                                 <input type="hidden" name="add" value="1">
-                                                <input type="hidden" name="transmitv_item" value="Women Maroon Top">
-                                                <input type="hidden" name="amount" value="899.99">
+                                                <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
+                                                <input type="hidden" name="amount" value="{{$data->Price}}">
                                                 <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
                                                     Add to Cart
                                                 </button>
@@ -359,7 +361,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="#">{{ $data->Name }} </a></h3>
+                                        <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
                                         <span class="price"><del>{{$data->Price}}</span>
                                     </div>
                                 </div>
@@ -411,172 +413,7 @@
             <!-- //content-6-section -->
 
             <!-- //post-grids-->
-            <section class="w3l-customers-sec-6">
-                <div class="customers-sec-6-cintent py-5">
-                    <!-- /customers-->
-                    <div class="container py-lg-5">
-                            <h3 class="hny-title text-center mb-0 ">Customers <span>Love</span></h3>
-                            <p class="mb-5 text-center">What People Say</p>
-                        <div class="row customerhny my-lg-5 my-4">
-                            <div class="col-md-12">
-                                <div id="customerhnyCarousel" class="carousel slide" data-ride="carousel">
-
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#customerhnyCarousel" data-slide-to="0" class="active"></li>
-                                        <li data-target="#customerhnyCarousel" data-slide-to="1"></li>
-                                    </ol>
-                                    <!-- Carousel items -->
-                                    <div class="carousel-inner">
-
-                                        <div class="carousel-item active">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="customer-info text-center">
-                                                        <div class="feedback-hny">
-                                                            <span class="fa fa-quote-left"></span>
-                                                            <p class="feedback-para">				
-                                                                Some text</p>
-                                                        </div>
-                                                        <div class="feedback-review mt-4">
-                                                            <img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
-                                                            <h5>Smith Roy</h5>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                        <div class="customer-info text-center">
-                                                                <div class="feedback-hny">
-                                                                    <span class="fa fa-quote-left"></span>
-                                                                    <p class="feedback-para">						
-                                                                        Some text</p>
-                                                                </div>
-                                                                <div class="feedback-review mt-4">
-                                                                    <img src="{{asset('/frontend/assets/images/c2.jpg')}}" class="img-fluid" alt="">
-                                                                    <h5>Lora Grill</h5>
-                    
-                                                                </div>
-                                                            </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                        <div class="customer-info text-center">
-                                                                <div class="feedback-hny">
-                                                                    <span class="fa fa-quote-left"></span>
-                                                                    <p class="feedback-para">						
-                                                                        Some text</p>
-                                                                </div>
-                                                                <div class="feedback-review mt-4">
-                                                                    <img src="{{asset('/frontend/assets/images/c3.jpg')}}" class="img-fluid" alt="">
-                                                                    <h5>Laura Sten</h5>
-                    
-                                                                </div>
-                                                            </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                        <div class="customer-info text-center">
-                                                                <div class="feedback-hny">
-                                                                    <span class="fa fa-quote-left"></span>
-                                                                    <p class="feedback-para">						
-                                                                        Some text</p>
-                                                                </div>
-                                                                <div class="feedback-review mt-4">
-                                                                    <img src="{{asset('/frontend/assets/images/c4.jpg')}}" class="img-fluid" alt="">
-                                                                    <h5>John Lee</h5>
-                    
-                                                                </div>
-                                                            </div>
-                                                </div>
-                                            </div>
-                                            <!--.row-->
-                                        </div>
-                                        <!--.item-->
-
-                                        <div class="carousel-item">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                        <div class="customer-info text-center">
-                                                                <div class="feedback-hny">
-                                                                    <span class="fa fa-quote-left"></span>
-                                                                    <p class="feedback-para">						
-                                                                        Some text</p>
-                                                                </div>
-                                                                <div class="feedback-review mt-4">
-                                                                    <img src="{{asset('/frontend/assets/images/c4.jpg')}}" class="img-fluid" alt="">
-                                                                    <h5>John Lee</h5>
-                    
-                                                                </div>
-                                                            </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                        <div class="customer-info text-center">
-                                                                <div class="feedback-hny">
-                                                                    <span class="fa fa-quote-left"></span>
-                                                                    <p class="feedback-para">						
-                                                                        Some text</p>
-                                                                </div>
-                                                                <div class="feedback-review mt-4">
-                                                                    <img src="{{asset('/frontend/assets/images/c3.jpg')}}" class="img-fluid" alt="">
-                                                                    <h5>Laura Sten</h5>
-                    
-                                                                </div>
-                                                            </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                        <div class="customer-info text-center">
-                                                            <div class="feedback-hny">
-                                                                <span class="fa fa-quote-left"></span>
-                                                                <p class="feedback-para">					
-                                                                    Some text</p>
-                                                            </div>
-                                                            <div class="feedback-review mt-4">
-                                                                <img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
-                                                                <h5>Smith Roy</h5>
-                
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                            <div class="customer-info text-center">
-                                                                    <div class="feedback-hny">
-                                                                        <span class="fa fa-quote-left"></span>
-                                                                        <p class="feedback-para">							
-                                                                            Some text</p>
-                                                                    </div>
-                                                                    <div class="feedback-review mt-4">
-                                                                        <img src="{{asset('/frontend/assets/images/c2.jpg')}}" class="img-fluid" alt="">
-                                                                        <h5>Lora Grill</h5>
-                        
-                                                                    </div>
-                                                                </div>
-                                                    </div>
-                                            </div>
-                                            <!--.row-->
-                                        </div>
-                                        <!--.item-->
-
-                                    </div>
-                                    <!--.carousel-inner-->
-                                </div>
-                                <!--.Carousel-->
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- //customers-->
-            <section class="w3l-subscription-6">
-                <!--/customers -->
-                <div class="subscription-infhny">
-                    <div class="container-fluid">
-
-                        <div class="subscription-grids row">
-                        </div>
-
-                        <!--//customers -->
-                    </div>
-            </section>
-            <!-- //customers-6-->
+            
 
 
             <section class="w3l-footer-22">

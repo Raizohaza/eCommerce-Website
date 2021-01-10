@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Commnent;
+use App\Models\User;
+use App\Models\Product_Images;
+use App\Models\Product_image;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -48,8 +52,10 @@ class ProductController extends Controller
     {
         //echo $id;
         $data_product = Product::find($id);
+        $data_images = Product_image::join('products', 'products.id', '=' , 'product_images.ProductId')->where('product_images.ProductId', $id)
+        ->get(['product_images.*']);
         
-        return view('product', compact('data_product'));
+        return view('product', compact('data_product','data_images'));
     }
 
     /**
