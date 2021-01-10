@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\user;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,12 +19,22 @@ class DashboardController extends Controller
     	return view('admin.register')->with('users',$users);
 
     }
+
+    //list category
     public function categoried()
     {
 
     	$categories = Category::all();
 
     	return view('admin.categorier')->with('categories',$categories);
+
+    }
+    public function producted()
+    {
+
+    	$products = Product::all();
+
+    	return view('admin.producter')->with('products',$products);
 
     }
     // here we create fuction for edit users
@@ -53,11 +64,16 @@ class DashboardController extends Controller
         return redirect('/role-register')->with('status','data deleted');
 
     }
+    
+    //edit category
+
     public function categoriededit(Request $request, $id)
     {
     	$categories = Category::findOrFail($id);
     	return view('admin.category-edit')->with('categories',$categories);
     }
+
+    //edit update
     public function categoriedupdate(Request $request, $id)
     {
     	$categories = Category::find($id);
@@ -67,6 +83,8 @@ class DashboardController extends Controller
         
     	return redirect('/role-categorier')->with('status','data is updated'); 
     }
+
+    //delete category
     public function categorierdelete($id)
     {
         $categories = Category::findOrFail($id);

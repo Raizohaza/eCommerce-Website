@@ -20,6 +20,7 @@
                               </div>
                   @endif
               </div>
+
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
@@ -36,8 +37,11 @@
                       @foreach($categories as $row)
                       <tr>
                         <td>{{ $row->id }}</td>
-                        <td>{{ $row->Name }}</td>
-
+                        <td>
+                           <a class="nav-link" href="role-product/{{$row -> Name}}">
+                                  {{$row->Name}}
+                           </a>
+                       </td>
                         <td>
                           <a href="role-categorier-edit/{{ $row->id }}" class="btn btn-success">EDIT</a>
                         </td>

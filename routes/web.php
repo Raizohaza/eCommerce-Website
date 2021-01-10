@@ -24,7 +24,7 @@ Route::post('/users/{users}/update-users', 'App\Http\Controllers\HomeController@
 //send mail
 Route::get('/send-mail', 'App\Http\Controllers\HomeController@send_mail');
 Route::get('/',  [App\Http\Controllers\HomeController::class, 'init']);
-
+Route::get('/pie', 'App\Http\Controllers\ProductController@get_all_products_for_pie_chart');
 Route::get('/test', function () {
     $data = DB::table('users')->get();
 
@@ -51,6 +51,10 @@ Route::group(['middleware'  => ['auth','admin']], function() {
 	Route::put('/role-categorier-update/{id}','App\Http\Controllers\Admin\DashboardController@categoriedupdate');
 	//delete route
     Route::delete('/role-categorier-delete/{id}','App\Http\Controllers\Admin\DashboardController@categorierdelete');
+	//create category
+	Route::get('/role-category','App\Http\Controllers\CategoryController@index');
+	Route::get('/role-products/{Name}','App\Http\Controllers\Admin\DashboardController@producted');
+
 });
 Auth::routes();
 
