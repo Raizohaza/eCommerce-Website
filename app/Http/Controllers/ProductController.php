@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Models\Product_Images;
 use App\Models\Product_image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades;
+use Storage;
 
 class ProductController extends Controller
 {
@@ -98,7 +100,7 @@ class ProductController extends Controller
         if($request->hasFile('Image'))
         {
             // Xóa hình cũ để tránh rác
-            assets::delete('public/frontend/images/' . $products->Image);
+            Storage::delete('public/frontend/images/' . $products->Image);
 
             // Upload hình mới
             // Lưu tên hình vào column sp_hinh
