@@ -236,8 +236,8 @@
                 <div class="grids-hny-2-mian py-5">
                     <div class="container py-lg-5">
                             
-                        <h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
-                        <p class="mb-4 text-center">Handpicked Favourites just for you</p>
+                        <h3 class="hny-title mb-0 text-center">Shop With <span>Meow~</span></h3>
+                        <p class="mb-4 text-center">Chúc bạn mua sắm vui vẻ</p>
                         <div class="welcome-grids row mt-5">
 
                         @foreach ($data_category as $category)
@@ -303,19 +303,6 @@
                      <li ><a href="./category/product/{{ $data->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
                      </li>
              </ul>
-           
-            
-             <div class="transmitv single-item">
-             <form action="Cart" method="post">
-                     <input type="hidden" name="cmd" value="_cart">
-                     <input type="hidden" name="add" value="1">
-                     <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
-                     <input type="hidden" name="amount" value="{{$data->Price}}">
-                     <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                         Add to Cart
-                     </button>
-             </form>
-             </div>
          </div>
          <div class="product-content">
              <p class="tittle"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></p>
@@ -362,16 +349,7 @@
                                                 </li>
                                         </ul>
                                     
-                                        <div class="transmitv single-item">
-                                        <form action="Cart" method="get">
-                                                <input type="hidden" name="cmd" value="_cart">
-                                                <input type="hidden" name="add" value="1">
-                                                <input type="hidden" name="transmitv_item" value="{{$fa->Name}}">
-                                                <input type="hidden" name="amount" value="{{$fa->Price}}">
-                                                <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                                                    Add to Cart
-                                                </button>
-                                        </form>
+                                    
                                         </div>
                                     </div>
                                     <div class="product-content">

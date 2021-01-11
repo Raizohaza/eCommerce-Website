@@ -78,17 +78,8 @@
                      </li>
              </ul>
             
-             <div class="transmitv single-item">
-             <form action="./product/{{$data->id}}/Cart" method="get">
-                     <input type="hidden" name="cmd" value="_cart">
-                     <input type="hidden" name="add" value="1">
-                     <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
-                     <input type="hidden" name="amount" value="{{$data->Price}}">
-                     <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-                         Add to Cart
-                     </button>
-             </form>
-             </div>
+            
+            
          </div>
          <div class="product-content">
              <h3 class="title"><a href="./product/{{ $data->id }}">{{ $data->Name }} </a></h3>

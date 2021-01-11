@@ -49,7 +49,7 @@
         <div class="row mb-4">
             <div class="col-sm-12">
             <div class="breadcrumb">
-                <a href="../"><i class="icon fa fa-home"></i></a>
+                <a href="./"><i class="icon fa fa-home"></i></a>
                 <span class="mx-2 mb-0">/</span>
                 <strong class="text-right">Thông tin giỏ hàng</strong>
             </div>

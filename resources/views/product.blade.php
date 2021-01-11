@@ -141,7 +141,7 @@
                                 </div>
 <br><br>
                                 <div class="galssescart2 cart cart box_1">
-                                        <form action="Cart" method="get" >
+                                        <form action="./{{$data_product->id}}/Cart" method="get" >
                                             <button class="top_transmitv_cart" type="submit" name="submit" value="">
                                                 <span class="blacktext"> Cart </span>
                                                 <span class="fa fa-shopping-cart"></span>                                                                                        
