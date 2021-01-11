@@ -6,7 +6,9 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'fe92894ac2e760888864ee370ec90319dc4b6bf5',
+
+  'reference' => '3c34311eb111bf6b4c34fd9d5a72af3de16af9ab',
+
     'name' => 'laravel/laravel',
   ),
   'versions' => 
