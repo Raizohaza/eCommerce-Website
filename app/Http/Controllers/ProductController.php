@@ -18,7 +18,7 @@ use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades;
 use Storage;
 
-
+use Exception;
 
 class ProductController extends Controller
 {
@@ -66,7 +66,7 @@ class ProductController extends Controller
         //echo $id;
         $nameuser = Auth::user()->name;
         $iduser = Auth::user()->id;
-        $getProductId = $id;
+        $getProductId = (int)$id;
         //echo $getProductId;
         $data_product = Product::find($id);
 
@@ -78,14 +78,12 @@ class ProductController extends Controller
         ->select('product_images.*')
         ->get();
         //var_dump($data_images);
+        echo $iduser;
+        echo ($getProductId);
+        $data_favorite =DB::table('favorites')->where('ProductId',$getProductId)->where('UserId',$iduser)
+        ->select('favorites.*')->first();
 
-        $data_favorite =DB::table('favorites')
-                ->join('users','favorites.UserId', '=', 'users.id')
-                ->join('products', 'favorites.ProductId', '=', 'products.id')
-                ->select('products.*','favorites.Liked')
-                ->get();
-
-
+        var_dump($data_favorite);
         $data_commnent =DB::table('commnents')
         ->join('products', 'products.id', '=' , 'commnents.ProductId')
         ->join('users', 'users.id' , '=' , 'commnents.UserId')
@@ -168,6 +166,71 @@ class ProductController extends Controller
         $products = \App\Models\Product::all();
         return view('pie',compact('products')); 
     }
+
+    public function ajaxRequestUpdatePurchase(Request $request)
+    {
+        $mgs ='success';
+        
+        if ($request->ProductId != null && $request->Liked != null)
+        {
+            
+            try{
+                $userId = Auth::id();
+                $iked = 1;
+                if($request->Liked == 1)
+                    $Liked = 0;
+                    
+                $data = array(
+                    'ProductId'=>$request->ProductId,
+                    'Liked'=>0,
+                    'UserId'=>$userId,
+                    'created_at'=>null,
+                    'updated_at'=>null
+                );
+            
+                $pid =(int) $data['ProductId'];
+                $favorite = Favorite::updateOrCreate($data);
+                // $favorite = DB::table('favorites')
+                // ->where('ProductId','=',$pid)->where('UserId','=',$userId)
+                // ->select('favorites.*')
+                // ->get();
+
+                //$favorite = Favorite::firstOrCreate($data);
+                if ($favorite->count() != 0)
+                {
+                    if($request->Liked == 1)
+                        $favorite->Liked = 0;
+                    else 
+                        $favorite->Liked = 1;
+                    $favorite->save() ;
+                    $mgs = json_encode($favorite->Liked);
+                    //favorite[0]->id
+                }
+                else
+                {
+                    Favorite::insert($data);
+                    $mgs = -2;
+                }
+            }
+            catch(Exception $ex)
+            {
+                $mgs = $ex->getMessage();
+            }
+            
+        }
+        
+        else 
+        $mgs= 'Failed';
+
+        
+        return response()->json(
+            [
+                'success' => true,
+                'message' => $mgs,
+            ]
+        );
+    }
+
     public function init()
     {
         $data = array(
