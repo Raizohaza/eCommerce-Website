@@ -150,12 +150,9 @@
                                                                                           
                                             </button>
                                         </form>
-                                    
                                 </div>
                             </div>
                             <div class="col-12 mb-4">
-                                
-
                                 </div>
                             </div>
                         </div>
@@ -172,18 +169,15 @@
     </div>
 </div>
     <div class="row">
-           
         <div class="col-12 text-center">
             <div class="card-columns twocols">
             @foreach($data_images as $imagess)         
                         <div class="card mb-4">
-                            <img class="img-fluid text-center detailImageItem" src="{{ asset('/frontend/assets/images/')}}/{{$imagess->Name}}" alt="" style="margin: auto;" />
+                            <img class="img-fluid text-center detailImageItem" src="{{ asset('/frontend/assets/images/')}}/{{$imagess->Name}}" alt="chưa có ảnh" style="margin: auto;" />
                         </div>
             @endforeach 
             </div>
-
         </div>
-       
     </div>
 
     <section class="w3l-customers-sec-6">
@@ -196,40 +190,59 @@
                             <p class="mb-5 text-center">What People Say</p>
                             <div class="row customerhny my-lg-5 my-4">                          
                                 <!--.Carousel-->
-
                             </div>
                     </div>                       
                         <div class="row customerhny my-lg-5 my-4">
                             <div class="col-md-12">
                                 <div id="customerhnyCarousel" class="carousel slide" data-ride="carousel">
-
                                     <ol class="carousel-indicators">
                                         <li data-target="#customerhnyCarousel" data-slide-to="0" class="active"></li>
                                         <li data-target="#customerhnyCarousel" data-slide-to="1"></li>
                                     </ol>
                                     <!-- Carousel items -->
-                                    
                                     <div class="carousel-inner">
-                                        
                                         <div class="carousel-item active">
                                             <div class="row">
                                             <div class="col-md-3">
                                                     <div class="customer-info text-center">
-                                                    
-                                                    <form action="#">                                                                                                  
-                                                        <div class="feedback-hny">
-                                                            <span class="fa fa-quote-left"></span>
-                                                            <p id="field" class="feedback-para">				
-                                                            </p>
-                                                            <input type="text" id="fname" name="fname">
-                                                            <input type="submit" value="Commnent">
-                                                        </div>
-                                                    </form>
-                                                        <div class="feedback-review mt-4">
-                                                            <img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
-                                                            <h5>{{$nameuser}}</h5>
+                                                        @if($iduser != null)
+                                                            <form action="#">                                                                                                  
+                                                                <div class="feedback-hny">
+                                                                    <span class="fa fa-quote-left"></span>
+                                                                    <p id="field" class="feedback-para">				
+                                                                    </p>
+                                                                    <input type="text" id="fname" name="fname">
+                                                                    <input type="submit" value="Commnent">
+                                                                </div>
+                                                            </form>
+                                                            <div class="feedback-review mt-4">
+                                                                <img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
+                                                            
+                                                                <h5>{{$nameuser}}</h5>
+                                                   
+                                                                
 
-                                                        </div>
+                                                            </div>
+                                                        @else
+                                                            <form action="{{ route('register') }}">                                                                                                  
+                                                                <div class="feedback-hny">
+                                                                    <span class="fa fa-quote-left"></span>
+                                                                    <p id="field" class="feedback-para">				
+                                                                    </p>
+                                                                    <input type="text" id="fname" name="fname">
+                                                                    <input type="submit" value="Đăng nhập">
+                                                                </div>
+                                                            </form>
+                                                            <div class="feedback-review mt-4">
+                                                                <img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt="">
+                                                            
+                                                                
+                                                   
+                                                                <h5> Bạn chưa đăng nhập </h5>
+
+                                                            </div>
+                                                        @endif
+
                                                     </div>
                                                 </div>
                                             @foreach($data_commnent as $commnent)                                               

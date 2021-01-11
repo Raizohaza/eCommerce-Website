@@ -20,7 +20,8 @@ use App\Http\Controllers\Admin\FavoriteController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/    
+*/
+Route::get('register/verify/{code}', 'Auth\RegisterController@verify');    
 Route::get('/users/{users}/edit', 'App\Http\Controllers\HomeController@edit');
 Route::post('/users/{users}/update-users', 'App\Http\Controllers\HomeController@update');
 //send mail
@@ -65,13 +66,16 @@ Route::group(['middleware'  => ['auth','admin']], function() {
  
 });
 Auth::routes(['verify' => true]);
-// Route::get('/', function () {return view('home');})->middleware('verified');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 
 Route::get('/category', [App\Http\Controllers\CategoryController::class, 'init']);
 
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'init']);
+
+Route::get('/product_images', [App\Http\Controllers\Product_ImagesController::class, 'init']);
 
 Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show']);
 

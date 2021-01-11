@@ -7,7 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Enums\Status;
 
 class DashboardController extends Controller
 {
@@ -19,7 +19,6 @@ class DashboardController extends Controller
     	return view('admin.register')->with('users',$users);
 
     }
-
     //list category
     public function categoried()
     {
@@ -43,6 +42,7 @@ class DashboardController extends Controller
     	$users = User::findOrFail($id);
     	return view('admin.register-edit')->with('users',$users);
     }
+
 
     // here we create function for update button
     public function registerupdate(Request $request, $id)
