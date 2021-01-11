@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Product_Images;
 use App\Models\Product_image;
 use Illuminate\Http\Request;
+use App\Enums\Status;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -124,7 +125,7 @@ class ProductController extends Controller
         $products->Name = $request->Name;
         $products->Price = $request->Price;
         $products->Description = $request->Description;
-        
+                
         // $products->Catid = $request->Catid;
 
         if($request->hasFile('Image'))
@@ -157,7 +158,7 @@ class ProductController extends Controller
         if(empty($products) == false)
         {
             // Xóa hình cũ để tránh rác
-            assets::delete('public/frontend/images/' . $products->Image);
+            Storage::delete('public/frontend/assets/images/' . $products->Image);
         }
 
         $products->delete();
