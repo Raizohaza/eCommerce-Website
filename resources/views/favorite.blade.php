@@ -39,9 +39,9 @@
         <div class="breadcrumb">
             <a href="../"><i class="icon fa fa-home"></i></a>
             <span class="mx-2 mb-0">/</span>
-            <a href="../">Home</a>
+            <a href="./">Home</a>
             <span class="mx-2 mb-0">/</span>
-            <strong class="text-black">Page</strong>
+            <a href="./favorite">Danh sách sản phẩm yêu thích</strong>
         </div>
     </div>
 </div>
@@ -50,8 +50,8 @@
                 <div class="grids-hny-2-mian py-5">
                     <div class="container py-lg-5">
                             
-                        <h3 class="hny-title mb-0 text-center">Shop With <span>Meow~</span></h3>
-                        <p class="mb-4 text-center">Danh sách sản phẩm yêu thích</p>
+                        <h3 class="hny-title mb-0 text-center">Yêu <span>Thích</span></h3>
+                        <p class="mb-4 text-center">Danh sách sản phẩm bạn đã yêu thích</p>
                         <div class="welcome-grids row mt-5">
                         @foreach ($data_favorite as $data_product)
                         

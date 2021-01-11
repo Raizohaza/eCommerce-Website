@@ -74,7 +74,7 @@ Route::get('/product', [App\Http\Controllers\ProductController::class, 'init']);
 
 Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show']);
 
-Route::get('/favorite/{id}', [App\Http\Controllers\FavoriteController::class, 'show']);
+Route::get('/favorite', [App\Http\Controllers\FavoriteController::class, 'show']);
 
 Route::get('/category/product/{id}', [App\Http\Controllers\ProductController::class, 'show']);
 

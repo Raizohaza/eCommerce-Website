@@ -75,10 +75,10 @@
                         <!--/nav-->
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <div class="container-fluid serarc-fluid">
-                                <a class="navbar-brand" href="index.html">
+                                <a class="navbar-brand" href="./">
                                     Meow~<span class="lohny">S</span>tore</a>
                                 <!-- if logo is image enable this   -->
-                                        <a class="navbar-brand" href="./welcome">
+                                        <a class="navbar-brand" href="./">
                                             <img src="/project-ltw1\public\frontend\assets\images\icon.jpg" alt="Meow~" title="Meow~" style="height:50px;" />
                                         </a> 
                                 <!--/search-right-->
@@ -120,7 +120,7 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href='./favorite/{{$getUserId}}'>Sản phẩm Yêu thích</a>
+                                            <a class="nav-link" href='./favorite'>Sản phẩm Yêu thích</a>
                                         </li>
 
                                         
@@ -243,7 +243,7 @@
                                             <a href="./category/{{ $category->id }}">
                                                 <img src="{{ asset('/frontend/assets/images/')}}/{{$category->Name}}.jpg" class="img-fluid" alt="" />
                                                 <div class="boxhny-content">
-                                                    <h3 class="title">View</h3>
+                                                    <a href="./category/{{ $category->id }}"  class="title">View</h3>
                                                 </div>
                                             </a>
                                     </div>
@@ -280,13 +280,13 @@
                 <div class="ecom-contenthny py-5">
                     <div class="container py-lg-5">
                         <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>HOT</span></h3>
-                            <p class="text-center">Những sản phẩm thời trang mới Hot nhất</p>
+                            <p class="text-center">Những sản phẩm thời trang mới nhất</p>
                         <!-- /row-->
 
                         <div class="ecom-products-grids row mt-lg-5 mt-3">
 
-@foreach($data_product as $data)
-    @if($data->id < 5)
+@foreach($data_new as $data)
+   
  <div class="col-lg-3 col-6 product-incfhny mt-4">
      <div class="product-grid2 transmitv">
          <div class="product-image2">
@@ -314,12 +314,12 @@
              </div>
          </div>
          <div class="product-content">
-             <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></h3>
+             <p class="tittle"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></p>
              <span class="price">{{$data->Price}}</span>
          </div>
      </div>
  </div>
-     @endif
+    
  @endforeach  
 </div>
                                                  
@@ -371,7 +371,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="./category/product/{{ $data->id }}">{{ $fa->Name }} </a></h3>
+                                        <p class="title"><a href="./category/product/{{ $data->id }}">{{ $fa->Name }} </a></p>
                                         <span class="price">{{$fa->Price}}</span>
                                     </div>
                                 </div>
@@ -387,7 +387,10 @@
             <!-- //content-6-section -->
 
             <!-- //post-grids-->
-            
+        
+
+
+
 
 
             <section class="w3l-footer-22">

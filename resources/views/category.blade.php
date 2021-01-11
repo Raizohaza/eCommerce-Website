@@ -71,22 +71,15 @@
                  <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
                  
              </a>
-        @foreach($data_favorite as $check)
+       
           
              <ul class="social">
-                    
-                     <li id="favID"><a id="favField" href="./product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a>
-                     </li>
-             </ul>
-            
-             <ul class="social">
-                     
-                     <li id="favID"><a id="favField" href="./product/{{ $data->id }}" data-tip="Favorite"><span class="fa fa-heart"></span></a>
+                     <li ><a href="./product/{{ $data->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
                      </li>
              </ul>
             
              <div class="transmitv single-item">
-             <form action="#" method="post">
+             <form action="/cart" method="post">
                      <input type="hidden" name="cmd" value="_cart">
                      <input type="hidden" name="add" value="1">
                      <input type="hidden" name="transmitv_item" value="{{$data->Name}}">

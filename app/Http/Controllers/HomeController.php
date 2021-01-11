@@ -117,10 +117,10 @@ class HomeController extends BaseController
         $data_category = Category::all();
         $data_product = Product::all();
 
-        $max = Product::max('id');
+        $max = Product::max('id')-10;
 
-        $data_new = DB::table('products')->where('id', '>' , '40')
-        ->get();
+        $data_new = DB::table('products')->where('id', '>' , $max)
+        ->select('products.*')->get();
 
         $getUserId = Auth::id();
 
@@ -130,7 +130,7 @@ class HomeController extends BaseController
                 ->select('products.*')
                 ->get();
         
-
+        
 
 
         return view('welcome',compact('data_category','data_product', 'data_favorite','getUserId' ,'data_new'));

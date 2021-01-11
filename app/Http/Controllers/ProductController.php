@@ -20,6 +20,7 @@ use Illuminate\Support\Facades;
 use Storage;
 
 
+
 class ProductController extends Controller
 {
     /**
