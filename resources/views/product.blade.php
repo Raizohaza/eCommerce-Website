@@ -105,27 +105,24 @@
                             <div class="col-12 mb-2">
                                 <div>
                                 @isset ($data_favorite)
-                                    @foreach($data_favorite as $check)
-                                                        
-                                        @if($data_product->id == $check->id)
-                                        <b class="redd">Yêu thích: </b> <h3><a id="favField" name="{{$data_product->id}}/1" data-tip="Favorite"><span class="fa fa-heart redd "></span></a></h3>
-                                                        
-                                                                                    
-                                        @endif
-                                    @endforeach
+                                <b class="redd">Yêu thích: </b>
+                                 <h3>
+                                    <a id="favField" name="{{$data_product->id}}/1" data-tip="Favorite">
+                                        <span id="redheart" class="fa fa-heart redd "></span>
+                                    </a>
+                                </h3>
+                     
                                 
                                 @endisset
-
-                                <?php
-                                    if (isset($data_favorite ) != false) {
-                                        
-                                    ?>
-
-                                        <b>Yêu thích: </b> <h3><a id="favField" name="{{$data_product->id}}/0" data-tip="disFavorite"><span class="fa fa-heart "></span></a></h3>
-                                        
-                                    <?php
-                                        }
-                                ?>
+                                @empty($data_favorite)
+                                <b>Yêu thích: </b>
+                                 <h3>
+                                    <a id="favField" name="{{$data_product->id}}/0" data-tip="disFavorite">
+                                        <span class="fa fa-heart "></span>
+                                    </a>
+                                </h3>
+                                @endempty
+                                
                                 
                                 
                                 </div>
@@ -309,21 +306,41 @@
         
         e.preventDefault();
 
+        var url = '{{ url('updateProduct') }}';
+
         var test2 = $("#favField").attr("name");
 
-        alert(test2);
-        
-        var url = '{{ url('updatePurchase') }}';
+        var res = test2.split("/");
+
+        var pid = res[0];
+
+        var liked = res[1];
+
+        alert(liked);
 
         $.ajax({
            url:url,
            method:'POST',
            data:{
-                    
+                    ProductId: pid,
+                    Liked: liked
                 },
            success:function(response){
               if(response.success){
-                  alert(response.message) //Message come from controller
+                console.log(response.message); //Message come from controller
+                
+                
+                if (response.message == 0 )
+                    {
+                        document.getElementById("redheart").classList.remove('redd');
+                        document.getElementById("favField").name = "{{$data_product->id}}/0" ;
+                    }
+                else 
+                    {
+                        document.getElementById("redheart").classList.add('redd');
+                    
+                        document.getElementById("favField").name = "{{$data_product->id}}/1" ;
+                    }
               }else{
                   alert("Error")
               }
