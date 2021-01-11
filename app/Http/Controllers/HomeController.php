@@ -19,8 +19,6 @@ use App\Models\Category;
 use App\Models\User as getUser;
 
 use App\Models\Product;
-use App\Models\Delivery_info;
-
 
 use App\Models\Delivery_info;
 
