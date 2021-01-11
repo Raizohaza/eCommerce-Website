@@ -16,8 +16,8 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->decimal('Total');
-            $table->integer('Status');
+            $table->decimal('Total')->default('0');
+            $table->integer('Status')->default('1');
             $table->unsignedBigInteger('UserId');
             $table->foreign('UserId')->references('id')->on('users');
         });

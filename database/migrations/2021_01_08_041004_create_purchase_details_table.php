@@ -15,10 +15,11 @@ class CreatePurchaseDetailsTable extends Migration
     {
         Schema::create('purchase_details', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
             $table->unsignedBigInteger('ProductId');
             $table->unsignedBigInteger('PurchaseId');
             $table->decimal('Unit_Price');
-            $table->integer('Quantity');
+            $table->integer('Quantity')->default('1');
             $table->decimal('SubTotal');
             $table->foreign('ProductId')->references('id')->on('products');
             $table->foreign('PurchaseId')->references('id')->on('purchases');

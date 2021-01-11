@@ -102,58 +102,49 @@
                     <div class="row mt-4">
                             <div class="col-12 mb-2">
                                 <div>
-                                
-                                <b class="redd">Yêu thích: </b>
-                                 <h3>
-                                 
-                                 @if ($data_favorite->Liked == 1)
-                                    <a id="favField" name="{{$data_product->id}}/1" data-tip="Favorite">
-                                    
-                                        <span id="redheart" class="fa fa-heart redd "></span>
-                                       
-                                      
-                                       
-                                    </a>
-                                    @else
-                                    <a id="favField" name="{{$data_product->id}}/0" data-tip="Favorite">
-                                    
-                                        
-                                       
-                                        <span id="redheart" class="fa fa-heart "></span>
-                                       
-                                    </a>
+                                    @if ($data_favorite !=null)
+                                        <b class="redd">Yêu thích: </b>
+                                        <h3>
+                                            
+                                            @if ($data_favorite->Liked == 1)
+                                                <a id="favField" name="{{$data_product->id}}/1" data-tip="Favorite">
+                                                    <span id="redheart" class="fa fa-heart redd "></span>
+                                                </a>
+                                                @else
+                                                <a id="favField" name="{{$data_product->id}}/0" data-tip="Favorite">
+                                                    <span id="redheart" class="fa fa-heart "></span>
+                                                </a>
+                                            @endif
+                                            
+                                            
+                                        </h3>
                                     @endif
-                                </h3>
-                                
-                        
-                
-                               
-                               
-                                
-                                
-                                
                                 </div>
                                 <br>
                                 <br>
+                                @if ($data_purchase !=null)
                                 <div class="group-input">
                                     <button class="disable" id="btnPrv">
                                         <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-remove.svg">
                                     </button>
-                                        <input type="text" id="btnField" class="input" value="1">
+                                    
+                                    <input type="text" id="btnField" class="input" value="{{$data_purchase_detail->Quantity}}" readonly>
+                                    
                                     <button id="btnNext">
                                         <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-add.svg">
                                     </button>
-                                        
                                 </div>
-<br><br>
                                 <div class="galssescart2 cart cart box_1">
-                                        <form action="./{{$data_product->id}}/Cart" method="get" >
-                                            <button class="top_transmitv_cart" type="submit" name="submit" value="">
-                                                <span class="blacktext"> Cart </span>
-                                                <span class="fa fa-shopping-cart"></span>                                                                                        
-                                            </button>
-                                        </form>
+                                    <form action="../../Cart" method="get" >
+                                        <button class="" type="submit" name="submit" value="">
+                                            <span class="blacktext"> Cart </span>
+                                            <span class="fa fa-shopping-cart"></span>                                                                                        
+                                        </button>
+                                    </form>
                                 </div>
+                                @endif
+                            <br><br>
+                                
                             </div>
                             <div class="col-12 mb-4">
                                 </div>
@@ -302,7 +293,7 @@
     
 </body>
 
-
+{{-- plus --}}
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
@@ -317,24 +308,22 @@
             var url = '{{ url('updateQuantity') }}';
             var test = $("#btnField").attr("value");
             
-            
+            //alert(test);
 
             $.ajax({
                     url: url,
                     method:'POST',
                     async: false,
                     data:{
-                        test:test
+                        test:test,
+                        plus:1
                     },
                     
-                    
-                    success:function(response)
-                    {
-                        alert(response.newdata);
-                        if(respone.success)
-                        {
-                            
-                            document.GetElemenById("btnField").value = response.messenger;
+                    success:function(response){
+                        if(response.success){
+                            console.log(response.message); //Message come from controller
+
+                            $('#btnField').attr("value", response.message)
                         }
                         else{ alert("Error")}
 
@@ -350,13 +339,53 @@
 
 </script>
 
+{{-- minus --}}
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 
+    $(document).on("click" , "#btnPrv", 
+        function(e)
+        {
+            e.preventDefault();
+            var url = '{{ url('updateQuantity') }}';
+            var test = $("#btnField").attr("value");
+            
+            //alert(test);
 
+            $.ajax({
+                    url: url,
+                    method:'POST',
+                    async: false,
+                    data:{
+                        test:test,
+                        plus:0
+                    },
+                    
+                    success:function(response){
+                        if(response.success){
+                            console.log(response.message); //Message come from controller
 
+                            $('#btnField').attr("value", response.message)
+                        }
+                        else{ alert("Error")}
 
+                    },
+                    error:function(error)
+                    {
+                        console.log(error)
+                    }
 
+                });
 
+        });
 
+</script>
+
+{{-- favorite --}}
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
