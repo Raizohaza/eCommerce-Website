@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ccd9d3c7dd3b2a9f7e08e195f9689049127e6fcb',
+    'reference' => 'e8b1f2105720686fe41aaaee9001e99c727f140f',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -19,6 +19,15 @@
       array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
+    ),
+    'bensampo/laravel-enum' => 
+    array (
+      'pretty_version' => 'v3.2.0',
+      'version' => '3.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a16fa6d9d1646b9fe52c5c91add6bc452c8baa8d',
     ),
     'brick/math' => 
     array (
@@ -204,6 +213,15 @@
       array (
       ),
       'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+    ),
+    'hanneskod/classtools' => 
+    array (
+      'pretty_version' => '1.2.1',
+      'version' => '1.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd365ddac0e602027c0471ea292f4ba2afcb49394',
     ),
     'illuminate/auth' => 
     array (
@@ -429,6 +447,33 @@
         0 => '*',
       ),
     ),
+    'laminas/laminas-code' => 
+    array (
+      'pretty_version' => '3.5.1',
+      'version' => '3.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b549b70c0bb6e935d497f84f750c82653326ac77',
+    ),
+    'laminas/laminas-eventmanager' => 
+    array (
+      'pretty_version' => '3.3.0',
+      'version' => '3.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1940ccf30e058b2fd66f5a9d696f1b5e0027b082',
+    ),
+    'laminas/laminas-zendframework-bridge' => 
+    array (
+      'pretty_version' => '1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6ede70583e101030bcace4dcddd648f760ddf642',
+    ),
     'laravel/framework' => 
     array (
       'pretty_version' => 'v8.14.0',
@@ -445,7 +490,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ccd9d3c7dd3b2a9f7e08e195f9689049127e6fcb',
+      'reference' => 'e8b1f2105720686fe41aaaee9001e99c727f140f',
     ),
     'laravel/tinker' => 
     array (
@@ -1270,6 +1315,20 @@
       array (
       ),
       'reference' => 'bafc69caeb4d49c39fd0779086c03a3738cbb389',
+    ),
+    'zendframework/zend-code' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^3.4.1',
+      ),
+    ),
+    'zendframework/zend-eventmanager' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '^3.2.1',
+      ),
     ),
   ),
 );

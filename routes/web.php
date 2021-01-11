@@ -65,9 +65,8 @@ Route::group(['middleware'  => ['auth','admin']], function() {
  
 });
 Auth::routes(['verify' => true]);
-// Route::get('/', function () {return view('home');})->middleware('verified');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
 
 Route::get('/category', [App\Http\Controllers\CategoryController::class, 'init']);
 
