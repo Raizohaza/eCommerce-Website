@@ -37,9 +37,9 @@
     <div class="row mb-4">
     <div class="col-sm-12">
         <div class="breadcrumb">
-            <a href="../"><i class="icon fa fa-home"></i></a>
-            <span class="mx-2 mb-0">/</span>
-            <a href="./">Home</a>
+            <a href="./"><i class="icon fa fa-home"></i></a>
+            
+           
             <span class="mx-2 mb-0">/</span>
             <a href="./favorite">Danh sách sản phẩm yêu thích</strong>
         </div>
@@ -57,7 +57,7 @@
                         
                             <div class="col-lg-2 col-md-4 col-6 welcome-image">
                                     <div class="boxhny13">
-                                    <a href="../category/product/{{ $data_product->id }}">
+                                    <a href="category/product/{{ $data_product->id }}">
                                                 <img src="{{asset('/frontend/assets/images/')}}/{{$data_product->Image}}" class="img-fluid" alt="" />
                                                 <div class="boxhny-content">
                                                     <h3 class="title">View</h3>
@@ -65,7 +65,7 @@
                                             </a>
                                             
                                     </div>
-                                    <h4><a href="../category/product/{{ $data_product->id }}">{{$data_product->Name}}</a></h4>
+                                    <h4><a href="category/product/{{ $data_product->id }}">{{$data_product->Name}}</a></h4>
 
                             </div>
                         @endforeach

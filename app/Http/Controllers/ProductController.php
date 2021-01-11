@@ -78,12 +78,30 @@ class ProductController extends Controller
         ->select('product_images.*')
         ->get();
         //var_dump($data_images);
-        echo $iduser;
-        echo ($getProductId);
+        //echo $iduser;
+        //echo ($getProductId);
         $data_favorite =DB::table('favorites')->where('ProductId',$getProductId)->where('UserId',$iduser)
         ->select('favorites.*')->first();
+        //var_dump($data_favorite);
 
-        var_dump($data_favorite);
+        if($data_favorite == null)    
+        {
+            $data = array(
+            'ProductId'=>$id,
+            'Liked'=>0,
+            'UserId'=>$iduser,
+            'created_at'=>null,
+            'updated_at'=>null
+            );
+            $favorite = Favorite::insert($data);
+            //var_dump($favorite);
+            $data_favorite =DB::table('favorites')->where('ProductId',$getProductId)->where('UserId',$iduser)
+            ->select('favorites.*')->first();
+        }
+        //$pid =(int) $data['ProductId'];
+        
+
+        
         $data_commnent =DB::table('commnents')
         ->join('products', 'products.id', '=' , 'commnents.ProductId')
         ->join('users', 'users.id' , '=' , 'commnents.UserId')

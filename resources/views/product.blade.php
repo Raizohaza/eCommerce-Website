@@ -102,24 +102,33 @@
                     <div class="row mt-4">
                             <div class="col-12 mb-2">
                                 <div>
-                                @isset ($data_favorite)
+                                
                                 <b class="redd">Yêu thích: </b>
                                  <h3>
+                                 <p> {{$data_favorite->Liked}} </p>
+                                 @if ($data_favorite->Liked == 1)
                                     <a id="favField" name="{{$data_product->id}}/1" data-tip="Favorite">
+                                    
                                         <span id="redheart" class="fa fa-heart redd "></span>
+                                       
+                                      
+                                       
                                     </a>
+                                    @else
+                                    <a id="favField" name="{{$data_product->id}}/0" data-tip="Favorite">
+                                    
+                                        
+                                       
+                                        <span id="redheart" class="fa fa-heart "></span>
+                                       
+                                    </a>
+                                    @endif
                                 </h3>
-                     
                                 
-                                @endisset
-                                @empty($data_favorite)
-                                <b>Yêu thích: </b>
-                                 <h3>
-                                    <a id="favField" name="{{$data_product->id}}/0" data-tip="disFavorite">
-                                        <span class="fa fa-heart "></span>
-                                    </a>
-                                </h3>
-                                @endempty
+                        
+                
+                               
+                               
                                 
                                 
                                 
@@ -313,11 +322,12 @@
 
         var liked = res[1];
 
-        alert(liked);
+       // alert(liked);
 
         $.ajax({
            url:url,
            method:'POST',
+           async: false,
            data:{
                     ProductId: pid,
                     Liked: liked
@@ -327,16 +337,17 @@
                 console.log(response.message); //Message come from controller
                 
                 
-                if (response.message == 0 )
-                    {
-                        document.getElementById("redheart").classList.remove('redd');
-                        document.getElementById("favField").name = "{{$data_product->id}}/0" ;
-                    }
-                else 
+                if (response.message == 1)
                     {
                         document.getElementById("redheart").classList.add('redd');
                     
                         document.getElementById("favField").name = "{{$data_product->id}}/1" ;
+                    }
+                else 
+                    {
+                        
+                        document.getElementById("redheart").classList.remove('redd');
+                        document.getElementById("favField").name = "{{$data_product->id}}/0" ;
                     }
               }else{
                   alert("Error")

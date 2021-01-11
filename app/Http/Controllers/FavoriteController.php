@@ -80,6 +80,7 @@ class FavoriteController extends Controller
         ->join('users','favorites.UserId', '=', 'users.id')
         ->join('products', 'favorites.ProductId', '=', 'products.id')
         ->select('products.*','favorites.Liked')
+        ->distinct()
         ->get();
 
         //var_dump($data_favorite);
