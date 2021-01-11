@@ -37,7 +37,11 @@ class HomeController extends BaseController
      */
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
+        // if(Auth::id()==NULL)
+        //     // {
+        //     //     $this->middleware('guest')->except('logout');
+        //     // }
+        //         $this->middleware(['auth','verified']);
     }
 
         /**
@@ -105,6 +109,11 @@ class HomeController extends BaseController
     public function index()
     {
         return view('home');
+    }
+
+    public function indexi()
+    {
+        return view('welcome');
     }
 
     public function init()

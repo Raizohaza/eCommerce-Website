@@ -8,7 +8,8 @@ use App\Models\Commnent;
 use App\Models\User;
 use App\Models\Product_image;
 use Illuminate\Http\Request;
-
+use App\Enums\Status;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\DB;
@@ -128,22 +129,17 @@ class ProductController extends Controller
         $products->Name = $request->Name;
         $products->Price = $request->Price;
         $products->Description = $request->Description;
-        
+                
         // $products->Catid = $request->Catid;
+        // foreach ($request->files as $key => $value) {
+        //     $imageName = uniqid() . time();
+        //     $image = Image::make($request->$key);
+        //     $image->save($this->getSaveImagePath() . "{$imageName}.jpg");
+        //     $image->destroy();
 
-        if($request->hasFile('Image'))
-        {
-            // Xóa hình cũ để tránh rác
-            Storage::delete('public/frontend/images/' . $products->Image);
+        //     $product->$key = $imageName;
+        // }
 
-            // Upload hình mới
-            // Lưu tên hình vào column sp_hinh
-            $file = $request->Image;
-            $products->Image = $file->getClientOriginalName();
-            
-            // Chép file vào thư mục "photos"
-            $fileSaved = $file->storeAs('public/frontend/images/', $products->Image);
-        }
         $products->update();
 
         return redirect()->route('admin.producter');
@@ -161,7 +157,7 @@ class ProductController extends Controller
         if(empty($products) == false)
         {
             // Xóa hình cũ để tránh rác
-            assets::delete('public/frontend/images/' . $products->Image);
+            Storage::delete('public/frontend/assets/images/' . $products->Image);
         }
 
         $products->delete();
