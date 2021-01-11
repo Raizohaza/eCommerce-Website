@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 
-use App\Models\Product_Images;
+use App\Models\Product_image;
 
 class Product_ImagesController extends Controller
 {
@@ -211,497 +211,497 @@ class Product_ImagesController extends Controller
         $data2 = array(
             array(
                 'Name'=>"T01-1.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"11"
             ),
             array(
                 'Name'=>"T01-2.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"11"
             ),
             array(
                 'Name'=>"T01-3.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"11"
             ),
             array(
                 'Name'=>"T02-1.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"12"
             ),
             array(
                 'Name'=>"T02-2.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"12"
             ),
             array(
                 'Name'=>"T02-3.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"12"
             ),
             array(
                 'Name'=>"T03-1.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"13"
             ),
             array(
                 'Name'=>"T03-2.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"13"
             ),
             array(
                 'Name'=>"T03-3.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"13"
             ),
             array(
                 'Name'=>"T04-1.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"14"
             ),
             array(
                 'Name'=>"T04-2.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"14"
             ),
             array(
                 'Name'=>"T04-3.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"14"
             ),
             array(
                 'Name'=>"T05-1.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"15"
             ),
             array(
                 'Name'=>"T05-2.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"15"
             ),
             array(
                 'Name'=>"T05-3.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"15"
             ),
             array(
                 'Name'=>"T06-1.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"16"
             ),
             array(
                 'Name'=>"T06-2.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"16"
             ),
             array(
                 'Name'=>"T06-3.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"16"
             ),
             array(
                 'Name'=>"T07-1.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"17"
             ),
             array(
                 'Name'=>"T07-2.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"17"
             ),
             array(
                 'Name'=>"T07-3.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"17"
             ),
             array(
                 'Name'=>"T08-1.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"18"
             ),
             array(
                 'Name'=>"T08-2.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"18"
             ),
             array(
                 'Name'=>"T08-3.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"18"
             ),
             array(
                 'Name'=>"T09-1.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"19"
             ),
             array(
                 'Name'=>"T09-2.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"19"
             ),
             array(
                 'Name'=>"T09-3.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"19"
             ),
             array(
                 'Name'=>"T10-1.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"20"
             ),
             array(
                 'Name'=>"T10-2.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"20"
             ),
             array(
                 'Name'=>"T10-3.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"20"
             ),
         );
         $data3 = array(
             array(
                 'Name'=>"M01-1.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"21"
             ),
             array(
                 'Name'=>"M01-2.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"21"
             ),
             array(
                 'Name'=>"M01-3.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"21"
             ),
             array(
                 'Name'=>"M02-1.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"22"
             ),
             array(
                 'Name'=>"M02-2.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"22"
             ),
             array(
                 'Name'=>"M02-3.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"22"
             ),
             array(
                 'Name'=>"M03-1.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"23"
             ),
             array(
                 'Name'=>"M03-2.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"23"
             ),
             array(
                 'Name'=>"M03-3.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"23"
             ),
             array(
                 'Name'=>"M04-1.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"24"
             ),
             array(
                 'Name'=>"M04-2.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"24"
             ),
             array(
                 'Name'=>"M04-3.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"24"
             ),
             array(
                 'Name'=>"M05-1.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"25"
             ),
             array(
                 'Name'=>"M05-2.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"25"
             ),
             array(
                 'Name'=>"M05-3.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"25"
             ),
             array(
                 'Name'=>"M06-1.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"26"
             ),
             array(
                 'Name'=>"M06-2.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"26"
             ),
             array(
                 'Name'=>"M06-3.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"26"
             ),
             array(
                 'Name'=>"M07-1.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"27"
             ),
             array(
                 'Name'=>"M07-2.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"27"
             ),
             array(
                 'Name'=>"M07-3.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"27"
             ),
             array(
                 'Name'=>"M08-1.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"28"
             ),
             array(
                 'Name'=>"M08-2.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"28"
             ),
             array(
                 'Name'=>"M08-3.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"28"
             ),
             array(
                 'Name'=>"M09-1.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"29"
             ),
             array(
                 'Name'=>"M09-2.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"29"
             ),
             array(
                 'Name'=>"M09-3.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"29"
             ),
             array(
                 'Name'=>"M10-1.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"30"
             ),
             array(
                 'Name'=>"M10-2.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"30"
             ),
             array(
                 'Name'=>"M10-3.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"30"
             ),
         );
         $data4 = array(
             array(
                 'Name'=>"G01-1.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"31"
             ),
             array(
                 'Name'=>"G01-2.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"31"
             ),
             array(
                 'Name'=>"G01-3.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"31"
             ),
             array(
                 'Name'=>"G02-1.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"32"
             ),
             array(
                 'Name'=>"G02-2.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"32"
             ),
             array(
                 'Name'=>"G02-3.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"32"
             ),
             array(
                 'Name'=>"G03-1.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"33"
             ),
             array(
                 'Name'=>"G03-2.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"33"
             ),
             array(
                 'Name'=>"G03-3.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"33"
             ),
             array(
                 'Name'=>"G04-1.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"34"
             ),
             array(
                 'Name'=>"G04-2.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"34"
             ),
             array(
                 'Name'=>"G04-3.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"34"
             ),
             array(
                 'Name'=>"G05-1.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"35"
             ),
             array(
                 'Name'=>"G05-2.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"35"
             ),
             array(
                 'Name'=>"G05-3.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"35"
             ),
             array(
                 'Name'=>"G06-1.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"36"
             ),
             array(
                 'Name'=>"G06-2.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"36"
             ),
             array(
                 'Name'=>"G06-3.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"36"
             ),
             array(
                 'Name'=>"G07-1.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"37"
             ),
             array(
                 'Name'=>"G07-2.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"37"
             ),
             array(
                 'Name'=>"G07-3.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"37"
             ),
             array(
                 'Name'=>"G08-1.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"38"
             ),
             array(
                 'Name'=>"G08-2.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"38"
             ),
             array(
                 'Name'=>"G08-3.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"38"
             ),
             array(
                 'Name'=>"G09-1.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"39"
             ),
             array(
                 'Name'=>"G09-2.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"39"
             ),
             array(
                 'Name'=>"G09-3.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"39"
             ),
             array(
                 'Name'=>"G10-1.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"40"
             ),
             array(
                 'Name'=>"G10-2.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"40"
             ),
             array(
                 'Name'=>"G10-3.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"40"
             ),
         );
         $data5 = array(
             array(
                 'Name'=>"X01-1.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"41"
             ),
             array(
                 'Name'=>"X01-2.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"41"
             ),
             array(
                 'Name'=>"X01-3.JPG",
-                'ProductId'=>"1"
+                'ProductId'=>"41"
             ),
             array(
                 'Name'=>"X02-1.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"42"
             ),
             array(
                 'Name'=>"X02-2.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"42"
             ),
             array(
                 'Name'=>"X02-3.JPG",
-                'ProductId'=>"2"
+                'ProductId'=>"42"
             ),
             array(
                 'Name'=>"X03-1.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"43"
             ),
             array(
                 'Name'=>"X03-2.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"43"
             ),
             array(
                 'Name'=>"X03-3.JPG",
-                'ProductId'=>"3"
+                'ProductId'=>"43"
             ),
             array(
                 'Name'=>"X04-1.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"44"
             ),
             array(
                 'Name'=>"X04-2.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"44"
             ),
             array(
                 'Name'=>"X04-3.JPG",
-                'ProductId'=>"4"
+                'ProductId'=>"44"
             ),
             array(
                 'Name'=>"X05-1.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"45"
             ),
             array(
                 'Name'=>"X05-2.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"45"
             ),
             array(
                 'Name'=>"X05-3.JPG",
-                'ProductId'=>"5"
+                'ProductId'=>"45"
             ),
             array(
                 'Name'=>"X06-1.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"46"
             ),
             array(
                 'Name'=>"X06-2.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"46"
             ),
             array(
                 'Name'=>"X06-3.JPG",
-                'ProductId'=>"6"
+                'ProductId'=>"46"
             ),
             array(
                 'Name'=>"X07-1.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"47"
             ),
             array(
                 'Name'=>"X07-2.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"47"
             ),
             array(
                 'Name'=>"X07-3.JPG",
-                'ProductId'=>"7"
+                'ProductId'=>"47"
             ),
             array(
                 'Name'=>"X08-1.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"48"
             ),
             array(
                 'Name'=>"X08-2.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"48"
             ),
             array(
                 'Name'=>"X08-3.JPG",
-                'ProductId'=>"8"
+                'ProductId'=>"48"
             ),
             array(
                 'Name'=>"X09-1.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"49"
             ),
             array(
                 'Name'=>"X09-2.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"49"
             ),
             array(
                 'Name'=>"X09-3.JPG",
-                'ProductId'=>"9"
+                'ProductId'=>"49"
             ),
             array(
                 'Name'=>"X10-1.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"50"
             ),
             array(
                 'Name'=>"X10-2.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"50"
             ),
             array(
                 'Name'=>"X10-3.JPG",
-                'ProductId'=>"10"
+                'ProductId'=>"50"
             ),
         );
-        //Product_Images::insert($data);
-        //Product_Images::insert($data2);
-        //Product_Images::insert($data3);
-        //Product_Images::insert($data4);
-        Product_Images::insert($data5);
-        $test =Product_Images::all();
+        Product_image::insert($data);
+        Product_image::insert($data2);
+        Product_image::insert($data3);
+        Product_image::insert($data4);
+        Product_image::insert($data5);
+        $test =Product_image::all();
         echo $test;
     }
 }

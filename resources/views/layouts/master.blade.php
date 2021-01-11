@@ -29,7 +29,7 @@
       <div class="logo">
         
         <!--<img src="{{ URL::to('/assets/img/log.jpg') }}" width="100" height="100">
-        --><h3>Admin-Panel </h3>
+        --><h3>Admin-Panel</h3>
         <!--<a href="http://www.creative-tim.com" class="simple-text logo-mini">
           CT
         </a>

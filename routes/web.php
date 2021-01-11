@@ -73,6 +73,8 @@ Route::get('/category', [App\Http\Controllers\CategoryController::class, 'init']
 
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'init']);
 
+Route::get('/product_images', [App\Http\Controllers\Product_ImagesController::class, 'init']);
+
 Route::get('/category/{id}', [App\Http\Controllers\CategoryController::class, 'show']);
 
 Route::get('/favorite', [App\Http\Controllers\FavoriteController::class, 'show']);

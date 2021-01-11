@@ -6,7 +6,6 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Commnent;
 use App\Models\User;
-use App\Models\Product_Images;
 use App\Models\Product_image;
 use Illuminate\Http\Request;
 
@@ -65,14 +64,19 @@ class ProductController extends Controller
     {
         //echo $id;
         $nameuser = Auth::user()->name;
-
+        $iduser = Auth::user()->id;
+        $getProductId = $id;
+        //echo $getProductId;
         $data_product = Product::find($id);
 
         $category = Category::find($data_product->Catid);
 
 
-        $data_images = Product_image::join('products', 'products.id', '=' , 'product_images.ProductId')->where('product_images.ProductId', $id)
-        ->get(['product_images.*']);
+
+        $data_images = DB::table('product_images')->where('product_images.ProductId' , '=', $getProductId)
+        ->select('product_images.*')
+        ->get();
+        //var_dump($data_images);
 
         $data_favorite =DB::table('favorites')
                 ->join('users','favorites.UserId', '=', 'users.id')
@@ -90,7 +94,7 @@ class ProductController extends Controller
 
         
         
-        return view('product', compact('data_product','data_images','data_favorite', 'data_commnent', 'nameuser', 'category'));
+        return view('product', compact('data_product','data_images','data_favorite', 'data_commnent', 'nameuser', 'iduser', 'category'));
     }
 
     /**

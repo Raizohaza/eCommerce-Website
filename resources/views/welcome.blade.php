@@ -122,11 +122,17 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href='./favorite'>Sản phẩm Yêu thích</a>
                                         </li>
-
-                                        
-                                        <li class="nav-item">
+                                    @if($getUserId != null)
+                                    <li class="nav-item">
                                             <a href="{{ route('register') }}" class="nav-link">Đăng xuất</a>
-                                        </li>
+                                    </li>
+                                    @else
+                                    <li class="nav-item">
+                                            <a href="{{ route('register') }}" class="nav-link">Đăng nhập</a>
+                                    </li>
+                                    @endif
+                                        
+                                       
                                     </ul>
 
                                 </div>
@@ -217,9 +223,7 @@
                         <!--//banner-slider-->
                         <div class="right-banner">
                             <div class="right-1">
-                                <p>
-                                    Hàng loạt các trang phục HOT đang chờ bạn
-                                    <br>Meow~ ngay</p>
+                                
                             </div>
                         </div>
 
