@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="Description">Tên sản phẩm</label>
+                                <label for="Description">Description</label>
                                 <input type="text" class="form-control" id="Description" name="Description" value="{{ old('Description', $products->Description) }}">
                             </div>
                             <div class="form-group">
