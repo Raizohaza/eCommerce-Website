@@ -291,28 +291,28 @@
 
 @foreach($data_new as $data)
    
- <div class="col-lg-3 col-6 product-incfhny mt-4">
-     <div class="product-grid2 transmitv">
-         <div class="product-image2">
-        
-             <a href="./category/product/{{ $data->id }}">
-                 <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-                 <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
-             </a>
-             <ul class="social">
-                     <li ><a href="./category/product/{{ $data->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-                     </li>
-             </ul>
-         </div>
-         <div class="product-content">
-             <p class="tittle"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></p>
-             <span class="price">{{$data->Price}}</span>
-         </div>
-     </div>
- </div>
+                            <div class="col-lg-3 col-6 product-incfhny mt-4">
+                                <div class="product-grid2 transmitv">
+                                    <div class="product-image2">
+                                    
+                                        <a href="./category/product/{{ $data->id }}">
+                                            <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                                            <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                                        </a>
+                                        <ul class="social">
+                                                <li ><a href="./category/product/{{ $data->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-content">
+                                        <p class="tittle"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></p>
+                                        <span class="price">{{$data->Price}}</span>
+                                    </div>
+                                </div>
+                            </div>
     
  @endforeach  
-</div>
+                        </div>
                                                  
                        
                         <!-- //row-->
@@ -321,46 +321,41 @@
             </section>
             <!-- //products-->
           
-            <section id="spFav" class="w3l-ecommerce-main">
+            <section id="spHOT" class="w3l-ecommerce-main">
                 <!-- /products-->
                 <div class="ecom-contenthny py-5">
                     <div class="container py-lg-5">
-                        <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>Mới</span></h3>
-                        <p class="text-center">Những sản phẩm thời trang mới nhất</p>
+                        <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>Yêu Thích Nhất</span></h3>
+                            <p class="text-center">Những sản phẩm thời trang mới nhất</p>
                         <!-- /row-->
 
-                       
-                       
-                           <div class="ecom-products-grids row mt-lg-5 mt-3">
+                        <div class="ecom-products-grids row mt-lg-5 mt-3">
 
-                           @foreach($data_new as $fa)
-                           
-                                
+@foreach($data_favorite as $data)
+   
                             <div class="col-lg-3 col-6 product-incfhny mt-4">
                                 <div class="product-grid2 transmitv">
                                     <div class="product-image2">
-                                        <a href="./category/product/{{ $fa->id }}">
-                                            <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$fa->Image}}">
-                                            <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$fa->Image}}">  
+                                    
+                                        <a href="./category/product/{{ $data->id }}">
+                                            <img class="pic-1 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
+                                            <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
                                         </a>
-                                      
                                         <ul class="social">
-                                                <li ><a href="./category/product/{{ $fa->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+                                                <li ><a href="./category/product/{{ $data->id }}"  data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
                                                 </li>
                                         </ul>
-                                    
-                                    
-                                        </div>
                                     </div>
                                     <div class="product-content">
-                                        <p class="title"><a href="./category/product/{{ $data->id }}">{{ $fa->Name }} </a></p>
-                                        <span class="price">{{$fa->Price}}</span>
+                                        <p class="tittle"><a href="./category/product/{{ $data->id }}">{{ $data->Name }} </a></p>
+                                        <span class="price">{{$data->Price}}</span>
                                     </div>
                                 </div>
                             </div>
-                                
-                            @endforeach  
+    
+ @endforeach  
                         </div>
+                                                 
                        
                         <!-- //row-->
                     </div>

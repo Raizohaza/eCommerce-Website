@@ -132,8 +132,8 @@ class HomeController extends BaseController
                 ->join('users','favorites.UserId', '=', 'users.id')
                 ->join('products', 'favorites.ProductId', '=', 'products.id')
                 ->select('products.*')
+                ->distinct()
                 ->get();
-        
         
 
 

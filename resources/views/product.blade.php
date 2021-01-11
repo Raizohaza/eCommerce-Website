@@ -105,7 +105,7 @@
                                 
                                 <b class="redd">Yêu thích: </b>
                                  <h3>
-                                 <p> {{$data_favorite->Liked}} </p>
+                                 
                                  @if ($data_favorite->Liked == 1)
                                     <a id="favField" name="{{$data_product->id}}/1" data-tip="Favorite">
                                     
@@ -136,11 +136,11 @@
                                 <br>
                                 <br>
                                 <div class="group-input">
-                                    <button class="disable">
+                                    <button class="disable" id="btnPrv">
                                         <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-remove.svg">
                                     </button>
-                                        <input type="text" class="input" value="1">
-                                    <button>
+                                        <input type="text" id="btnField" class="input" value="1">
+                                    <button id="btnNext">
                                         <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-add.svg">
                                     </button>
                                         
@@ -301,6 +301,62 @@
     </div>
     
 </body>
+
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $(document).on("click" , "#btnNext", 
+        function(e)
+        {
+            e.preventDefault();
+            var url = '{{ url('updateQuantity') }}';
+            var test = $("#btnField").attr("value");
+            
+            
+
+            $.ajax({
+                    url: url,
+                    method:'POST',
+                    async: false,
+                    data:{
+                        test:test
+                    },
+                    
+                    
+                    success:function(response)
+                    {
+                        alert(response.newdata);
+                        if(respone.success)
+                        {
+                            
+                            document.GetElemenById("btnField").value = response.messenger;
+                        }
+                        else{ alert("Error")}
+
+                    },
+                    error:function(error)
+                    {
+                        console.log(error)
+                    }
+
+                });
+
+        });
+
+</script>
+
+
+
+
+
+
+
+
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {

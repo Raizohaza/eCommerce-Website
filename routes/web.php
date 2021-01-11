@@ -90,3 +90,5 @@ Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'ajaxReques
 Route::post('updatePurchase', [App\Http\Controllers\PurchaseController::class, 'ajaxRequestUpdatePurchase']);
 
 Route::post('updateProduct', [App\Http\Controllers\ProductController::class, 'ajaxRequestUpdatePurchase']);
+
+Route::post('updateQuantity', [App\Http\Controllers\ProductController::class, 'ajaxRequestUpdateQuantity']);

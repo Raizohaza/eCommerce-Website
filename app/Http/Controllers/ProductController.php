@@ -249,6 +249,52 @@ class ProductController extends Controller
         );
     }
 
+
+
+    public function ajaxRequestUpdateQuantity(Request $request)
+    {
+        try{
+            if($request->test <= 1)
+            {
+                $mgs= json_encode(1);
+                echo $mgs;
+            }else
+            {
+                $temp = $request->test;
+                echo $temp;
+            }
+        }catch(Exception $ex)
+        {
+            $msg = $ex->getMessenger();
+        }
+        
+
+
+
+
+
+        return response()->json(
+            [
+                'success' => true,
+                'message' => $mgs,
+                'newdata' => $temp,
+            ]
+        );
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function init()
     {
         $data = array(
