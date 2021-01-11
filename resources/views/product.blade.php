@@ -61,6 +61,9 @@
             .redd{
     color: #E00B0B 
 }
+.blcacktext {
+	color: #000000;
+}
             .midd{
                 width: 400px;
   height: 120px;
@@ -100,6 +103,7 @@
                 <div class="mb-4">
                     <img class="img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data_product->Image}}" alt="{{$data_product->Name}}" />
                 </div>
+                
 
 
             </div>
@@ -125,8 +129,42 @@
                         <!-- <h5 class="text-black display-6"><span>Tiết kiệm <span class="">-50,000 đ</span></span></h5> -->
                     <div class="row mt-4">
                             <div class="col-12 mb-2">
-                                <b>...</b><br />
-                                <span class="small">{{$data_product->Quantity}}</span>
+                                <div>
+                                @foreach($data_favorite as $check)
+                                                     
+                                @if($data_product->id == $check->id)
+                                <b class="redd">Yêu thích: </b> <h3><a id="favField" href="../../category/product/{{$data_product->id}}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a></h3>
+                                                
+                                @else
+                                <b>Yêu thích: </b> <h3><a id="favField" href="../../category/product/{{$data_product->id}}" data-tip="Favorite"><span class="fa fa-heart "></span></a></h3>
+                                                    
+                                @endif
+                                @endforeach
+                                
+                                </div>
+                                <br>
+                                <br>
+                                <div class="group-input">
+                                    <button class="disable">
+                                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-remove.svg">
+                                    </button>
+                                        <input type="text" class="input" value="1">
+                                    <button>
+                                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-add.svg">
+                                    </button>
+                                        
+                                </div>
+<br><br>
+                                <div class="galssescart2 cart cart box_1">
+                                        <form action="Cart" method="get" >
+                                            <button class="top_transmitv_cart" type="submit" name="submit" value="">
+                                                <span class="blacktext"> Cart </span>
+                                                <span class="fa fa-shopping-cart"></span>
+                                                                                          
+                                            </button>
+                                        </form>
+                                    
+                                </div>
                             </div>
                             <div class="col-12 mb-4">
                                 
@@ -140,16 +178,7 @@
                          {{$data_product->Description}}                     
                     </div>
                     <br><br>
-                    @foreach($data_favorite as $check)
-                                                     
-            @if($data_product->id == $check->id)
-                    <h3><a id="favField" href="../../category/product/{{$data_product->id}}" data-tip="Favorite"><span class="fa fa-heart redd "></span></a></h3>
-                                                
-            @else
-                    <h3><a id="favField" href="../../category/product/{{$data_product->id}}" data-tip="Favorite"><span class="fa fa-heart "></span></a></h3>
-                                                    
-            @endif
-        @endforeach
+                    
                                                 
             </div>
         </div>
@@ -206,7 +235,7 @@
                                                             <p id="field" class="feedback-para">				
                                                             </p>
                                                             <input type="text" id="fname" name="fname">
-                                                            <input type="submit" value="Submit">
+                                                            <input type="submit" value="Commnent">
                                                         </div>
                                                     </form>
                                                         <div class="feedback-review mt-4">

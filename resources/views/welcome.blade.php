@@ -243,7 +243,7 @@
                                             <a href="./category/{{ $category->id }}">
                                                 <img src="{{ asset('/frontend/assets/images/')}}/{{$category->Name}}.jpg" class="img-fluid" alt="" />
                                                 <div class="boxhny-content">
-                                                    <h3 class="title">View</h3>
+                                                    <a href="./category/{{ $category->id }}"  class="title">View</h3>
                                                 </div>
                                             </a>
                                     </div>
