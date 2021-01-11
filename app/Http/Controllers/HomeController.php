@@ -111,10 +111,10 @@ class HomeController extends BaseController
         return view('home');
     }
 
-    public function indexi()
-    {
-        return view('welcome');
-    }
+    // public function indexi()
+    // {
+    //     return view('welcome');
+    // }
 
     public function init()
     {

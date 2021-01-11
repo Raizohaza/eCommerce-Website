@@ -23,7 +23,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="xFnIbRiqlbUWt2-5yqv6TejVhQ1oYB1hZiZ1jRXLzHw" />
-    <link rel="icon" type="image/png" href="http://localhost/project-ltw1\public\frontend\assets\images\icon.jpg">
+    <link rel="icon" type="image/png" href="{{asset('/frontend/assets/images/icon.jpg')}}">
 
     <title>Meow~Meow Store</title>
     
@@ -103,8 +103,6 @@
                 <div class="mb-4">
                     <img class="img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data_product->Image}}" alt="{{$data_product->Name}}" />
                 </div>
-                
-
 
             </div>
             <div class="col-3">
@@ -159,8 +157,7 @@
                                         <form action="Cart" method="get" >
                                             <button class="top_transmitv_cart" type="submit" name="submit" value="">
                                                 <span class="blacktext"> Cart </span>
-                                                <span class="fa fa-shopping-cart"></span>
-                                                                                          
+                                                <span class="fa fa-shopping-cart"></span>                                                                                        
                                             </button>
                                         </form>
                                 </div>

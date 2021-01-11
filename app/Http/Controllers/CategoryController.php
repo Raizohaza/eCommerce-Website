@@ -62,10 +62,14 @@ class CategoryController extends Controller
     public function show($id)
     {
         //echo $id;
+        $soluong = Category::max('id');
+        $soluong2 = Category::max('id') / 8;
+
         $data_category = Product::join('categories', 'products.Catid', '=' , 'categories.id')->where('products.Catid', $id)
-        ->get(['products.*']);
+        ->select('products.*')->get();
 
         $category = Category::find($id);
+
 
         $data_favorite =DB::table('favorites')
                 ->join('users','favorites.UserId', '=', 'users.id')
@@ -73,7 +77,7 @@ class CategoryController extends Controller
                 ->select('products.*','favorites.Liked')
                 ->get();
         //echo $data_category;
-        return view('category', compact('data_category', 'data_favorite', 'category'));
+        return view('category',  compact('data_category', 'data_favorite', 'category', 'soluong' , 'soluong2'));
     }
 
     /**

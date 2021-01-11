@@ -109,6 +109,9 @@ class PurchaseController extends Controller
             ->where('purchases.Status', '=','1')
             ->select('purchase_details.*','products.*')
             ->get();
+
+        $sum = DB::table('purchase_details')->sum('SubTotal');
+        
         $_purchaseId = -1;
         foreach($purchase_details as $item)
         {
@@ -116,7 +119,7 @@ class PurchaseController extends Controller
             break;
         }
         //if($purchase_details->Status == 2)
-        return view('cart', compact('purchase_details','_purchaseId'));
+        return view('cart', compact('purchase_details','_purchaseId', 'sum'));
     }
 
     public function ajaxRequestUpdatePurchase(Request $request)

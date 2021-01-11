@@ -5,7 +5,7 @@
        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" type="image/png" href="/project-ltw1\public\frontend\assets\images\icon.jpg">
+        <link rel="icon" type="image/png" href="{{asset('/frontend/assets/images/icon.jpg')}}">
         
         <title>Meow~Meow Store</title>
 
@@ -128,7 +128,7 @@
                                     </li>
                                     @else
                                     <li class="nav-item">
-                                            <a href="{{ route('register') }}" class="nav-link">Đăng nhập</a>
+                                            <a href="{{ route('login') }}" class="nav-link">Đăng nhập</a>
                                     </li>
                                     @endif
                                         
@@ -306,7 +306,7 @@
            
             
              <div class="transmitv single-item">
-             <form action="#" method="post">
+             <form action="Cart" method="post">
                      <input type="hidden" name="cmd" value="_cart">
                      <input type="hidden" name="add" value="1">
                      <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
@@ -363,7 +363,7 @@
                                         </ul>
                                     
                                         <div class="transmitv single-item">
-                                        <form action="#" method="post">
+                                        <form action="Cart" method="get">
                                                 <input type="hidden" name="cmd" value="_cart">
                                                 <input type="hidden" name="add" value="1">
                                                 <input type="hidden" name="transmitv_item" value="{{$fa->Name}}">

@@ -79,7 +79,7 @@
              </ul>
             
              <div class="transmitv single-item">
-             <form action="/cart" method="post">
+             <form action="./product/{{$data->id}}/Cart" method="get">
                      <input type="hidden" name="cmd" value="_cart">
                      <input type="hidden" name="add" value="1">
                      <input type="hidden" name="transmitv_item" value="{{$data->Name}}">
