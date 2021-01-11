@@ -81,6 +81,8 @@ class FavoriteController extends Controller
         ->join('products', 'favorites.ProductId', '=', 'products.id')
         ->select('products.*','favorites.Liked')
         ->get();
+
+        //var_dump($data_favorite);
         return view('/favorite', compact('data_favorite'));
     }
 

@@ -18,8 +18,7 @@ use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades;
 use Storage;
 
-use Illuminate\Support\Facades;
-use Storage;
+
 
 class ProductController extends Controller
 {

@@ -71,7 +71,7 @@
                  <img class="pic-2 img-fluid" src="{{ asset('/frontend/assets/images/')}}/{{$data->Image}}">
                  
              </a>
-        @foreach($data_favorite as $check)
+       
           
              <ul class="social">
                     
