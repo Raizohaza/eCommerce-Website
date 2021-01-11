@@ -88,3 +88,5 @@ Route::get('category/product/fav/{{id}}/{Liked}', [App\Http\Controllers\Admin\Fa
 Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'ajaxRequest']);
 
 Route::post('updatePurchase', [App\Http\Controllers\PurchaseController::class, 'ajaxRequestUpdatePurchase']);
+
+Route::post('updateProduct', [App\Http\Controllers\ProductController::class, 'ajaxRequestUpdatePurchase']);
