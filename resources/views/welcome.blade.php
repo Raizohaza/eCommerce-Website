@@ -113,10 +113,10 @@
                                             <a class="nav-link" href="#spCategory">Shop</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href='#spHOT'>Sản phẩm HOT</a>
+                                            <a class="nav-link" href='#spHOT'>Mới Nhất</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href='#spFav'>Mới</a>
+                                            <a class="nav-link" href='#spFav'>Yêu thích Nhất</a>
                                         </li>
 
                                         <li class="nav-item">
@@ -283,7 +283,7 @@
                 <!-- /products-->
                 <div class="ecom-contenthny py-5">
                     <div class="container py-lg-5">
-                        <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>HOT</span></h3>
+                        <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>Mới</span></h3>
                             <p class="text-center">Những sản phẩm thời trang mới nhất</p>
                         <!-- /row-->
 
@@ -326,7 +326,7 @@
                 <div class="ecom-contenthny py-5">
                     <div class="container py-lg-5">
                         <h3 class="hny-title mb-0 text-center">Top sản phẩm <span>Yêu Thích Nhất</span></h3>
-                            <p class="text-center">Những sản phẩm thời trang mới nhất</p>
+                            <p class="text-center">Những sản phẩm thời trang được yêu thích nhất</p>
                         <!-- /row-->
 
                         <div class="ecom-products-grids row mt-lg-5 mt-3">
