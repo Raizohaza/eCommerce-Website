@@ -73,6 +73,7 @@ class ProductController extends Controller
             $fileSaved = $file->storeAs('public/frontend/assets/images', $products->Image);
         }
         $products->save();
+        return view('admin.producter');
     }
 
     /**
