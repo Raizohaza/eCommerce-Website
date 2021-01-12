@@ -169,7 +169,7 @@ class ProductController extends Controller
             );
 
         }
-        var_dump($iduser);
+        //var_dump($iduser);
         return view('product', compact('data_product','data_images','data_favorite', 'data_commnent', 'data_purchase', 'data_purchase_detail', 'nameuser', 'iduser', 'category'));
     }
 
