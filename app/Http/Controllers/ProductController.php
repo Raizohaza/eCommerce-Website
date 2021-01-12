@@ -74,7 +74,7 @@ class ProductController extends Controller
             ->get();
 
         $data_commnent =DB::table('commnents')
-        ->join('products', 'products.id', '=' , 'commnents.ProductId')
+        ->where('commnents.ProductId',$getProductId)
         ->join('users', 'users.id' , '=' , 'commnents.UserId')
         ->select('commnents.*', 'users.name')
         ->get('commnents.*', 'products.id');
@@ -109,13 +109,27 @@ class ProductController extends Controller
             ->select('purchases.*')->firstOrCreate(['UserId' => $iduser]);
 
             //tim purchasedetail
-            $dataForPurDetail = array(
-                'PurchaseId'=>$data_purchase->id,
-                'ProductId'=>$getProductId,
-                'Unit_Price' => $data_product->Price,
-                'SubTotal' => $data_product->Price
-                );
-            
+            $data_purchase_detail = PurchaseDetail::where('PurchaseId',$data_purchase->id)
+            ->where('ProductId',$getProductId)->select('purchase_details.*')->first();
+            if(isset($data_purchase_detail->Quantity))
+            { 
+               $dataForPurDetail = array(
+                    'PurchaseId'=>$data_purchase->id,
+                    'ProductId'=>$getProductId,
+                    'Unit_Price' => $data_product->Price,
+                    'SubTotal' => $data_purchase_detail->SubTotal,
+                    'Quantity' => $data_purchase_detail->Quantity
+                    );
+            }
+            else
+            {
+                $dataForPurDetail = array(
+                    'PurchaseId'=>$data_purchase->id,
+                    'ProductId'=>$getProductId,
+                    'Unit_Price' => $data_product->Price,
+                    'SubTotal' => $data_product->Price
+                    );
+            }
             $data_purchase_detail = PurchaseDetail::select('purchase_details.*')
             ->firstOrCreate($dataForPurDetail);
         }
@@ -221,20 +235,15 @@ class ProductController extends Controller
                     
                 $data = array(
                     'ProductId'=>$request->ProductId,
-                    'Liked'=>0,
+                    'Liked'=>$request->Liked,
                     'UserId'=>$userId,
                     'created_at'=>null,
                     'updated_at'=>null
                 );
             
-                $pid =(int) $data['ProductId'];
-                $favorite = Favorite::updateOrCreate($data);
-                // $favorite = DB::table('favorites')
-                // ->where('ProductId','=',$pid)->where('UserId','=',$userId)
-                // ->select('favorites.*')
-                // ->get();
+                $favorite = Favorite::updateOrCreate(['ProductId'=>$request->ProductId],
+                ['Liked'=>$request->Liked],['UserId'=>$userId]);
 
-                //$favorite = Favorite::firstOrCreate($data);
                 if ($favorite->count() != 0)
                 {
                     if($request->Liked == 1)
@@ -275,16 +284,18 @@ class ProductController extends Controller
     public function ajaxRequestUpdateQuantity(Request $request)
     {
         $mgs = 'success';
+        $Quantity = $request->test;
         try{
             if($request->plus == 1)
             {
                 if($request->test < 1)
                 {
-                    $mgs= json_encode(1);
+                    //$mgs= json_encode(1);
+                    $Quantity = -1;
                     //echo $mgs;
                 }else
                 {
-                    $mgs = $request->test +1;
+                    $Quantity = $Quantity + 1;
                     //$mgs = $request->plus ;
 
                 }
@@ -293,18 +304,35 @@ class ProductController extends Controller
             {
                 if($request->test -1 < 1)
                 {
-                    $mgs= json_encode(1);
+                    //$mgs= json_encode(1);
+                    $Quantity = -1;
                     //echo $mgs;
                 }else
                 {
-                    $mgs = $request->test - 1;
+                    $Quantity = $Quantity- 1;
+                    
                     //$mgs = false;
 
                 }
             }
+            $mgs = $Quantity;
+            if($Quantity != -1)
+            {
+                $msg = $Quantity;
+                $PurchaseDetail = PurchaseDetail::find($request->PurchaseDetailId);
+                // $dataUpdate = array(
+                //     'id'=>$request->PurchaseDetailId,
+                //     'Quantity'=>$Quantity,
+                //     'SubTotal'=>$Quantity*$PurchaseDetail->Unit_Price
+                // );
+                
+                $PurchaseDetail->Quantity = $Quantity;
+                $PurchaseDetail->SubTotal = $Quantity*$PurchaseDetail->Unit_Price;
+                $PurchaseDetail->save();
+            }
         }catch(Exception $ex)
         {
-            $msg = $ex->getMessage();
+            $mgs = $ex->getMessage();
         }
         
         return response()->json(

@@ -206,7 +206,7 @@
                                                                     <p id="field" class="feedback-para">				
                                                                     </p>
                                                                     <input type="text" id="fname" name="fname">
-                                                                    <input type="submit" value="Commnent">
+                                                                    <input type="button" id="btnComment"  value="Commnent">
                                                                 </div>
                                                             </form>
                                                             <div class="feedback-review mt-4">
@@ -307,8 +307,9 @@
             e.preventDefault();
             var url = '{{ url('updateQuantity') }}';
             var test = $("#btnField").attr("value");
-            
+            var purchaseDetailId = {{ $data_purchase_detail->id }}
             //alert(test);
+            //alert(purchaseDetailId);
 
             $.ajax({
                     url: url,
@@ -316,7 +317,8 @@
                     async: false,
                     data:{
                         test:test,
-                        plus:1
+                        plus:1,
+                        PurchaseDetailId:purchaseDetailId
                     },
                     
                     success:function(response){
@@ -353,7 +355,7 @@
             e.preventDefault();
             var url = '{{ url('updateQuantity') }}';
             var test = $("#btnField").attr("value");
-            
+            var purchaseDetailId = {{ $data_purchase_detail->id }}
             //alert(test);
 
             $.ajax({
@@ -362,7 +364,8 @@
                     async: false,
                     data:{
                         test:test,
-                        plus:0
+                        plus:0,
+                        PurchaseDetailId:purchaseDetailId
                     },
                     
                     success:function(response){
@@ -394,6 +397,67 @@
     });
 
     $(document).on("click", "#favField", function(e){
+        
+        e.preventDefault();
+
+        var url = '{{ url('updateProduct') }}';
+
+        var test2 = $("#favField").attr("name");
+
+        var res = test2.split("/");
+
+        var pid = res[0];
+
+        var liked = res[1];
+
+       // alert(liked);
+
+        $.ajax({
+           url:url,
+           method:'POST',
+           async: false,
+           data:{
+                    ProductId: pid,
+                    Liked: liked
+                },
+           success:function(response){
+              if(response.success){
+                console.log(response.message); //Message come from controller
+                
+                
+                if (response.message == 1)
+                    {
+                        document.getElementById("redheart").classList.add('redd');
+                    
+                        document.getElementById("favField").name = "{{$data_product->id}}/1" ;
+                    }
+                else 
+                    {
+                        
+                        document.getElementById("redheart").classList.remove('redd');
+                        document.getElementById("favField").name = "{{$data_product->id}}/0" ;
+                    }
+              }else{
+                  alert("Error")
+              }
+           },
+           error:function(error){
+              console.log(error)
+           }
+        });
+    });
+
+</script>
+
+{{-- commnents --}}
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $(document).on("click", "#btnComment", function(e){
         
         e.preventDefault();
 
