@@ -145,7 +145,8 @@ class ProductController extends Controller
                     'PurchaseId'=>$data_purchase->id,
                     'ProductId'=>$getProductId,
                     'Unit_Price' => $data_product->Price,
-                    'SubTotal' => $data_product->Price
+                    'SubTotal' => $data_product->Price,
+                    'Quantity' => 1
                     );
             }
             $data_purchase_detail = PurchaseDetail::select('purchase_details.*')
