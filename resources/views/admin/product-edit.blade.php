@@ -17,7 +17,7 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-md-8"> <!--col-md-8 means 8 row  and form put into one row and updtate the button below-->
-						<form action="../role-products-update/{{ $products->id}}" method="POST" ><!-- here we update the button-->
+						<form action="../role-products-update/{{ $products->id}}" method="POST" enctype="multipart/form-data"><!-- here we update the button-->
 								
                                 {{ csrf_field() }}
 								{{ method_field('PUT') }}

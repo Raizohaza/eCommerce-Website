@@ -20,7 +20,7 @@
                               </div>
                   @endif
               </div>
-
+              <a href="role-products-create" class="btn btn-success">Add</a>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
