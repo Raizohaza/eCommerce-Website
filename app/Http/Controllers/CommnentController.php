@@ -93,7 +93,7 @@ class CommnentController extends Controller
     {
         $mgs ='success';
         
-        if ($request->Pid != null && $request->Content != null)
+        if ($request->Pid != null && $request->Content != null && $request->un != null)
         {
             
             try{

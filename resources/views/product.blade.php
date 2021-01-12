@@ -122,7 +122,7 @@
                                 </div>
                                 <br>
                                 <br>
-                                @if ($data_purchase !=null)
+                                @if ($data_purchase->id != 0)
                                 <div class="group-input">
                                     <button class="disable" id="btnPrv">
                                         <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-remove.svg">
@@ -196,10 +196,10 @@
                                     <!-- Carousel items -->
                                     <div class="carousel-inner">
                                         <div class="carousel-item active" id="commentSection">
-                                            <div class="row">
+                                            <div class="row" >
                                             <div class="col-md-3">
-                                                    <div class="customer-info text-center">
-                                                        @if($iduser != null)
+                                                    <div class="customer-info text-center" >
+                                                        @if($iduser != -1)
                                                             <form action="#">                                                                                                  
                                                                 <div class="feedback-hny">
                                                                     <span class="fa fa-quote-left"></span>
@@ -217,7 +217,7 @@
                                                                 
 
                                                             </div>
-                                                        @else
+                                                        {{-- @else
                                                             <form action="{{ route('register') }}">                                                                                                  
                                                                 <div class="feedback-hny">
                                                                     <span class="fa fa-quote-left"></span>
@@ -234,7 +234,8 @@
                                                    
                                                                 <h5> Bạn chưa đăng nhập </h5>
 
-                                                            </div>
+                                                             --}}
+                                                            {{-- </div> --}}
                                                         @endif
 
                                                     </div>
@@ -255,8 +256,6 @@
                                                     </div>
                                                 </div>
                                                 
-                                                
-                                            </div>  
                                             @endforeach                                                                                                                               
                                         </div>
                                         
@@ -307,7 +306,7 @@
             e.preventDefault();
             var url = '{{ url('updateQuantity') }}';
             var test = $("#btnField").attr("value");
-            var purchaseDetailId = {{ $data_purchase_detail->id }}
+            var purchaseDetailId = {{ $data_purchase_detail->id }};
             //alert(test);
             //alert(purchaseDetailId);
 
@@ -355,7 +354,7 @@
             e.preventDefault();
             var url = '{{ url('updateQuantity') }}';
             var test = $("#btnField").attr("value");
-            var purchaseDetailId = {{ $data_purchase_detail->id }}
+            var purchaseDetailId = {{ $data_purchase_detail->id }};
             //alert(test);
 
             $.ajax({
@@ -467,6 +466,10 @@
 
         var pid = {{ $data_product->id}};
 
+        var un = {{$nameuser}};
+
+        
+
         //alert(test2);
 
         $.ajax({
@@ -475,7 +478,9 @@
            async: false,
            data:{
                     Pid:pid,
-                    Content:test2
+                    Content:test2,
+                    un:un
+                    
                 },
            success:function(response){
               if(response.success){
@@ -484,9 +489,9 @@
                 
                 if (response.message == 1)
                 {
-                    var newDiv = '<div class="col-md-3"> <div class="customer-info text-center">  <div class="feedback-hny"> <span class="fa fa-quote-left"></span> <p class="feedback-para">'
-                                    +test2+'</p></div> <div class="feedback-review mt-4"><img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt=""> <h5>'+pid+'</h5> </div> </div></div>'
-                    alert(newDiv);
+                    var newDiv = '<div class="row-md-3"> <div class="customer-info text-center">  <div class="feedback-hny"> <span class="fa fa-quote-left"></span> <p class="feedback-para">'
+                                    +test2+'</p></div> <div class="feedback-review mt-4"><img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt=""> <h5>'+un+'</h5> </div> </div></div>'
+                    //alert(newDiv);
                     $('#commentSection').append(newDiv);
              
                 }

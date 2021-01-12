@@ -154,16 +154,22 @@ class ProductController extends Controller
         else
         {
             $nameuser = 'Guest';
-            $iduser = '999';
+            $iduser = '-1';
 
             $data_favorite = null;
 
-            $data_purchase = null;
+            $data_purchase = (object) array(
+                'id' => 0,
+                'Quantity'=>0
+            );
 
-            $data_purchase_detail = null;
+            $data_purchase_detail = (object) array(
+                'id' => '0',
+                'Quantity'=>'0'
+            );
+
         }
-
-
+        var_dump($iduser);
         return view('product', compact('data_product','data_images','data_favorite', 'data_commnent', 'data_purchase', 'data_purchase_detail', 'nameuser', 'iduser', 'category'));
     }
 
