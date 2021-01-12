@@ -321,7 +321,7 @@
             </section>
             <!-- //products-->
           
-            <section id="spHOT" class="w3l-ecommerce-main">
+            <section id="spFav" class="w3l-ecommerce-main">
                 <!-- /products-->
                 <div class="ecom-contenthny py-5">
                     <div class="container py-lg-5">
