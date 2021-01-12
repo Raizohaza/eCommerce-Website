@@ -105,7 +105,7 @@ class PurchaseController extends Controller
         $purchase_details =  DB::table('purchase_details')
             ->join('purchases', 'purchases.id', '=', 'purchase_details.PurchaseId')
             ->join('products', 'products.id','=','purchase_details.ProductId')
-            ->where('purchases.userId', '=', $userId)
+            ->where('purchases.UserId', '=', $userId)
             ->where('purchases.Status', '=','1')
             ->select('purchase_details.*','products.*')
             ->get();
