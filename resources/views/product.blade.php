@@ -195,7 +195,7 @@
                                     </ol>
                                     <!-- Carousel items -->
                                     <div class="carousel-inner">
-                                        <div class="carousel-item active">
+                                        <div class="carousel-item active" id="commentSection">
                                             <div class="row">
                                             <div class="col-md-3">
                                                     <div class="customer-info text-center">
@@ -400,7 +400,7 @@
         
         e.preventDefault();
 
-        var url = '{{ url('updateProduct') }}';
+        var url = '{{ url('updateFav') }}';
 
         var test2 = $("#favField").attr("name");
 
@@ -461,25 +461,21 @@
         
         e.preventDefault();
 
-        var url = '{{ url('updateProduct') }}';
+        var url = '{{ url('addComment') }}';
 
-        var test2 = $("#favField").attr("name");
+        var test2 = $("#fname").val();
 
-        var res = test2.split("/");
+        var pid = {{ $data_product->id}};
 
-        var pid = res[0];
-
-        var liked = res[1];
-
-       // alert(liked);
+        //alert(test2);
 
         $.ajax({
            url:url,
            method:'POST',
            async: false,
            data:{
-                    ProductId: pid,
-                    Liked: liked
+                    Pid:pid,
+                    Content:test2
                 },
            success:function(response){
               if(response.success){
@@ -487,17 +483,17 @@
                 
                 
                 if (response.message == 1)
-                    {
-                        document.getElementById("redheart").classList.add('redd');
-                    
-                        document.getElementById("favField").name = "{{$data_product->id}}/1" ;
-                    }
+                {
+                    var newDiv = '<div class="col-md-3"> <div class="customer-info text-center">  <div class="feedback-hny"> <span class="fa fa-quote-left"></span> <p class="feedback-para">'
+                                    +test2+'</p></div> <div class="feedback-review mt-4"><img src="{{asset('/frontend/assets/images/c1.jpg')}}" class="img-fluid" alt=""> <h5>'+pid+'</h5> </div> </div></div>'
+                    alert(newDiv);
+                    $('#commentSection').append(newDiv);
+             
+                }
                 else 
-                    {
-                        
-                        document.getElementById("redheart").classList.remove('redd');
-                        document.getElementById("favField").name = "{{$data_product->id}}/0" ;
-                    }
+                {
+                    
+                }
               }else{
                   alert("Error")
               }

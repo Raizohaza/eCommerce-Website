@@ -85,10 +85,13 @@ Route::get('/category/product/{id}', [App\Http\Controllers\ProductController::cl
 
 Route::get('category/product/fav/{{id}}/{Liked}', [App\Http\Controllers\Admin\FavoriteController::class,'store']);
 
+//ajax
 Route::get('/Cart', [App\Http\Controllers\PurchaseController::class, 'ajaxRequest']);
 
 Route::post('updatePurchase', [App\Http\Controllers\PurchaseController::class, 'ajaxRequestUpdatePurchase']);
 
-Route::post('updateProduct', [App\Http\Controllers\ProductController::class, 'ajaxRequestUpdatePurchase']);
+Route::post('updateFav', [App\Http\Controllers\FavoriteController::class, 'ajaxRequestUpdateFav']);
 
 Route::post('updateQuantity', [App\Http\Controllers\ProductController::class, 'ajaxRequestUpdateQuantity']);
+
+Route::post('addComment', [App\Http\Controllers\CommnentController::class, 'ajaxRequestAddComment']);

@@ -12,7 +12,7 @@ use App\Models\Product;
 
 use App\Models\Favorite;
 
-
+use Exception;
 
 class FavoriteController extends Controller
 {
@@ -138,5 +138,63 @@ class FavoriteController extends Controller
             $data_fav.save();
             
        }
+    }
+    public function ajaxRequestUpdateFav(Request $request)
+    {
+        $mgs ='success';
+        
+        if ($request->ProductId != null && $request->Liked != null)
+        {
+            
+            try{
+                $userId = Auth::id();
+                $iked = 1;
+                if($request->Liked == 1)
+                    $Liked = 0;
+                    
+                $data = array(
+                    'ProductId'=>$request->ProductId,
+                    'Liked'=>$request->Liked,
+                    'UserId'=>$userId,
+                    'created_at'=>null,
+                    'updated_at'=>null
+                );
+            
+                $favorite = Favorite::updateOrCreate(['ProductId'=>$request->ProductId],
+                ['Liked'=>$request->Liked],['UserId'=>$userId]);
+
+                if ($favorite->count() != 0)
+                {
+                    if($request->Liked == 1)
+                        $favorite->Liked = 0;
+                    else 
+                        $favorite->Liked = 1;
+                    $favorite->save() ;
+                    $mgs = json_encode($favorite->Liked);
+                    //favorite[0]->id
+                }
+                else
+                {
+                    Favorite::insert($data);
+                    $mgs = -2;
+                }
+            }
+            catch(Exception $ex)
+            {
+                $mgs = $ex->getMessage();
+            }
+            
+        }
+        
+        else 
+        $mgs= 'Failed';
+
+        
+        return response()->json(
+            [
+                'success' => true,
+                'message' => $mgs,
+            ]
+        );
     }
 }

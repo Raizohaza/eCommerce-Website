@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\Commnent;
+
+use Exception;
+
 class CommnentController extends Controller
 {
     /**
@@ -81,5 +87,46 @@ class CommnentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function ajaxRequestAddComment(Request $request)
+    {
+        $mgs ='success';
+        
+        if ($request->Pid != null && $request->Content != null)
+        {
+            
+            try{
+                $userId = Auth::id();
+                
+                $data = array(
+                    'ProductId'=>$request->Pid,
+                    'Description'=>$request->Content,
+                    'UserId'=>$userId,
+                    'created_at'=>null,
+                    'updated_at'=>null
+                );
+            
+                
+                Commnent::insert($data);
+                $mgs = 1;
+            }
+            catch(Exception $ex)
+            {
+                $mgs = $ex->getMessage();
+            }
+            
+        }
+        
+        else 
+        $mgs= 'Failed';
+
+        
+        return response()->json(
+            [
+                'success' => true,
+                'message' => $mgs,
+            ]
+        );
     }
 }

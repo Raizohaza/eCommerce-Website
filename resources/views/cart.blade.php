@@ -152,42 +152,6 @@
         <link rel="stylesheet" href="{{asset('/frontend/assets/css/CssFramework.css')}}">
     
     
-    {{-- <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    
-        $("#").click(function(e){
-            
-            e.preventDefault();
-    
-            var __QtyUpdate = $('input[name={{ $purchase_detail->id + $purchase_detail->id }}]').val();
-            var url = '{{ url('#') }}';
-            alert(JSON.stringify(__QtyUpdate, null, 4));
-            console.log(JSON.stringify(__QtyUpdate, null, 4))
-            $.ajax({
-               url:url,
-               method:'POST',
-               data:{
-                      Quantity:__QtyUpdate
-                    },
-               success:function(response){
-                  if(response.success){
-                      alert(response.message) //Message come from controller
-                  }else{
-                      alert("Error")
-                  }
-               },
-               error:function(error){
-                  console.log(error)
-               }
-            });
-        });
-    
-    </script> --}}
-
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
