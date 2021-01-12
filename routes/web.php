@@ -25,6 +25,7 @@ Route::get('register/verify/{code}', 'Auth\RegisterController@verify');
 Route::get('/users/{users}/edit', 'App\Http\Controllers\HomeController@edit');
 Route::post('/users/{users}/update-users', 'App\Http\Controllers\HomeController@update');
 //send mail
+
 Route::get('/send-mail', 'App\Http\Controllers\HomeController@send_mail');
 Route::get('/',  [App\Http\Controllers\HomeController::class, 'init']);
 Route::get('/pie', 'App\Http\Controllers\ProductController@get_all_products_for_pie_chart');
@@ -59,6 +60,10 @@ Route::group(['middleware'  => ['auth','admin']], function() {
 	Route::post('/role-add','App\Http\Controllers\CategoryController@store');
 
 	//products
+	Route::get('/role-products-create', 'App\Http\Controllers\ProductController@create')->name('admin.product-add');
+
+	Route::post('/role-products-store', 'App\Http\Controllers\ProductController@store')->name('admin.store');
+
 	Route::get('/role-products','App\Http\Controllers\ProductController@index')->name('admin.producter');
     Route::get('/role-products-edit/{id}', 'App\Http\Controllers\ProductController@edit')->name('admin.product-edit');
     Route::put('/role-products-update/{id}', 'App\Http\Controllers\ProductController@update')->name('admin.product-update');

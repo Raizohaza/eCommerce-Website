@@ -19,7 +19,7 @@ use App\Models\Favorite;
 use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades;
 use Storage;
-
+use Carbon;
 use Exception;
 
 class ProductController extends Controller
@@ -43,7 +43,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categorylist = Category::all();    
+        return view('admin.product-add')->with('categorylist', $categorylist);
     }
 
     /**
@@ -54,7 +55,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $products = new Product();
+        $products->Name = $request->Name;
+        $products->Price = $request->Price;
+        $products->Description = $request->Description;
+        $products->created_at = Carbon\Carbon::now();
+        $products->Catid = 1;
+
+        if($request->hasFile('Image'))
+        {
+            $file = $request->sp_hinh;
+
+            // Lưu tên hình vào column sp_hinh
+            $products->Image = $file->getClientOriginalName();
+            
+            // Chép file vào thư mục "photos"
+            $fileSaved = $file->storeAs('public/frontend/assets/images', $products->Image);
+        }
+        $products->save();
     }
 
     /**
@@ -168,14 +186,20 @@ class ProductController extends Controller
         $products->Description = $request->Description;
                 
         // $products->Catid = $request->Catid;
-        // foreach ($request->files as $key => $value) {
-        //     $imageName = uniqid() . time();
-        //     $image = Image::make($request->$key);
-        //     $image->save($this->getSaveImagePath() . "{$imageName}.jpg");
-        //     $image->destroy();
+        if($request->hasFile('Image'))
+        {
+            // Xóa hình cũ để tránh rác
+            Storage::delete('public\frontend\assets\images' . $products->Image);
 
-        //     $product->$key = $imageName;
-        // }
+            // Upload hình mới
+            // Lưu tên hình vào column
+            $file = $request->Image;
+            $products->Image = $file->getClientOriginalName();
+            
+            // Chép file vào thư mục "photos"
+            $fileSaved = $file->storeAs('public\frontend\assets\images', $products->Image);
+        }
+        $products->save();
 
         $products->update();
 
