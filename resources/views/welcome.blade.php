@@ -79,7 +79,7 @@
                                     Meow~<span class="lohny">S</span>tore</a>
                                 <!-- if logo is image enable this   -->
                                         <a class="navbar-brand" href="./">
-                                            <img src="/project-ltw1\public\frontend\assets\images\icon.jpg" alt="Meow~" title="Meow~" style="height:50px;" />
+                                            <img src="{{asset('/frontend/assets/images/icon.jpg')}}" alt="Meow~" title="Meow~" style="height:50px;" />
                                         </a> 
                                 <!--/search-right-->
                                 <div class="search-right">
